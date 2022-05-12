@@ -43,7 +43,7 @@ extension UIFont {
     static func setFont(fontType: customFont, fontSize : customFontSize) -> UIFont {
         if UIDevice.current.userInterfaceIdiom == .pad
         {
-            return  UIFont(name: fontType.rawValue, size: fontSize.rawValue + fontSize.rawValue/2) ?? UIFont()
+            return  UIFont(name: fontType.rawValue, size: fontSize.rawValue + fontSize.rawValue) ?? UIFont()
         }
         else {
             return UIFont(name: fontType.rawValue, size: fontSize.rawValue) ?? UIFont()

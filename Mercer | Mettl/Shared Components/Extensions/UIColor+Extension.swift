@@ -12,7 +12,6 @@ extension UIColor {
         var hexInt: Int32 = 0
         let scanner = Scanner(string: hex)
         scanner.charactersToBeSkipped = CharacterSet(charactersIn: "#")
-        //scanner.scanHexInt32(&hexInt)
         scanner.scanInt32(&hexInt)
         let red = CGFloat((hexInt & 0xff0000) >> 16) / 255.0
         let green = CGFloat((hexInt & 0xff00) >> 8) / 255.0

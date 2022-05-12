@@ -62,4 +62,16 @@ extension IntroCollection:  UICollectionViewDelegate, UICollectionViewDataSource
         let height = collectionView.bounds.height
         return CGSize(width: width, height: height)
     }
+    
+    func collectionView(_ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 0)
+    }
 }

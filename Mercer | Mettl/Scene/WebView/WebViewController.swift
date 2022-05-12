@@ -14,11 +14,17 @@ class WebViewController: UIViewController {
 
     var webView = WKWebView()
     //let url = "https://tests.mettl.pro/v2/"
-    let url = "https://mettl.xyz/v2/"
+    //let url = "https://mettl.xyz/v2/"
+    let url = "https://tests.mettl.xyz/v2/"
     weak var router: NextSceneDismisser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      //  setup()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setup()
     }
 }
