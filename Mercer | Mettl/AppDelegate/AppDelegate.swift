@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import WebKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    
     var rootController = RootCoordinator()
     static var shared: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
@@ -19,15 +21,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initialSetUp()
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
+    
+    // MARK:- UISceneSession Lifecycle
+    
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-
+    
     func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
@@ -39,13 +41,26 @@ extension AppDelegate {
     private func initialSetUp() {
         Thread.sleep(forTimeInterval: 0.5)
         setRootController()
+        getUserAgent()
     }
-    // MARK: setRootController
+    // MARK:- setRootController
     func setRootController() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         if let window = window {
             self.rootController.start(window: window)
         }
+    }
+    
+    // MARK:- webView UserAgent
+    func getUserAgent(){
+        let webView = WKWebView()
+        webView.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
+            if let unwrappedUserAgent = result as? String {
+                UserStore.save(userAgent: unwrappedUserAgent)
+            } else {
+                print("failed to get the user agent")
+            }
+        })
     }
 }
 

@@ -33,6 +33,28 @@ class IntroCollection: UICollectionView {
         self.delegate = self
         self.dataSource = self
         reloadData()
+        startTimer()
+    }
+    func startTimer() {
+        let timer =  Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
+    }
+
+    @objc func scrollAutomatically(_ timer1: Timer) {
+            for cell in self.visibleCells {
+                let indexPath: IndexPath? = self.indexPath(for: cell)
+                if ((indexPath?.row)! < introItem.count - 1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+
+                    self.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }
+//                else{
+//                    let indexPath1: IndexPath?
+//                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+//                    self.scrollToItem(at: indexPath1!, at: .left, animated: true)
+//                }
+
+            }
     }
 }
 

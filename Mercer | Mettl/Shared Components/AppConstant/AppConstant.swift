@@ -9,6 +9,9 @@ import UIKit
 import Foundation
 
 class AppConstant: NSObject {
+    // MARK:- App Constant
+    static let bypassPath = "/mettlMercerRRMobileApp=true"
+    
     // MARK:- Alert & Error Messages
     static let emptyInvitationKey = "Please enter a valid Invitation Key"
     static let incorrectInvitationKey = "Invalid Invitation Key. Please Verify the Key and try again."

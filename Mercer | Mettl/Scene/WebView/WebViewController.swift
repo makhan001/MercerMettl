@@ -11,7 +11,7 @@ import WebKit
 class WebViewController: UIViewController {
     @IBOutlet weak var customView: UIView!
     @IBOutlet weak var btnExit: UIButton!
-
+    
     var webView = WKWebView()
     //let url = "https://tests.mettl.pro/v2/"
     //let url = "https://mettl.xyz/v2/"
@@ -20,28 +20,48 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  setup()
+        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setup()
+        // setup()
     }
 }
 
 // MARK: - Instance Method
 extension WebViewController {
     func setup() {
-        let url = URL(string: url)
-        let request = URLRequest(url: url!)
-        webView = WKWebView(frame: self.customView.frame)
-        webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        webView.navigationDelegate = self
-        webView.load(request)
+        loadWebView()
         self.customView.addSubview(webView)
         [ btnExit ].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
+    }
+    
+    func loadWebView(){
+        if let myURL = URL(string: url) {
+            let myURLRequest = URLRequest(url: myURL)
+            webView = WKWebView(frame: self.customView.frame)
+            webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            if let userAgent = UserStore.userAgent {
+                webView.customUserAgent = "\(userAgent)\(AppConstant.bypassPath)"
+            }
+            webView.navigationDelegate = self
+            webView.load(myURLRequest)
+            getUpdatedUserAgentKey()
+        }
+    }
+    
+    func getUpdatedUserAgentKey() {
+        webView.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
+            if let unwrappedUserAgent = result as? String {
+                print("userAgent: \(UserStore.userAgent ?? "")")
+                print("updated userAgent: \(unwrappedUserAgent)")
+            } else {
+                print("failed to get the user agent")
+            }
+        })
     }
 }
 

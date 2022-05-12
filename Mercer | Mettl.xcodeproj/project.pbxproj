@@ -47,6 +47,7 @@
 		8642BA1F2808022100004711 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8642BA192808022100004711 /* Roboto-Bold.ttf */; };
 		8642BA202808022100004711 /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8642BA1A2808022100004711 /* Roboto-Thin.ttf */; };
 		8642BA212808022100004711 /* Roboto-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8642BA1B2808022100004711 /* Roboto-Black.ttf */; };
+		865BE7F4282D18E100126678 /* Userstore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865BE7F3282D18E000126678 /* Userstore.swift */; };
 		866499092809807800A95496 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866499062809807700A95496 /* UIImageView+Extension.swift */; };
 		8664990A2809807800A95496 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866499072809807800A95496 /* UIView+Extension.swift */; };
 		8664990B2809807800A95496 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866499082809807800A95496 /* UIColor+Extension.swift */; };
@@ -67,7 +68,6 @@
 
 /* Begin PBXFileReference section */
 		860886752817BF2C00076776 /* Prod_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prod_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		860886762817BF2C00076776 /* Mercer | Mettl copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Mercer | Mettl copy-Info.plist"; path = "/Users/applepc/Documents/Projects/Mercer | Mettl/Mercer | Mettl copy-Info.plist"; sourceTree = "<absolute>"; };
 		860886782817D9B300076776 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		862625542810436C009BA2DC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		8642B9F92807FF6F00004711 /* Dev_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dev_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,6 +84,7 @@
 		8642BA192808022100004711 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		8642BA1A2808022100004711 /* Roboto-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Thin.ttf"; sourceTree = "<group>"; };
 		8642BA1B2808022100004711 /* Roboto-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Black.ttf"; sourceTree = "<group>"; };
+		865BE7F3282D18E000126678 /* Userstore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userstore.swift; sourceTree = "<group>"; };
 		866499062809807700A95496 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		866499072809807800A95496 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		866499082809807800A95496 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
@@ -131,7 +132,6 @@
 			children = (
 				8642B9FB2807FF6F00004711 /* Mercer | Mettl */,
 				8642B9FA2807FF6F00004711 /* Products */,
-				860886762817BF2C00076776 /* Mercer | Mettl copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -179,6 +179,7 @@
 		8642BA122808012E00004711 /* Shared Components */ = {
 			isa = PBXGroup;
 			children = (
+				865BE7F2282D18BA00126678 /* UserStore */,
 				86876FFD28083DC800049206 /* Extensions */,
 				8664990C2809872600A95496 /* AppConstant */,
 			);
@@ -220,10 +221,19 @@
 		8642BA222808025700004711 /* Landing */ = {
 			isa = PBXGroup;
 			children = (
+				8676CB642817F7E300A04229 /* LandingCoordinator.swift */,
 				8642BA002807FF6F00004711 /* LandingViewController.swift */,
 				868770012808485700049206 /* Collection */,
 			);
 			path = Landing;
+			sourceTree = "<group>";
+		};
+		865BE7F2282D18BA00126678 /* UserStore */ = {
+			isa = PBXGroup;
+			children = (
+				865BE7F3282D18E000126678 /* Userstore.swift */,
+			);
+			path = UserStore;
 			sourceTree = "<group>";
 		};
 		8664990C2809872600A95496 /* AppConstant */ = {
@@ -237,6 +247,7 @@
 		86876FFA28082F8B00049206 /* Spalsh */ = {
 			isa = PBXGroup;
 			children = (
+				8676CB612817E40700A04229 /* SplashCoordinator.swift */,
 				86876FFB2808301C00049206 /* SplashViewController.swift */,
 			);
 			path = Spalsh;
@@ -270,8 +281,6 @@
 				86BB7CCE280D548700BB3B74 /* Coordinators.swift */,
 				860886782817D9B300076776 /* RootCoordinator.swift */,
 				86BB7CCF280D548700BB3B74 /* Scenes.swift */,
-				8676CB612817E40700A04229 /* SplashCoordinator.swift */,
-				8676CB642817F7E300A04229 /* LandingCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -426,6 +435,7 @@
 				866499092809807800A95496 /* UIImageView+Extension.swift in Sources */,
 				8676CB622817E40700A04229 /* SplashCoordinator.swift in Sources */,
 				86BB7CD0280D548700BB3B74 /* Coordinators.swift in Sources */,
+				865BE7F4282D18E100126678 /* Userstore.swift in Sources */,
 				8664990A2809807800A95496 /* UIView+Extension.swift in Sources */,
 				86876FFF28083DC800049206 /* UIFont+Extension.swift in Sources */,
 				868770072808485700049206 /* IntroCollection.swift in Sources */,
