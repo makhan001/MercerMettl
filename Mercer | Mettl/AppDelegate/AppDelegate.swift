@@ -11,7 +11,7 @@ import WebKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    
+    let webView = WKWebView()
     var rootController = RootCoordinator()
     static var shared: AppDelegate {
         return UIApplication.shared.delegate as! AppDelegate
@@ -53,7 +53,6 @@ extension AppDelegate {
     
     // MARK:- webView UserAgent
     func getUserAgent(){
-        let webView = WKWebView()
         webView.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
             if let unwrappedUserAgent = result as? String {
                 UserStore.save(userAgent: unwrappedUserAgent)
