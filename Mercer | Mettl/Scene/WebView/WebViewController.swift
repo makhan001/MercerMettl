@@ -10,8 +10,7 @@ import WebKit
 
 class WebViewController: UIViewController {
     @IBOutlet weak var customView: UIView!
-    @IBOutlet weak var btnExit: UIButton!
-    
+
     var webView = WKWebView()
     //let url = "https://tests.mettl.pro/v2/"
     //let url = "https://mettl.xyz/v2/"
@@ -20,12 +19,12 @@ class WebViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        assistiveTouch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // setup()
+        setup()
     }
 }
 
@@ -34,9 +33,13 @@ extension WebViewController {
     func setup() {
         loadWebView()
         self.customView.addSubview(webView)
-        [ btnExit ].forEach {
-            $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
-        }
+    }
+    
+    func assistiveTouch(){
+        let assistiveTouch = AssistiveTouchButton(frame: CGRect(x: view.frame.width - 50, y: view.frame.height - 150, width: 40, height: 40))
+        assistiveTouch.addTarget(self, action: #selector(tap(sender:)), for: .touchUpInside)
+        assistiveTouch.setImage(UIImage(named: "lock"), for: .normal)
+        view.addSubview(assistiveTouch)
     }
     
     func loadWebView(){
@@ -67,16 +70,7 @@ extension WebViewController {
 
 // MARK: - Button Action
 extension WebViewController {
-    @objc func buttonPressed(_ sender: UIButton) {
-        switch  sender {
-        case btnExit:
-            self.exitPressed()
-        default:
-            break
-        }
-    }
-    
-    private func exitPressed() {
+    @objc func tap(sender: UIButton) {
         self.router?.dismiss(controller: .webview)
     }
 }

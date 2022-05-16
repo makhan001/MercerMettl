@@ -234,7 +234,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="936.79999999999995" y="81.2807881773399"/>
+            <point key="canvasLocation" x="903" y="81"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="KQI-Se-aYM">
@@ -248,25 +248,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yub-nh-nqc">
-                                <rect key="frame" x="0.0" y="44" width="428" height="848"/>
+                                <rect key="frame" x="0.0" y="0.0" width="428" height="892"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j6i-Z6-yGV">
-                                <rect key="frame" x="378" y="842" width="40" height="40"/>
-                                <color key="backgroundColor" red="0.035294117649999998" green="0.41568627450000001" blue="0.60392156860000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="6tL-Z8-0hn"/>
-                                    <constraint firstAttribute="height" constant="40" id="XYS-WV-5I0"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="rectangle.portrait.and.arrow.right" catalog="system"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="20"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dHs-Fh-gnE"/>
                         <color key="backgroundColor" name="DarkBlueBG"/>
@@ -274,30 +258,26 @@
                             <constraint firstAttribute="trailing" secondItem="acc-Jj-Zip" secondAttribute="trailing" id="3d3-ah-CO1"/>
                             <constraint firstAttribute="trailing" secondItem="yub-nh-nqc" secondAttribute="trailing" id="4hY-fu-Ggo"/>
                             <constraint firstItem="acc-Jj-Zip" firstAttribute="leading" secondItem="dHs-Fh-gnE" secondAttribute="leading" id="6W4-hv-xRl"/>
-                            <constraint firstItem="dHs-Fh-gnE" firstAttribute="trailing" secondItem="j6i-Z6-yGV" secondAttribute="trailing" constant="10" id="Add-4U-KTA"/>
                             <constraint firstItem="yub-nh-nqc" firstAttribute="bottom" secondItem="dHs-Fh-gnE" secondAttribute="bottom" id="NQE-ic-o9e"/>
-                            <constraint firstItem="yub-nh-nqc" firstAttribute="top" secondItem="dHs-Fh-gnE" secondAttribute="top" id="V4e-fC-E6G"/>
+                            <constraint firstItem="yub-nh-nqc" firstAttribute="top" secondItem="csW-8w-U2f" secondAttribute="top" id="V4e-fC-E6G"/>
                             <constraint firstAttribute="bottom" secondItem="acc-Jj-Zip" secondAttribute="bottom" id="cNo-4k-T0n"/>
-                            <constraint firstItem="dHs-Fh-gnE" firstAttribute="bottom" secondItem="j6i-Z6-yGV" secondAttribute="bottom" constant="10" id="edk-EX-BHi"/>
                             <constraint firstItem="acc-Jj-Zip" firstAttribute="top" secondItem="csW-8w-U2f" secondAttribute="top" id="vln-FJ-1qm"/>
                             <constraint firstItem="yub-nh-nqc" firstAttribute="leading" secondItem="dHs-Fh-gnE" secondAttribute="leading" id="x9d-6C-hRZ"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="btnExit" destination="j6i-Z6-yGV" id="cs5-S3-VT4"/>
                         <outlet property="customView" destination="yub-nh-nqc" id="a87-f0-8J0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smA-AD-a8b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1768" y="81"/>
+            <point key="canvasLocation" x="1658" y="81"/>
         </scene>
     </scenes>
     <resources>
         <image name="AppBackgroud" width="360" height="760"/>
         <image name="MecerMettlLogo" width="276" height="46"/>
         <image name="RightArrow" width="33.333332061767578" height="33.333332061767578"/>
-        <image name="rectangle.portrait.and.arrow.right" catalog="system" width="128" height="108"/>
         <namedColor name="DarkBlueBG">
             <color red="0.086274509803921567" green="0.14117647058823529" blue="0.20392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

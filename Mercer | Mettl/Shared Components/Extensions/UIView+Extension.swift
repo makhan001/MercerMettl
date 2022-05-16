@@ -359,4 +359,17 @@ extension UIView {
         self.layer.shadowOpacity = 0.5
         self.layer.shadowRadius = 4
     }
+    
+    func captureScreenShot() -> UIImage? {
+        let scale = UIScreen.main.scale
+        let bounds = self.bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, scale)
+        if let _ = UIGraphicsGetCurrentContext() {
+            self.drawHierarchy(in: bounds, afterScreenUpdates: true)
+            let screenShot = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return screenShot
+        }
+        return nil
+    }
 }
