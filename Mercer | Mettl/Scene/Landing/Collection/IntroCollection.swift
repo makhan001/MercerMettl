@@ -36,17 +36,18 @@ class IntroCollection: UICollectionView {
         startTimer()
     }
     func startTimer() {
-        let timer =  Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
+        let _ =  Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
     }
+    
     var x = 1
     @objc func autoScroll() {
         if self.x < self.introItem.count {
-          let indexPath = IndexPath(item: x, section: 0)
-          self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-          self.x = self.x + 1
-        }else{
-          self.x = 0
-          self.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: true)
+            let indexPath = IndexPath(item: x, section: 0)
+            self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.x = self.x + 1
+        } else {
+            self.x = 0
+            self.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: false)
         }
     }
 }
@@ -79,14 +80,14 @@ extension IntroCollection:  UICollectionViewDelegate, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
     
     func collectionView(_ collectionView: UICollectionView,
-        layout collectionViewLayout: UICollectionViewLayout,
-        insetForSectionAt section: Int) -> UIEdgeInsets {
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 0)
     }
 }

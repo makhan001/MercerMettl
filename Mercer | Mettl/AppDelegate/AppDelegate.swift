@@ -13,9 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let webView = WKWebView()
     var rootController = RootCoordinator()
-    static var shared: AppDelegate {
-        return UIApplication.shared.delegate as! AppDelegate
-    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         initialSetUp()
@@ -38,11 +35,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 }
 //
 extension AppDelegate {
+    public static var shared: AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+    
     private func initialSetUp() {
         Thread.sleep(forTimeInterval: 0.5)
         setRootController()
         getUserAgent()
     }
+    
     // MARK:- setRootController
     func setRootController() {
         self.window = UIWindow(frame: UIScreen.main.bounds)
@@ -52,7 +54,7 @@ extension AppDelegate {
     }
     
     // MARK:- webView UserAgent
-    func getUserAgent(){
+    func getUserAgent() {
         webView.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
             if let unwrappedUserAgent = result as? String {
                 UserStore.save(userAgent: unwrappedUserAgent)
@@ -62,4 +64,3 @@ extension AppDelegate {
         })
     }
 }
-

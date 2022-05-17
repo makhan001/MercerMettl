@@ -12,19 +12,24 @@ class WebViewController: UIViewController {
     @IBOutlet weak var customView: UIView!
 
     var webView = WKWebView()
+    weak var router: NextSceneDismisser?
     //let url = "https://tests.mettl.pro/v2/"
     //let url = "https://mettl.xyz/v2/"
     let url = "https://tests.mettl.xyz/v2/"
-    weak var router: NextSceneDismisser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         assistiveTouch()
+        setStatusBarColor()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setup()
+    }
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+      return .darkContent
+        
     }
 }
 
@@ -34,7 +39,7 @@ extension WebViewController {
         loadWebView()
         self.customView.addSubview(webView)
     }
-    
+
     func assistiveTouch(){
         let assistiveTouch = AssistiveTouchButton(frame: CGRect(x: view.frame.width - 50, y: view.frame.height - 150, width: 40, height: 40))
         assistiveTouch.tintColor = UIColor(named: "DarkBlue")
@@ -91,3 +96,5 @@ extension WebViewController: WKNavigationDelegate {
         self.navigationItem.rightBarButtonItem = nil
     }
 }
+
+
