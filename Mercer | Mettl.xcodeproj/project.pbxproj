@@ -64,6 +64,10 @@
 		868770052808485700049206 /* IntroCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 868770022808485700049206 /* IntroCollectionViewCell.xib */; };
 		868770062808485700049206 /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868770032808485700049206 /* IntroCollectionViewCell.swift */; };
 		868770072808485700049206 /* IntroCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868770042808485700049206 /* IntroCollection.swift */; };
+		86B277F92834FB3200C24D9B /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B277F82834FB3200C24D9B /* SideMenuViewController.swift */; };
+		86B277FC2834FCE400C24D9B /* ValidateKeyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B277FB2834FCE400C24D9B /* ValidateKeyViewController.swift */; };
+		86B277FF2834FD5800C24D9B /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 86B277FE2834FD5800C24D9B /* SideMenu */; };
+		86B27801283504E700C24D9B /* ValidatekeyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B27800283504E700C24D9B /* ValidatekeyCoordinator.swift */; };
 		86BB7CD0280D548700BB3B74 /* Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB7CCE280D548700BB3B74 /* Coordinators.swift */; };
 		86BB7CD1280D548700BB3B74 /* Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB7CCF280D548700BB3B74 /* Scenes.swift */; };
 		86BB7CD3280D563C00BB3B74 /* AppAdaptables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB7CD2280D563C00BB3B74 /* AppAdaptables.swift */; };
@@ -101,6 +105,9 @@
 		868770022808485700049206 /* IntroCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IntroCollectionViewCell.xib; sourceTree = "<group>"; };
 		868770032808485700049206 /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCollectionViewCell.swift; sourceTree = "<group>"; };
 		868770042808485700049206 /* IntroCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCollection.swift; sourceTree = "<group>"; };
+		86B277F82834FB3200C24D9B /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		86B277FB2834FCE400C24D9B /* ValidateKeyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateKeyViewController.swift; sourceTree = "<group>"; };
+		86B27800283504E700C24D9B /* ValidatekeyCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatekeyCoordinator.swift; sourceTree = "<group>"; };
 		86BB7CCE280D548700BB3B74 /* Coordinators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
 		86BB7CCF280D548700BB3B74 /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
 		86BB7CD2280D563C00BB3B74 /* AppAdaptables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdaptables.swift; sourceTree = "<group>"; };
@@ -118,6 +125,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86B277FF2834FD5800C24D9B /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +174,9 @@
 			isa = PBXGroup;
 			children = (
 				8642BA222808025700004711 /* Landing */,
+				86B277F72834FB1400C24D9B /* SideMenu */,
 				86876FFA28082F8B00049206 /* Spalsh */,
+				86B277FA2834FCC700C24D9B /* ValidateKey */,
 				86262553281042DD009BA2DC /* WebView */,
 			);
 			path = Scene;
@@ -289,6 +299,23 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
+		86B277F72834FB1400C24D9B /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				86B277F82834FB3200C24D9B /* SideMenuViewController.swift */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		86B277FA2834FCC700C24D9B /* ValidateKey */ = {
+			isa = PBXGroup;
+			children = (
+				86B27800283504E700C24D9B /* ValidatekeyCoordinator.swift */,
+				86B277FB2834FCE400C24D9B /* ValidateKeyViewController.swift */,
+			);
+			path = ValidateKey;
+			sourceTree = "<group>";
+		};
 		86BB7CCD280D548700BB3B74 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
@@ -336,6 +363,7 @@
 			);
 			name = Dev_Mercer_Mettl;
 			packageProductDependencies = (
+				86B277FE2834FD5800C24D9B /* SideMenu */,
 			);
 			productName = "Mercer | Mettl";
 			productReference = 8642B9F92807FF6F00004711 /* Dev_Mercer_Mettl.app */;
@@ -366,6 +394,7 @@
 			);
 			mainGroup = 8642B9F02807FF6F00004711;
 			packageReferences = (
+				86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */,
 			);
 			productRefGroup = 8642B9FA2807FF6F00004711 /* Products */;
 			projectDirPath = "";
@@ -449,13 +478,16 @@
 				86BB7CD1280D548700BB3B74 /* Scenes.swift in Sources */,
 				8652ED682832590F00CD0E05 /* AssistiveTouch.swift in Sources */,
 				868770062808485700049206 /* IntroCollectionViewCell.swift in Sources */,
+				86B277F92834FB3200C24D9B /* SideMenuViewController.swift in Sources */,
 				8642BA012807FF6F00004711 /* LandingViewController.swift in Sources */,
 				866499092809807800A95496 /* UIImageView+Extension.swift in Sources */,
+				86B277FC2834FCE400C24D9B /* ValidateKeyViewController.swift in Sources */,
 				8676CB622817E40700A04229 /* SplashCoordinator.swift in Sources */,
 				86BB7CD0280D548700BB3B74 /* Coordinators.swift in Sources */,
 				865BE7F4282D18E100126678 /* Userstore.swift in Sources */,
 				8664990A2809807800A95496 /* UIView+Extension.swift in Sources */,
 				86876FFF28083DC800049206 /* UIFont+Extension.swift in Sources */,
+				86B27801283504E700C24D9B /* ValidatekeyCoordinator.swift in Sources */,
 				868770072808485700049206 /* IntroCollection.swift in Sources */,
 				862625552810436C009BA2DC /* WebViewController.swift in Sources */,
 				8676CB652817F7E300A04229 /* LandingCoordinator.swift in Sources */,
@@ -692,7 +724,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D DEV";
-				PRODUCT_BUNDLE_IDENTIFIER = "Com.Mettl.Mercer-Me";
+				PRODUCT_BUNDLE_IDENTIFIER = "Com.Mettl.Mercer-Mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -725,7 +757,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D DEV";
-				PRODUCT_BUNDLE_IDENTIFIER = "Com.Mettl.Mercer-Me";
+				PRODUCT_BUNDLE_IDENTIFIER = "Com.Mettl.Mercer-Mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -764,6 +796,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		86B277FE2834FD5800C24D9B /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8642B9F12807FF6F00004711 /* Project object */;
 }

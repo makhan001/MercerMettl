@@ -9,14 +9,14 @@ import UIKit
 import Foundation
 
 class AppConstant: NSObject {
-    // MARK:- App Constant
+    // MARK: -  App Constant
     static let bypassPath = "/mettlMercerRRMobileApp=true"
     
-    // MARK:- Alert & Error Messages
+    // MARK: -  Alert & Error Messages
     static let emptyInvitationKey = "Please enter a valid Invitation Key"
     static let incorrectInvitationKey = "Invalid Invitation Key. Please Verify the Key and try again."
     
-    // MARK:- Landing View Constants
+    // MARK: - Landing View Constants
     static let title1 = "Online Examination Platform"
     static let subTitle1 = "Conduct Secure, Scalable and Credible Remote Exam on new platform built for next-generation"
     
@@ -31,4 +31,8 @@ class AppConstant: NSObject {
     
     static let title5 = "Assessment in Lockdown mode"
     static let subTitle5 = "During an ongoing assessment, your device will go in Lockdown mode so that during the assessment, it cannot navigate away."
+    
+    // MARK: - Sidemenu Constants
+    static let helpUrl = "https://mettl.com/contact-us/?utm_medium=ppc&utm_source=adwords&utm_campaign=6496978781&ads_cmpid=6496978781&ads_adid=80644414969&ads_targetid=kwd-372040230718&ads_network=g&ads_creative=381927335886&ads_kw_term=mettl&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAkLCPzeOv_1Chq2G1s1dBVEF1eRAY4l9HJTICqRh3cWhEjtu4eN0rUaAmYyEALw_wcB"
+    static let aboutUsUrl = "https://mettl.com/?utm_medium=ppc&utm_source=adwords&utm_campaign=6496978781&ads_cmpid=6496978781&ads_adid=80644414969&ads_targetid=kwd-372040230718&ads_network=g&ads_creative=381927335886&ads_kw_term=mettl&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAkLCPzeOv_1Chq2G1s1dBVEF1eRAY4l9HJTICqRh3cWhEjtu4eN0rUaAmYyEALw_wcB"
 }

@@ -12,6 +12,7 @@ enum Scenes:String {
     case splash
     case landing
     case webview
+    case validate
 }
 
 enum Storyboard:String {
@@ -22,4 +23,5 @@ enum StoryboardIdentifier:String {
     case webview
     case splash
     case landing
+    case validateKey
 }

@@ -51,7 +51,7 @@ extension LandingViewController {
     }
     
     private func getStarted() {
-        router?.push(scene: .webview)
+       router?.push(scene: .validate)
     }
 }
 

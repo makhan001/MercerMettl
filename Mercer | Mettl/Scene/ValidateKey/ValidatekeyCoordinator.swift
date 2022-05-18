@@ -1,18 +1,19 @@
 //
-//  LandingCoordinator.swift
-//  Mercer | Mettl
+//  File.swift
+//  Dev_Mercer_Mettl
 //
-//  Created by m@k on 26/04/22.
+//  Created by m@k on 18/05/22.
 //
 
 import Foundation
 
-final class LandingCoordinator: Coordinator<Scenes> {
+import Foundation
+
+final class ValidatekeyCoordinator: Coordinator<Scenes> {
     
     weak var delegate: CoordinatorDimisser?
-    let controller: LandingViewController = LandingViewController.from(from: .main, with: .landing)
-    
-    private var validateKey1: ValidatekeyCoordinator!
+    let controller: ValidateKeyViewController = ValidateKeyViewController.from(from: .main, with: .validateKey) 
+    let webview: WebViewController = WebViewController.from(from: .main, with: .webview)
     
     override func start() {
         super.start()
@@ -22,22 +23,19 @@ final class LandingCoordinator: Coordinator<Scenes> {
     
     private func onStart() {
         controller.router = self
+        webview.router = self
+        webview.url = controller.url //One controller to another controller data parshing
     }
     
-    private func startValidateview() {
-        let router = Router()
-        validateKey1 = ValidatekeyCoordinator(router: router)
-        add(validateKey1)
-        validateKey1.delegate = self
-        validateKey1.start()
-        self.router.present(validateKey1, animated: true)
+    private func startWebview() {
+        self.router.present(webview, animated: true)
     }
 }
 
-extension LandingCoordinator: NextSceneDismisser {
+extension ValidatekeyCoordinator: NextSceneDismisser {
     func push(scene: Scenes) {
         switch scene {
-        case .validate: startValidateview()
+        case .webview: startWebview()
         default: break
         }
     }
@@ -52,7 +50,7 @@ extension LandingCoordinator: NextSceneDismisser {
     }
 }
 
-extension LandingCoordinator: CoordinatorDimisser {
+extension ValidatekeyCoordinator: CoordinatorDimisser {
     func dismiss(coordinator: Coordinator<Scenes>) {
         remove(child: coordinator)
         router.dismissModule(animated: true, completion: nil)

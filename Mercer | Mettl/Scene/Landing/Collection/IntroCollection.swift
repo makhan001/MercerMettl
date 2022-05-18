@@ -36,7 +36,7 @@ class IntroCollection: UICollectionView {
         startTimer()
     }
     func startTimer() {
-        let _ =  Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
+       let _ =  Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
     }
     
     var x = 1
@@ -79,6 +79,10 @@ extension IntroCollection:  UICollectionViewDelegate, UICollectionViewDataSource
         return CGSize(width: width, height: height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacing section: Int) -> CGFloat {
+        return 0
+    }
+    
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
@@ -88,6 +92,6 @@ extension IntroCollection:  UICollectionViewDelegate, UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
                         insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 0)
+        return UIEdgeInsets.init(top: 0, left: 5, bottom: 0, right: 5)
     }
 }

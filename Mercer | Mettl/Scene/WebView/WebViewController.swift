@@ -15,7 +15,9 @@ class WebViewController: UIViewController {
     weak var router: NextSceneDismisser?
     //let url = "https://tests.mettl.pro/v2/"
     //let url = "https://mettl.xyz/v2/"
-    let url = "https://tests.mettl.xyz/v2/"
+   // let url = "https://tests.mettl.xyz/v2/"
+    var url:String = ""
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +40,7 @@ extension WebViewController {
     func setup() {
         loadWebView()
         self.customView.addSubview(webView)
+        print("Url is \(self.url)")
     }
 
     func assistiveTouch(){
@@ -79,7 +82,8 @@ extension WebViewController {
 // MARK: - Button Action
 extension WebViewController {
     @objc func tap(sender: UIButton) {
-        self.router?.dismiss(controller: .webview)
+// self.navigationController?.popViewController(animated: true)
+        self.router?.dismiss(controller: .validate)
     }
 }
 
