@@ -14,7 +14,7 @@ class ValidateKeyViewController: UIViewController {
     @IBOutlet weak var btnSideMenu: UIButton!
     @IBOutlet weak var lblProvideKey: UILabel!
     @IBOutlet weak var lblMercerAssessment: UILabel!
-    @IBOutlet weak var TFInvitationKey: UITextField!
+    @IBOutlet weak var tfInvitationKey: UITextField!
     weak var router: NextSceneDismisser?
     let url = "https://tests.mettl.xyz/v2/"
     
@@ -32,8 +32,9 @@ extension ValidateKeyViewController {
         lblProvideKey.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         btnValidate.titleLabel?.font =  UIFont.setFont(fontType: .medium, fontSize: .medium)
         lblErrorMsg.font = UIFont.setFont(fontType: .regular, fontSize: .small)
+        tfInvitationKey.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         
-        TFInvitationKey.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        tfInvitationKey.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         [ btnValidate, btnSideMenu ].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
@@ -86,19 +87,19 @@ extension ValidateKeyViewController {
 // MARK: - Text field Validation  Callbacks
 extension ValidateKeyViewController {
     func validateData() -> Bool {
-        TFInvitationKey.borderWidth = 0.5
-        TFInvitationKey.layer.cornerRadius = 5
-        guard TFInvitationKey.text! != "" else {
+        tfInvitationKey.borderWidth = 0.5
+        tfInvitationKey.layer.cornerRadius = 5
+        guard tfInvitationKey.text! != "" else {
             lblErrorMsg.text = AppConstant.emptyInvitationKey
-            TFInvitationKey.borderColor = .red
+            tfInvitationKey.borderColor = .red
             return false
         }
-        guard TFInvitationKey.text! == "1234" else {
+        guard tfInvitationKey.text! == "1234" else {
             lblErrorMsg.text = AppConstant.incorrectInvitationKey
-            TFInvitationKey.borderColor = .red
+            tfInvitationKey.borderColor = .red
             return false
         }
-        TFInvitationKey.borderColor = .gray
+        tfInvitationKey.borderColor = .gray
         lblErrorMsg.text = ""
         return true
     }
