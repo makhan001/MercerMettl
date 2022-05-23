@@ -122,25 +122,25 @@ extension ValidateKeyViewController {
 }
 
 // MARK: - Text field Validation  Callbacks
-extension ValidateKeyViewController {
-    func validateData() -> Bool {
-        tfInvitationKey.borderWidth = 0.5
-        tfInvitationKey.layer.cornerRadius = 5
-        guard tfInvitationKey.text! != "" else {
-            lblErrorMsg.text = AppConstant.emptyInvitationKey
-            tfInvitationKey.borderColor = .red
-            return false
-        }
-        guard tfInvitationKey.text! == "1234" else {
-            lblErrorMsg.text = AppConstant.incorrectInvitationKey
-            tfInvitationKey.borderColor = .red
-            return false
-        }
-        tfInvitationKey.borderColor = .gray
-        lblErrorMsg.text = ""
-        return true
-    }
-}
+//extension ValidateKeyViewController {
+//    func validateData() -> Bool {
+//        tfInvitationKey.borderWidth = 0.5
+//        tfInvitationKey.layer.cornerRadius = 5
+//        guard tfInvitationKey.text! != "" else {
+//            lblErrorMsg.text = AppConstant.emptyInvitationKey
+//            tfInvitationKey.borderColor = .red
+//            return false
+//        }
+//        guard tfInvitationKey.text! == "1234" else {
+//            lblErrorMsg.text = AppConstant.incorrectInvitationKey
+//            tfInvitationKey.borderColor = .red
+//            return false
+//        }
+//        tfInvitationKey.borderColor = .gray
+//        lblErrorMsg.text = ""
+//        return true
+//    }
+//}
 
 
 
