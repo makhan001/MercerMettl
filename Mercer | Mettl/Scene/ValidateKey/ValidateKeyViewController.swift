@@ -12,14 +12,11 @@ class ValidateKeyViewController: UIViewController {
     @IBOutlet weak var lblErrorMsg: UILabel!
     @IBOutlet weak var lblProvideKey: UILabel!
     @IBOutlet weak var lblMercerAssessment: UILabel!
-    
     @IBOutlet weak var btnValidate: UIButton!
     @IBOutlet weak var btnSideMenu: UIButton!
     
-    @IBOutlet weak var TFInvitationKey: UITextField! // mak changes txtValidateKey user txt
-    
+    @IBOutlet weak var tfInvitationKey: UITextField! // mak changes txtValidateKey user txt
     let viewModel = ValidateKeyViewModel(provider: OnboardingServiceProvider())
-    
     weak var router: NextSceneDismisser?
     let url = "https://tests.mettl.xyz/v2/"
     
@@ -41,36 +38,37 @@ extension ValidateKeyViewController {
         lblProvideKey.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         btnValidate.titleLabel?.font =  UIFont.setFont(fontType: .medium, fontSize: .medium)
         lblErrorMsg.font = UIFont.setFont(fontType: .regular, fontSize: .small)
+        tfInvitationKey.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         
-        TFInvitationKey.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        tfInvitationKey.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
         [ btnValidate, btnSideMenu ].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
     }
     
     private func validateData() -> Bool {
-        TFInvitationKey.borderWidth = 0.5
-        TFInvitationKey.layer.cornerRadius = 5
+        tfInvitationKey.borderWidth = 0.5
+        tfInvitationKey.layer.cornerRadius = 5
         
         
         // mak changes do not force wrap user optional chain check below use this
         
-        // before guard TFInvitationKey.text! == "1234" else {
-        // guard let text = TFInvitationKey.text, text.count > 6 else {
+        // before guard tfInvitationKey.text! == "1234" else {
+        // guard let text = tfInvitationKey.text, text.count > 6 else {
         
-        guard let text = TFInvitationKey.text, text != "" else {
+        guard let text = tfInvitationKey.text, text != "" else {
             lblErrorMsg.text = AppConstant.emptyInvitationKey
-            TFInvitationKey.borderColor = .red
+            tfInvitationKey.borderColor = .red
             return false
         }
         
-        guard let text = TFInvitationKey.text, text.count > 6 else {
+        guard let text = tfInvitationKey.text, text.count > 6 else {
             lblErrorMsg.text = AppConstant.incorrectInvitationKey
-            TFInvitationKey.borderColor = .red
+            tfInvitationKey.borderColor = .red
             return false
         }
         
-        TFInvitationKey.borderColor = .gray
+        tfInvitationKey.borderColor = .gray
         lblErrorMsg.text = ""
         return true
     }
@@ -96,7 +94,7 @@ extension ValidateKeyViewController {
         case btnValidate:
             if validateData() {
 //                 router?.push(scene: .webview)
-                self.viewModel.validate(key: TFInvitationKey.text ?? "")
+                self.viewModel.validate(key: tfInvitationKey.text ?? "")
             }
             
         case btnSideMenu:
@@ -122,6 +120,29 @@ extension ValidateKeyViewController {
         }
     }
 }
+
+// MARK: - Text field Validation  Callbacks
+extension ValidateKeyViewController {
+    func validateData() -> Bool {
+        tfInvitationKey.borderWidth = 0.5
+        tfInvitationKey.layer.cornerRadius = 5
+        guard tfInvitationKey.text! != "" else {
+            lblErrorMsg.text = AppConstant.emptyInvitationKey
+            tfInvitationKey.borderColor = .red
+            return false
+        }
+        guard tfInvitationKey.text! == "1234" else {
+            lblErrorMsg.text = AppConstant.incorrectInvitationKey
+            tfInvitationKey.borderColor = .red
+            return false
+        }
+        tfInvitationKey.borderColor = .gray
+        lblErrorMsg.text = ""
+        return true
+    }
+}
+
+
 
 // MARK: - API Callbacks
 extension ValidateKeyViewController: OnboardingViewRepresentable {
