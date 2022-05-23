@@ -16,7 +16,7 @@ class WebViewController: UIViewController {
     //let url = "https://tests.mettl.pro/v2/"
     //let url = "https://mettl.xyz/v2/"
    // let url = "https://tests.mettl.xyz/v2/"
-    var url:String = ""
+    var webUrl:String = ""
 
     
     override func viewDidLoad() {
@@ -38,9 +38,9 @@ class WebViewController: UIViewController {
 // MARK: - Instance Method
 extension WebViewController {
     func setup() {
-        loadWebView()
+        self.loadWebView()
         self.customView.addSubview(webView)
-        print("Url is \(self.url)")
+        print("webUrl is \(self.webUrl)")
     }
 
     func assistiveTouch(){
@@ -53,21 +53,21 @@ extension WebViewController {
         view.addSubview(assistiveTouch)
     }
     
-    func loadWebView(){
-        if let myURL = URL(string: url) {
-            let myURLRequest = URLRequest(url: myURL)
-            webView = WKWebView(frame: self.customView.frame)
-            webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    private func loadWebView() {
+        if let url = URL(string: webUrl) {
+            let myURLRequest = URLRequest(url: url)
+            self.webView = WKWebView(frame: self.customView.frame)
+            self.webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             if let userAgent = UserStore.userAgent {
-                webView.customUserAgent = "\(userAgent)\(AppConstant.bypassPath)"
+                self.webView.customUserAgent = "\(userAgent)\(AppConstant.bypassPath)"
             }
-            webView.navigationDelegate = self
-            webView.load(myURLRequest)
-            getUpdatedUserAgentKey()
+            self.webView.navigationDelegate = self
+            self.webView.load(myURLRequest)
+            self.getUpdatedUserAgentKey()
         }
     }
     
-    func getUpdatedUserAgentKey() {
+    private func getUpdatedUserAgentKey() {
         webView.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
             if let unwrappedUserAgent = result as? String {
                 print("userAgent: \(UserStore.userAgent ?? "")")

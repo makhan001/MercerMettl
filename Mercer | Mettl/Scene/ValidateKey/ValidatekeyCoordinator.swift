@@ -8,6 +8,7 @@
 import Foundation
 
 import Foundation
+// mak changes also change Validatekey to ValidateKey these are two words user camel case
 
 final class ValidatekeyCoordinator: Coordinator<Scenes> {
     
@@ -17,17 +18,17 @@ final class ValidatekeyCoordinator: Coordinator<Scenes> {
     
     override func start() {
         super.start()
-        router.setRootModule(controller, hideBar: true)
+        self.router.setRootModule(controller, hideBar: true)
         self.onStart()
     }
     
     private func onStart() {
         controller.router = self
         webview.router = self
-        webview.url = controller.url //One controller to another controller data parshing
     }
     
     private func startWebview() {
+        self.webview.webUrl = controller.viewModel.webUrl
         self.router.present(webview, animated: true)
     }
 }

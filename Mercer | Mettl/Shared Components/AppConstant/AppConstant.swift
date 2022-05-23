@@ -32,6 +32,16 @@ class AppConstant: NSObject {
     static let title5 = "Assessment in Lockdown mode"
     static let subTitle5 = "During an ongoing assessment, your device will go in Lockdown mode so that during the assessment, it cannot navigate away."
     
+    /// API Error Messages
+    static let ErrorMessage = "Something went wrong"
+    static let SessionExpireMessage = "Your session is expired, please login again. Thank you."
+    static let BadRequesErrorMessage = "Incorrect request by user"
+    static let NetworkErrorMessage = "Please check you internet connection"
+    static let ServerErrorMessage = "Server is not available try later"
+    static let AuthorizeErrorMessage = "You are not authorized, please login again"
+    static let ParsingErrorMessage = "Request response is incorrect parse issue"
+
+    
     // MARK: - Sidemenu Constants
     static let helpUrl = "https://mettl.com/contact-us/?utm_medium=ppc&utm_source=adwords&utm_campaign=6496978781&ads_cmpid=6496978781&ads_adid=80644414969&ads_targetid=kwd-372040230718&ads_network=g&ads_creative=381927335886&ads_kw_term=mettl&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAkLCPzeOv_1Chq2G1s1dBVEF1eRAY4l9HJTICqRh3cWhEjtu4eN0rUaAmYyEALw_wcB"
     static let aboutUsUrl = "https://mettl.com/?utm_medium=ppc&utm_source=adwords&utm_campaign=6496978781&ads_cmpid=6496978781&ads_adid=80644414969&ads_targetid=kwd-372040230718&ads_network=g&ads_creative=381927335886&ads_kw_term=mettl&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAkLCPzeOv_1Chq2G1s1dBVEF1eRAY4l9HJTICqRh3cWhEjtu4eN0rUaAmYyEALw_wcB"
