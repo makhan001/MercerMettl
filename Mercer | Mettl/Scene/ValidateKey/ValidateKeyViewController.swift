@@ -12,10 +12,12 @@ class ValidateKeyViewController: UIViewController {
     @IBOutlet weak var lblErrorMsg: UILabel!
     @IBOutlet weak var lblProvideKey: UILabel!
     @IBOutlet weak var lblMercerAssessment: UILabel!
+    
     @IBOutlet weak var btnValidate: UIButton!
     @IBOutlet weak var btnProceed: UIButton!
     @IBOutlet weak var btnSideMenu: UIButton!
     @IBOutlet weak var txtValidateKey: UITextField!
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     let viewModel = ValidateKeyViewModel(provider: OnboardingServiceProvider())
     weak var router: NextSceneDismisser?
@@ -31,27 +33,38 @@ class ValidateKeyViewController: UIViewController {
 extension ValidateKeyViewController {
     private func setup() {
         self.viewModel.view = self
-        
-        //mak changes use self for the class properties and methods every where in the project and declare them as private if they are not required to used by other clas
-        txtValidateKey.text = "369flx4jcw"
+        self.activityIndicatorView.isHidden = true
+        self.configureButton()
+        self.configureLabel()
+        self.configureTextField()
+    }
+    
+    private func configureTextField() {
+        self.txtValidateKey.delegate = self
+        self.txtValidateKey.text = "369flx4jcw"
+        self.txtValidateKey.font = UIFont.setFont(fontType: .regular, fontSize: .semimedium)
+        self.txtValidateKey.setLeftPaddingPoints(10.0)
+        self.txtValidateKey.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+    }
+    
+    private func configureLabel() {
         self.lblWelcome.font = UIFont.setFont(fontType: .light, fontSize: .large)
-        lblMercerAssessment.font = UIFont.setFont(fontType: .regular, fontSize: .vxllarge)
-        lblProvideKey.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        btnValidate.titleLabel?.font =  UIFont.setFont(fontType: .regular, fontSize: .small)
-        btnProceed.titleLabel?.font =  UIFont.setFont(fontType: .medium, fontSize: .medium)
-        lblErrorMsg.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        txtValidateKey.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-
-        txtValidateKey.delegate = self
-        txtValidateKey.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        self.lblMercerAssessment.font = UIFont.setFont(fontType: .medium, fontSize: .vxllarge)
+        self.lblProvideKey.font = UIFont.setFont(fontType: .regular, fontSize: .mediumSmall)
+        self.lblErrorMsg.font = UIFont.setFont(fontType: .regular, fontSize: .small)
+    }
+    
+    private func configureButton() {
+        self.btnValidate.titleLabel?.font =  UIFont.setFont(fontType: .regular, fontSize: .semimedium)
+        self.btnProceed.titleLabel?.font =  UIFont.setFont(fontType: .medium, fontSize: .medium)
         [ btnValidate, btnSideMenu, btnProceed].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
     }
     
     private func validateData() -> Bool {
-        txtValidateKey.borderWidth = 0.5
-        txtValidateKey.layer.cornerRadius = 5
+        self.txtValidateKey.borderWidth = 0.5
+        self.txtValidateKey.layer.cornerRadius = 5
         guard let text = txtValidateKey.text, text != "" else {
             lblErrorMsg.text = AppConstant.emptyInvitationKey
             txtValidateKey.borderColor = .red
@@ -64,13 +77,23 @@ extension ValidateKeyViewController {
             return false
         }
         
-        txtValidateKey.borderColor = .gray
-        lblErrorMsg.text = ""
+        self.txtValidateKey.borderColor = .gray
+        self.lblErrorMsg.text = ""
         return true
     }
     
     private func startWebView() {
         self.router?.push(scene: .webview)
+    }
+    
+    private func showIndicator(_ show: Bool, _ onAPISuccess: Bool = true) {
+        self.btnValidate.setTitle("", for: .normal)
+        show ? self.activityIndicatorView.startAnimating() : self.activityIndicatorView.stopAnimating()
+        self.activityIndicatorView.isHidden = !show
+        if !onAPISuccess {
+            self.btnValidate.setTitle("Retry", for: .normal)
+        }
+        self.btnValidate.isHidden = show
     }
 }
 
@@ -82,23 +105,49 @@ extension ValidateKeyViewController {
     }
 }
 
+// MARK: - Textfield Delegate
+extension ValidateKeyViewController : UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        let length =  (textField.text?.count ?? 0) +  (string.count - range.length)
+        if length > 20 {
+            return false
+        }
+        self.btnProceed.isHidden = true
+        self.btnValidate.isUserInteractionEnabled = true
+        self.btnValidate.setTitle("Validate Key", for: .normal)
+        self.btnValidate.setImage(nil, for: .normal)
+
+        if string.isEmpty {
+            return true
+        }
+        let alphaNumericRegEx = "[a-zA-Z0-9]"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", alphaNumericRegEx)
+        return predicate.evaluate(with: string)
+    }
+}
+
+
 // MARK: - Button Action
 extension ValidateKeyViewController {
     @objc func buttonPressed(_ sender: UIButton) {
         switch  sender {
         case btnValidate:
-            if validateData() {
-                self.viewModel.validate(key: txtValidateKey.text ?? "")
-                btnValidate.loadingIndicator(true)
-            }
-            
+            self.validateKeyAction()
         case btnSideMenu:
-            // mak changes use separate func when you are in switch case 2 line is good but it is more than it then use a separate private func as action for the button the way I did for side menu action
             self.sideMenuAction()
         case btnProceed:
             self.startWebView()
         default:
             break
+        }
+    }
+    
+    private func validateKeyAction() {
+        if validateData() {
+            self.viewModel.validate(key: txtValidateKey.text ?? "")
+            self.showIndicator(true)
+//            self.btnValidate.loadingIndicator(true)
         }
     }
     
@@ -108,12 +157,24 @@ extension ValidateKeyViewController {
         menu.presentationStyle = .menuSlideIn
         menu.leftSide = true
         present(menu, animated: true, completion: nil)
-        print("btnSideMenu")
     }
     
     private func validateKey() {
         if validateData() {
             print("Yeah its done")
+        }
+    }
+    
+    private func updateViewAfterValidateKey() {
+        if viewModel.webUrl != "", viewModel.webUrl.count > 1 {
+            self.showIndicator(false)
+            self.btnValidate.isUserInteractionEnabled = false
+            self.btnValidate.setTitle("", for: .normal)
+            self.btnValidate.setImage(UIImage(named: "ic-mercer-validation-success"), for: .normal)
+            self.btnProceed.isHidden = false
+        } else {
+            self.btnValidate.isUserInteractionEnabled = true
+            self.showIndicator(false, false)
         }
     }
 }
@@ -123,30 +184,14 @@ extension ValidateKeyViewController: OnboardingViewRepresentable {
     func onAction(_ action: OnboardingAction) {
         switch action {
         case let .errorMessage(text), let .requireFields(text: text):
-            print("error messsage ---> \(text)")
-            lblErrorMsg.text = text
-            btnValidate.loadingIndicator(false)
-            txtValidateKey.borderColor = .red
+            self.lblErrorMsg.text = text
+            self.txtValidateKey.borderColor = .red
+            self.showIndicator(false, false)
         case .validate:
-            btnValidate.loadingIndicator(false)
-            btnValidate.isUserInteractionEnabled = false
-            btnValidate.setTitle("", for: .normal)
-            btnValidate.setBackgroundImage(UIImage(named: "ic-mercer-validation-success"), for: .normal)
-            self.btnProceed.isHidden = false
+            self.updateViewAfterValidateKey()
         default:
             break
         }
     }
 }
 
-// MARK: - Delegate Methods
-extension ValidateKeyViewController : UITextFieldDelegate{
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string.isEmpty {
-            return true
-        }
-        let alphaNumericRegEx = "[a-zA-Z0-9]"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", alphaNumericRegEx)
-        return predicate.evaluate(with: string)
-    }
-}

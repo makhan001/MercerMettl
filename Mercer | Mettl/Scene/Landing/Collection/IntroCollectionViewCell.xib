@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad12_9" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cunduct ,as ads aqd asd asd asd asd asd assd asd asd asd asd ad ad asd a ds ad" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="y2Q-dD-xYP">
-                                <rect key="frame" x="22" y="226" width="445" height="41"/>
+                                <rect key="frame" x="25" y="229" width="439" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.38823529411764707" green="0.45098039215686275" blue="0.50588235294117645" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -38,11 +38,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lWa-X5-rIo" firstAttribute="height" secondItem="7ev-Vy-hjX" secondAttribute="height" multiplier="0.379205" id="0h6-gc-aND"/>
-                            <constraint firstAttribute="trailing" secondItem="y2Q-dD-xYP" secondAttribute="trailing" constant="22" id="2ne-v4-9Tp"/>
+                            <constraint firstAttribute="trailing" secondItem="y2Q-dD-xYP" secondAttribute="trailing" constant="25" id="2ne-v4-9Tp"/>
                             <constraint firstItem="Igi-Tw-Fma" firstAttribute="centerX" secondItem="7ev-Vy-hjX" secondAttribute="centerX" id="HSg-dr-bdl"/>
-                            <constraint firstItem="y2Q-dD-xYP" firstAttribute="leading" secondItem="7ev-Vy-hjX" secondAttribute="leading" constant="22" id="JIm-S6-6Vx"/>
+                            <constraint firstItem="y2Q-dD-xYP" firstAttribute="leading" secondItem="7ev-Vy-hjX" secondAttribute="leading" constant="25" id="JIm-S6-6Vx"/>
                             <constraint firstItem="Igi-Tw-Fma" firstAttribute="leading" secondItem="7ev-Vy-hjX" secondAttribute="leading" constant="22" id="TDC-gq-Fhc"/>
-                            <constraint firstItem="y2Q-dD-xYP" firstAttribute="top" secondItem="Igi-Tw-Fma" secondAttribute="bottom" constant="12" id="W3q-eM-2HB"/>
+                            <constraint firstItem="y2Q-dD-xYP" firstAttribute="top" secondItem="Igi-Tw-Fma" secondAttribute="bottom" constant="15" id="W3q-eM-2HB"/>
                             <constraint firstItem="lWa-X5-rIo" firstAttribute="centerX" secondItem="7ev-Vy-hjX" secondAttribute="centerX" id="ZQ0-rf-z61"/>
                             <constraint firstItem="lWa-X5-rIo" firstAttribute="top" secondItem="7ev-Vy-hjX" secondAttribute="top" constant="44" id="kjB-Sc-h7T"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="y2Q-dD-xYP" secondAttribute="bottom" constant="5" id="opl-Tc-WoL"/>
@@ -66,10 +66,9 @@
             </constraints>
             <size key="customSize" width="488" height="327"/>
             <connections>
-                <outlet property="ImageView" destination="lWa-X5-rIo" id="za9-bw-uCg"/>
+                <outlet property="imageWalkthough" destination="lWa-X5-rIo" id="dxr-b6-sTc"/>
                 <outlet property="lblSubTitle" destination="y2Q-dD-xYP" id="C4s-An-wWb"/>
                 <outlet property="lblTitle" destination="Igi-Tw-Fma" id="MPg-kl-SDl"/>
-                <outlet property="view" destination="7ev-Vy-hjX" id="sMz-lY-ZBb"/>
             </connections>
             <point key="canvasLocation" x="411.62109375" y="208.41874084919471"/>
         </collectionViewCell>

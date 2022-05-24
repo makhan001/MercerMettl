@@ -14,7 +14,7 @@ struct IntroItemsStruct {
     var image:String
 }
 
-class IntroCollection: UICollectionView {
+class IntroCollectionView: UICollectionView {
     var introItem = [IntroItemsStruct(title: AppConstant.title1,
                                       subTitle: AppConstant.subTitle1,
                                       image: "OB-1"),
@@ -52,7 +52,7 @@ class IntroCollection: UICollectionView {
     }
 }
 
-extension IntroCollection:  UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension IntroCollectionView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return introItem.count
     }

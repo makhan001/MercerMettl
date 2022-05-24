@@ -23,7 +23,7 @@ final class ValidateKeyViewModel {
     
     func validate(key: String) {
         self.key = key
-        provider.validate(key: key)
+        self.provider.validate(key: key)
     }
 }
 
@@ -35,7 +35,8 @@ extension ValidateKeyViewModel: OnboardingServiceProvierDelegate {
                     self.view?.onAction(.errorMessage(AppConstant.ErrorMessage))
                     return
                 }
-                self.view?.onAction(.errorMessage(message))
+                self.view?.onAction(.errorMessage("Invalid invitation key: \(self.key)"))
+//                self.view?.onAction(.errorMessage(message))
             } else {
                 if let _ = response as? SuccessResponseModel {
                     self.webUrl = "\(SessionDispatcher().host)/\(APIVersion.v2)/authenticateKey/\(self.key)"

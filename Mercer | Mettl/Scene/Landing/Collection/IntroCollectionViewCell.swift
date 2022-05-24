@@ -8,10 +8,9 @@
 import UIKit
 
 class IntroCollectionViewCell: UICollectionViewCell {
-    @IBOutlet weak var view:UIView!
     @IBOutlet weak var lblTitle:UILabel!
     @IBOutlet weak var lblSubTitle:UILabel!
-    @IBOutlet weak var ImageView:UIImageView!
+    @IBOutlet weak var imageWalkthough: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,10 +19,10 @@ class IntroCollectionViewCell: UICollectionViewCell {
 
 extension IntroCollectionViewCell {
     func configure(item:IntroItemsStruct) {
-        lblTitle.font = UIFont.setFont(fontType: .medium, fontSize: .medium)
-        lblSubTitle.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        lblTitle.text = item.title
-        lblSubTitle.text = item.subTitle
-        ImageView.image = UIImage(named: item.image)
+        self.lblTitle.font = UIFont.setFont(fontType: .medium, fontSize: .large)
+        self.lblSubTitle.font = UIFont.setFont(fontType: .regular, fontSize: .regular)
+        self.lblTitle.text = item.title
+        self.lblSubTitle.text = item.subTitle
+        self.imageWalkthough.image = UIImage(named: item.image)
     }
 }

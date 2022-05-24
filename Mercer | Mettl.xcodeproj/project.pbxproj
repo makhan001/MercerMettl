@@ -84,6 +84,8 @@
 		E34A58E5283749CB009AF40B /* APIAdaptables.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A58E4283749CB009AF40B /* APIAdaptables.swift */; };
 		E34A58E728374C82009AF40B /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A58E628374C82009AF40B /* APIProvider.swift */; };
 		E34A58E928375313009AF40B /* JSONNull.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A58E828375313009AF40B /* JSONNull.swift */; };
+		E3B7165E283CC2510077002C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7165D283CC2510077002C /* UITextField+Extension.swift */; };
+		E3B7165F283CC2510077002C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7165D283CC2510077002C /* UITextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +138,7 @@
 		E34A58E4283749CB009AF40B /* APIAdaptables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAdaptables.swift; sourceTree = "<group>"; };
 		E34A58E628374C82009AF40B /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
 		E34A58E828375313009AF40B /* JSONNull.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONNull.swift; sourceTree = "<group>"; };
+		E3B7165D283CC2510077002C /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,9 +266,9 @@
 		8642BA222808025700004711 /* Landing */ = {
 			isa = PBXGroup;
 			children = (
+				868770012808485700049206 /* Collection */,
 				8676CB642817F7E300A04229 /* LandingCoordinator.swift */,
 				8642BA002807FF6F00004711 /* LandingViewController.swift */,
-				868770012808485700049206 /* Collection */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -312,6 +315,7 @@
 				866499072809807800A95496 /* UIView+Extension.swift */,
 				8607112A2833805D00D105CD /* UIViewController+Extension.swift */,
 				8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */,
+				E3B7165D283CC2510077002C /* UITextField+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -542,6 +546,7 @@
 				860886582817BF2C00076776 /* UIView+Extension.swift in Sources */,
 				860886592817BF2C00076776 /* UIFont+Extension.swift in Sources */,
 				8608865B2817BF2C00076776 /* IntroCollection.swift in Sources */,
+				E3B7165F283CC2510077002C /* UITextField+Extension.swift in Sources */,
 				8608865C2817BF2C00076776 /* WebViewController.swift in Sources */,
 				86054B24282951860053A9C6 /* RootCoordinator.swift in Sources */,
 				8608865D2817BF2C00076776 /* AppConstant.swift in Sources */,
@@ -595,6 +600,7 @@
 				860886792817D9B300076776 /* RootCoordinator.swift in Sources */,
 				8664990B2809807800A95496 /* UIColor+Extension.swift in Sources */,
 				E34A58DB28374506009AF40B /* APIResponder.swift in Sources */,
+				E3B7165E283CC2510077002C /* UITextField+Extension.swift in Sources */,
 				E34A58D528374251009AF40B /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

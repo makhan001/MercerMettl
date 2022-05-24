@@ -1,8 +1,19 @@
 {
   "images" : [
     {
-      "filename" : "icons8-done-28.png",
-      "idiom" : "universal"
+      "filename" : "ic-mercer-validation-success.png",
+      "idiom" : "iphone",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "ic-mercer-validation-success@2x.png",
+      "idiom" : "iphone",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "ic-mercer-validation-success@3x copy.png",
+      "idiom" : "iphone",
+      "scale" : "3x"
     }
   ],
   "info" : {
