@@ -13,9 +13,10 @@ class ValidateKeyViewController: UIViewController {
     @IBOutlet weak var lblProvideKey: UILabel!
     @IBOutlet weak var lblMercerAssessment: UILabel!
     @IBOutlet weak var btnValidate: UIButton!
+    @IBOutlet weak var btnProceed: UIButton!
     @IBOutlet weak var btnSideMenu: UIButton!
+    @IBOutlet weak var txtValidateKey: UITextField!
     
-    @IBOutlet weak var tfInvitationKey: UITextField! // mak changes txtValidateKey user txt
     let viewModel = ValidateKeyViewModel(provider: OnboardingServiceProvider())
     weak var router: NextSceneDismisser?
     let url = "https://tests.mettl.xyz/v2/"
@@ -32,49 +33,43 @@ extension ValidateKeyViewController {
         self.viewModel.view = self
         
         //mak changes use self for the class properties and methods every where in the project and declare them as private if they are not required to used by other clas
-        
+        txtValidateKey.text = "369flx4jcw"
         self.lblWelcome.font = UIFont.setFont(fontType: .light, fontSize: .large)
         lblMercerAssessment.font = UIFont.setFont(fontType: .regular, fontSize: .vxllarge)
         lblProvideKey.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        btnValidate.titleLabel?.font =  UIFont.setFont(fontType: .medium, fontSize: .medium)
+        btnValidate.titleLabel?.font =  UIFont.setFont(fontType: .regular, fontSize: .small)
+        btnProceed.titleLabel?.font =  UIFont.setFont(fontType: .medium, fontSize: .medium)
         lblErrorMsg.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        tfInvitationKey.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        
-        tfInvitationKey.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-        [ btnValidate, btnSideMenu ].forEach {
+        txtValidateKey.font = UIFont.setFont(fontType: .regular, fontSize: .small)
+
+        txtValidateKey.delegate = self
+        txtValidateKey.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
+        [ btnValidate, btnSideMenu, btnProceed].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
     }
     
     private func validateData() -> Bool {
-        tfInvitationKey.borderWidth = 0.5
-        tfInvitationKey.layer.cornerRadius = 5
-        
-        
-        // mak changes do not force wrap user optional chain check below use this
-        
-        // before guard tfInvitationKey.text! == "1234" else {
-        // guard let text = tfInvitationKey.text, text.count > 6 else {
-        
-        guard let text = tfInvitationKey.text, text != "" else {
+        txtValidateKey.borderWidth = 0.5
+        txtValidateKey.layer.cornerRadius = 5
+        guard let text = txtValidateKey.text, text != "" else {
             lblErrorMsg.text = AppConstant.emptyInvitationKey
-            tfInvitationKey.borderColor = .red
+            txtValidateKey.borderColor = .red
             return false
         }
         
-        guard let text = tfInvitationKey.text, text.count > 6 else {
+        guard let text = txtValidateKey.text, text.count > 6 else {
             lblErrorMsg.text = AppConstant.incorrectInvitationKey
-            tfInvitationKey.borderColor = .red
+            txtValidateKey.borderColor = .red
             return false
         }
         
-        tfInvitationKey.borderColor = .gray
+        txtValidateKey.borderColor = .gray
         lblErrorMsg.text = ""
         return true
     }
     
     private func startWebView() {
-        print("navigate to web view")
         self.router?.push(scene: .webview)
     }
 }
@@ -82,10 +77,10 @@ extension ValidateKeyViewController {
 // MARK: - Observers
 extension ValidateKeyViewController {
     @objc func textFieldDidChange(_ textField: UITextField) {
-        self.validateKey()
+        let validations = validateData()
+        print(validations)
     }
 }
-
 
 // MARK: - Button Action
 extension ValidateKeyViewController {
@@ -93,13 +88,15 @@ extension ValidateKeyViewController {
         switch  sender {
         case btnValidate:
             if validateData() {
-//                 router?.push(scene: .webview)
-                self.viewModel.validate(key: tfInvitationKey.text ?? "")
+                self.viewModel.validate(key: txtValidateKey.text ?? "")
+                btnValidate.loadingIndicator(true)
             }
             
         case btnSideMenu:
-            // mak changes use separate func when you are in switch case 2 line is good but it is more than it then use a separate private func as action for the button the way I didi for side menu action
+            // mak changes use separate func when you are in switch case 2 line is good but it is more than it then use a separate private func as action for the button the way I did for side menu action
             self.sideMenuAction()
+        case btnProceed:
+            self.startWebView()
         default:
             break
         }
@@ -121,40 +118,35 @@ extension ValidateKeyViewController {
     }
 }
 
-// MARK: - Text field Validation  Callbacks
-//extension ValidateKeyViewController {
-//    func validateData() -> Bool {
-//        tfInvitationKey.borderWidth = 0.5
-//        tfInvitationKey.layer.cornerRadius = 5
-//        guard tfInvitationKey.text! != "" else {
-//            lblErrorMsg.text = AppConstant.emptyInvitationKey
-//            tfInvitationKey.borderColor = .red
-//            return false
-//        }
-//        guard tfInvitationKey.text! == "1234" else {
-//            lblErrorMsg.text = AppConstant.incorrectInvitationKey
-//            tfInvitationKey.borderColor = .red
-//            return false
-//        }
-//        tfInvitationKey.borderColor = .gray
-//        lblErrorMsg.text = ""
-//        return true
-//    }
-//}
-
-
-
 // MARK: - API Callbacks
 extension ValidateKeyViewController: OnboardingViewRepresentable {
     func onAction(_ action: OnboardingAction) {
         switch action {
         case let .errorMessage(text), let .requireFields(text: text):
             print("error messsage ---> \(text)")
+            lblErrorMsg.text = text
+            btnValidate.loadingIndicator(false)
+            txtValidateKey.borderColor = .red
         case .validate:
-            self.startWebView()
+            btnValidate.loadingIndicator(false)
+            btnValidate.isUserInteractionEnabled = false
+            btnValidate.setTitle("", for: .normal)
+            btnValidate.setBackgroundImage(UIImage(named: "ic-mercer-validation-success"), for: .normal)
+            self.btnProceed.isHidden = false
         default:
             break
         }
     }
 }
 
+// MARK: - Delegate Methods
+extension ValidateKeyViewController : UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if string.isEmpty {
+            return true
+        }
+        let alphaNumericRegEx = "[a-zA-Z0-9]"
+        let predicate = NSPredicate(format:"SELF MATCHES %@", alphaNumericRegEx)
+        return predicate.evaluate(with: string)
+    }
+}

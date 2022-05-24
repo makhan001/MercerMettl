@@ -10,10 +10,10 @@ import UIKit
 class LandingViewController: UIViewController {
     @IBOutlet weak var lblWelcometo: UILabel!
     @IBOutlet weak var lblGetStarted: UILabel!
+    @IBOutlet weak var lblAssessment: UILabel!
+    @IBOutlet weak var lblMercerMettl: UILabel!
     @IBOutlet weak var btnGetStarted: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var lblMercerMettl: UILabel!
-    @IBOutlet weak var lblAssessment: UILabel!
     @IBOutlet weak var collectionView: IntroCollection!
     
     weak var router: NextSceneDismisser?

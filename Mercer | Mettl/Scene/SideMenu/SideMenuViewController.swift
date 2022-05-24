@@ -15,10 +15,12 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var btnAboutUs: UIButton!
     @IBOutlet weak var lblAboutUs: UILabel!
     @IBOutlet weak var lblNeedHelp: UILabel!
+    @IBOutlet weak var lblContactOn: UILabel!
     @IBOutlet weak var lblPowerdBy: UILabel!
     @IBOutlet weak var lblCopyRights: UILabel!
     @IBOutlet weak var btnContactNumber: UIButton!
     @IBOutlet weak var lblContactNumber: UILabel!
+    @IBOutlet weak var lblUSContactNumber: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,10 +34,12 @@ extension SideMenuViewController {
         lblPowerdBy.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblCopyRights.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblNeedHelp.font = UIFont.setFont(fontType: .medium, fontSize: .small)
+        lblContactOn.font = UIFont.setFont(fontType: .medium, fontSize: .small)
         lblHelp.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblAboutUs.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblContactNumber.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        
+        lblUSContactNumber.font = UIFont.setFont(fontType: .regular, fontSize: .small)
+
         [ btnBack, btnHelp, btnAboutUs, btnContactNumber].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }

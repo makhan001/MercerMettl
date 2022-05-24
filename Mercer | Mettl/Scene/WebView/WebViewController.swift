@@ -82,7 +82,6 @@ extension WebViewController {
 // MARK: - Button Action
 extension WebViewController {
     @objc func tap(sender: UIButton) {
-// self.navigationController?.popViewController(animated: true)
         self.router?.dismiss(controller: .validate)
     }
 }

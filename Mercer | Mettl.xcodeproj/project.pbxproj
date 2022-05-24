@@ -71,6 +71,8 @@
 		86BB7CD0280D548700BB3B74 /* Coordinators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB7CCE280D548700BB3B74 /* Coordinators.swift */; };
 		86BB7CD1280D548700BB3B74 /* Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB7CCF280D548700BB3B74 /* Scenes.swift */; };
 		86BB7CD3280D563C00BB3B74 /* AppAdaptables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB7CD2280D563C00BB3B74 /* AppAdaptables.swift */; };
+		8B25AD24283BFF7200DB6681 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */; };
+		8B25AD25283BFF7200DB6681 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */; };
 		E34A58D328374241009AF40B /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A58D228374241009AF40B /* APIParser.swift */; };
 		E34A58D528374251009AF40B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A58D428374251009AF40B /* APIError.swift */; };
 		E34A58D728374267009AF40B /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A58D628374267009AF40B /* APIBase.swift */; };
@@ -122,6 +124,7 @@
 		86BB7CCE280D548700BB3B74 /* Coordinators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
 		86BB7CCF280D548700BB3B74 /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
 		86BB7CD2280D563C00BB3B74 /* AppAdaptables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdaptables.swift; sourceTree = "<group>"; };
+		8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		E34A58D228374241009AF40B /* APIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParser.swift; sourceTree = "<group>"; };
 		E34A58D428374251009AF40B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E34A58D628374267009AF40B /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
@@ -308,6 +311,7 @@
 				866499062809807700A95496 /* UIImageView+Extension.swift */,
 				866499072809807800A95496 /* UIView+Extension.swift */,
 				8607112A2833805D00D105CD /* UIViewController+Extension.swift */,
+				8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -542,6 +546,7 @@
 				86054B24282951860053A9C6 /* RootCoordinator.swift in Sources */,
 				8608865D2817BF2C00076776 /* AppConstant.swift in Sources */,
 				8607112C2833805D00D105CD /* UIViewController+Extension.swift in Sources */,
+				8B25AD25283BFF7200DB6681 /* UIButton+Extension.swift in Sources */,
 				8608865E2817BF2C00076776 /* AppDelegate.swift in Sources */,
 				8676CB662817F7E300A04229 /* LandingCoordinator.swift in Sources */,
 				8608865F2817BF2C00076776 /* AppAdaptables.swift in Sources */,
@@ -560,6 +565,7 @@
 				E34A58E928375313009AF40B /* JSONNull.swift in Sources */,
 				8652ED682832590F00CD0E05 /* AssistiveTouch.swift in Sources */,
 				868770062808485700049206 /* IntroCollectionViewCell.swift in Sources */,
+				8B25AD24283BFF7200DB6681 /* UIButton+Extension.swift in Sources */,
 				E34A58D328374241009AF40B /* APIParser.swift in Sources */,
 				E34A58E728374C82009AF40B /* APIProvider.swift in Sources */,
 				86B277F92834FB3200C24D9B /* SideMenuViewController.swift in Sources */,
@@ -796,9 +802,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SM44RL5GS4;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Mercer_Mettl;
@@ -818,6 +825,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEV";
 				PRODUCT_BUNDLE_IDENTIFIER = "Com.Mettl.Mercer-Mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -829,9 +837,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = SM44RL5GS4;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Mercer_Mettl;
@@ -851,6 +860,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEV";
 				PRODUCT_BUNDLE_IDENTIFIER = "Com.Mettl.Mercer-Mer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
