@@ -27,7 +27,7 @@ extension SplashViewController {
         #elseif PRO
         print("Prod. target")
         #endif
-        
+        self.navigationController?.navigationBar.isHidden = true
         self.imgView.alpha = 0
         self.imgView.fadeIn(1.5)
         scheduleTimer()

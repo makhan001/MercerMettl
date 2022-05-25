@@ -47,7 +47,7 @@ extension WebViewController {
         let assistiveTouch = AssistiveTouchButton(frame: CGRect(x: view.frame.width - 50, y: view.frame.height - 150, width: 40, height: 40))
         assistiveTouch.tintColor = UIColor(named: "DarkBlue")
         assistiveTouch.addTarget(self, action: #selector(tap(sender:)), for: .touchUpInside)
-        assistiveTouch.setImage(UIImage(named: "lock1"), for: .normal)
+        assistiveTouch.setImage(UIImage(named: "ic-mercer-web-lock"), for: .normal)
         assistiveTouch.backgroundColor = .white
         assistiveTouch.cornerRadius = 20
         view.addSubview(assistiveTouch)

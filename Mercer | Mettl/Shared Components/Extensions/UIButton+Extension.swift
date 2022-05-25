@@ -2,7 +2,7 @@
 //  UIButton+Extension.swift
 //  Mercer | Mettl
 //
-//  Created by Dipak Agalcha on 23/05/22.
+//  Created by m@k on 23/05/22.
 //
 
 import Foundation

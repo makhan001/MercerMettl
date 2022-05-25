@@ -17,15 +17,19 @@ struct IntroItemsStruct {
 class IntroCollectionView: UICollectionView {
     var introItem = [IntroItemsStruct(title: AppConstant.title1,
                                       subTitle: AppConstant.subTitle1,
-                                      image: "OB-1"),
-                     IntroItemsStruct(title: AppConstant.title2,                     subTitle: AppConstant.subTitle2,
-                                      image: "OB-2"),
-                     IntroItemsStruct(title: AppConstant.title3,                     subTitle: AppConstant.subTitle3,
-                                      image: "OB-3"),
-                     IntroItemsStruct(title: AppConstant.title4,                     subTitle: AppConstant.subTitle4,
-                                      image: "OB-4"),
-                     IntroItemsStruct(title: AppConstant.title5,                     subTitle: AppConstant.subTitle5,
-                                      image: "OB-5")]
+                                      image: "ic-mercer-intro-icon1"),
+                     IntroItemsStruct(title: AppConstant.title2,
+                                      subTitle: AppConstant.subTitle2,
+                                      image: "ic-mercer-intro-icon2"),
+                     IntroItemsStruct(title: AppConstant.title3,
+                                      subTitle: AppConstant.subTitle3,
+                                      image: "ic-mercer-intro-icon3"),
+                     IntroItemsStruct(title: AppConstant.title4,
+                                      subTitle: AppConstant.subTitle4,
+                                      image: "ic-mercer-intro-icon4"),
+                     IntroItemsStruct(title: AppConstant.title5,
+                                      subTitle: AppConstant.subTitle5,
+                                      image: "ic-mercer-intro-icon5")]
     var didScrolledAtIndex:((Int) -> Void)?
     
     func configure() {
@@ -36,7 +40,7 @@ class IntroCollectionView: UICollectionView {
         startTimer()
     }
     func startTimer() {
-       let _ =  Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
+        let _ =  Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
     }
     
     var x = 1
@@ -63,6 +67,13 @@ extension IntroCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
         }
         cell.configure(item: introItem[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let indexPathOfVisible = collectionView.indexPath(for: collectionView.visibleCells.first ?? UICollectionViewCell())
+        if indexPath.row < indexPathOfVisible?.row ?? 0 {
+            collectionView.scrollToItem(at: indexPathOfVisible!, at: .right, animated: false)
+        }
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {

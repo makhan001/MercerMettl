@@ -19,7 +19,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ev-Vy-hjX">
                         <rect key="frame" x="0.0" y="0.0" width="489" height="327"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="OB-1" translatesAutoresizingMaskIntoConstraints="NO" id="lWa-X5-rIo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic-mercer-intro-icon1" translatesAutoresizingMaskIntoConstraints="NO" id="lWa-X5-rIo">
                                 <rect key="frame" x="62" y="44" width="365" height="124"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Online Examinatiion Platform" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igi-Tw-Fma">
@@ -74,6 +74,6 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="OB-1" width="203" height="158"/>
+        <image name="ic-mercer-intro-icon1" width="203" height="158"/>
     </resources>
 </document>

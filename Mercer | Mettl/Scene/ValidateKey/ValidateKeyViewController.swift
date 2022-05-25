@@ -170,7 +170,9 @@ extension ValidateKeyViewController {
             self.showIndicator(false)
             self.btnValidate.isUserInteractionEnabled = false
             self.btnValidate.setTitle("", for: .normal)
-            self.btnValidate.setImage(UIImage(named: "ic-mercer-validation-success"), for: .normal)
+            if let starImg = UIImage(named: "ic-mercer-validation-success") {
+                btnValidate.setImage(starImg, for: .normal)
+            }
             self.btnProceed.isHidden = false
         } else {
             self.btnValidate.isUserInteractionEnabled = true

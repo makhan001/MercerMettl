@@ -29,7 +29,7 @@ class AppConstant: NSObject {
     static let title4 = "Proctor-enabled Assessments"
     static let subTitle4 = "Some of the assessments may be monitored thorough proctors in real-time to avoid use of any fraudulent means."
     
-    static let title5 = " Assessment in Lockdown mode"
+    static let title5 = "Assessment in Lockdown mode"
     static let subTitle5 = " During an assessment, your device will enter a lockdown mode to provide you with a disturbance free environment."
     
     /// API Error Messages
