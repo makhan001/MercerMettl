@@ -11,6 +11,7 @@ import Foundation
 class AppConstant: NSObject {
     // MARK: -  App Constant
     static let bypassPath = "/mettlMercerRRMobileApp=true"
+    static let pendoAppKey = "eyJhbGciOiJSUzI1NiIsImtpZCI6IiIsInR5cCI6IkpXVCJ9.eyJkYXRhY2VudGVyIjoidXMiLCJrZXkiOiJiNWZjNzE5Nzg2MmRhMmIzZDkxMDdmMmQ2NGU5YzJhNDFjY2RiZjcxNTNiOGEyZDk5ZDI5NmNkNGFkZjJmOGFkOWFjMTgxZTBhMDVhMWY4NDNhNTE4OTU0N2FhZmViZDNkZDkwYjQ1NGYxNzMxMjhhODlhMmJmOTgxOWRmNDIwOS45MzhmZDZiOTU5MzIwYWUyYTRmYjMwODg0OTlhMDkzNi4xNzkzYjFiNTQ4ZDYxNTJjYzExODdhOTQxNjVhMDdlY2I1YjRiM2Q0NzAyY2MwMDdhOGJjNzljOWU1NTQ3MzAwIn0.bME5RTJK2oMTnlutoiPq6S27re0JyGn7_63qDrrX1gU8bhGddx-nfGAgGUah8Ams0I5ylTWEhKiqAD5-bh4IVs4dz-ncJtV6ODs8N78i1V-RWWybypfvmLsQXSH1YFC_uKT_gUCVTGMd8puitwRhbS6vOaHraHNmkErP-_m83cs"
     
     // MARK: -  Alert & Error Messages
     static let emptyInvitationKey = "Please enter a valid Invitation Key"
@@ -33,6 +34,7 @@ class AppConstant: NSObject {
     static let subTitle5 = " During an assessment, your device will enter a lockdown mode to provide you with a disturbance free environment."
     
     /// API Error Messages
+    
     static let ErrorMessage = "Something went wrong"
     static let SessionExpireMessage = "Your session is expired, please login again. Thank you."
     static let BadRequesErrorMessage = "Incorrect request by user"

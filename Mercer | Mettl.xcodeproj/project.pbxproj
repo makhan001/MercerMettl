@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1847DCEF283F88650075FD5D /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1847DCE1283F88630075FD5D /* Font Awesome 5 Brands-Regular-400.otf */; };
+		1847DCF0283F88650075FD5D /* FontAwesomeStateRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCE2283F88630075FD5D /* FontAwesomeStateRequirement.swift */; };
+		1847DCF1283F88650075FD5D /* FontAwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCE3283F88640075FD5D /* FontAwesomeImageView.swift */; };
+		1847DCF2283F88650075FD5D /* FontAwesomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCE4283F88640075FD5D /* FontAwesomeView.swift */; };
+		1847DCF3283F88650075FD5D /* FontAwesomeTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCE5283F88640075FD5D /* FontAwesomeTabBarItem.swift */; };
+		1847DCF4283F88650075FD5D /* Font Awesome 5 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1847DCE6283F88640075FD5D /* Font Awesome 5 Free-Regular-400.otf */; };
+		1847DCF5283F88650075FD5D /* FontAwesomeTextRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCE7283F88640075FD5D /* FontAwesomeTextRepresentable.swift */; };
+		1847DCF6283F88650075FD5D /* Font Awesome 5 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1847DCE8283F88640075FD5D /* Font Awesome 5 Free-Solid-900.otf */; };
+		1847DCF7283F88650075FD5D /* FontAwesomeBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCE9283F88640075FD5D /* FontAwesomeBarButtonItem.swift */; };
+		1847DCF8283F88650075FD5D /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCEA283F88640075FD5D /* Enum.swift */; };
+		1847DCF9283F88650075FD5D /* FontAwesomeImageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCEB283F88640075FD5D /* FontAwesomeImageRepresentable.swift */; };
+		1847DCFA283F88650075FD5D /* FontAwesomeSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCEC283F88640075FD5D /* FontAwesomeSegmentedControl.swift */; };
+		1847DCFB283F88650075FD5D /* FontAwesomeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCED283F88640075FD5D /* FontAwesomeExtension.swift */; };
+		1847DCFC283F88650075FD5D /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCEE283F88650075FD5D /* FontAwesome.swift */; };
+		1847DCFF283FC28A0075FD5D /* Pendo in Frameworks */ = {isa = PBXBuildFile; productRef = 1847DCFE283FC28A0075FD5D /* Pendo */; };
+		187A80A42840D4460057B91E /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 187A80A32840D4460057B91E /* IQKeyboardManagerSwift */; };
 		86054B24282951860053A9C6 /* RootCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860886782817D9B300076776 /* RootCoordinator.swift */; };
 		8607112B2833805D00D105CD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607112A2833805D00D105CD /* UIViewController+Extension.swift */; };
 		8607112C2833805D00D105CD /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8607112A2833805D00D105CD /* UIViewController+Extension.swift */; };
@@ -89,6 +105,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1847DCE1283F88630075FD5D /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
+		1847DCE2283F88630075FD5D /* FontAwesomeStateRequirement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeStateRequirement.swift; sourceTree = "<group>"; };
+		1847DCE3283F88640075FD5D /* FontAwesomeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeImageView.swift; sourceTree = "<group>"; };
+		1847DCE4283F88640075FD5D /* FontAwesomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeView.swift; sourceTree = "<group>"; };
+		1847DCE5283F88640075FD5D /* FontAwesomeTabBarItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeTabBarItem.swift; sourceTree = "<group>"; };
+		1847DCE6283F88640075FD5D /* Font Awesome 5 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		1847DCE7283F88640075FD5D /* FontAwesomeTextRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeTextRepresentable.swift; sourceTree = "<group>"; };
+		1847DCE8283F88640075FD5D /* Font Awesome 5 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		1847DCE9283F88640075FD5D /* FontAwesomeBarButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeBarButtonItem.swift; sourceTree = "<group>"; };
+		1847DCEA283F88640075FD5D /* Enum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
+		1847DCEB283F88640075FD5D /* FontAwesomeImageRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeImageRepresentable.swift; sourceTree = "<group>"; };
+		1847DCEC283F88640075FD5D /* FontAwesomeSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeSegmentedControl.swift; sourceTree = "<group>"; };
+		1847DCED283F88640075FD5D /* FontAwesomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeExtension.swift; sourceTree = "<group>"; };
+		1847DCEE283F88650075FD5D /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		8607112A2833805D00D105CD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		860886752817BF2C00076776 /* Prod_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prod_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		860886782817D9B300076776 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
@@ -154,12 +184,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				86B277FF2834FD5800C24D9B /* SideMenu in Frameworks */,
+				1847DCFF283FC28A0075FD5D /* Pendo in Frameworks */,
+				187A80A42840D4460057B91E /* IQKeyboardManagerSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1847DCE0283F88170075FD5D /* Fontawesome */ = {
+			isa = PBXGroup;
+			children = (
+				1847DCEA283F88640075FD5D /* Enum.swift */,
+				1847DCE1283F88630075FD5D /* Font Awesome 5 Brands-Regular-400.otf */,
+				1847DCE6283F88640075FD5D /* Font Awesome 5 Free-Regular-400.otf */,
+				1847DCE8283F88640075FD5D /* Font Awesome 5 Free-Solid-900.otf */,
+				1847DCEE283F88650075FD5D /* FontAwesome.swift */,
+				1847DCE9283F88640075FD5D /* FontAwesomeBarButtonItem.swift */,
+				1847DCED283F88640075FD5D /* FontAwesomeExtension.swift */,
+				1847DCEB283F88640075FD5D /* FontAwesomeImageRepresentable.swift */,
+				1847DCE3283F88640075FD5D /* FontAwesomeImageView.swift */,
+				1847DCEC283F88640075FD5D /* FontAwesomeSegmentedControl.swift */,
+				1847DCE2283F88630075FD5D /* FontAwesomeStateRequirement.swift */,
+				1847DCE5283F88640075FD5D /* FontAwesomeTabBarItem.swift */,
+				1847DCE7283F88640075FD5D /* FontAwesomeTextRepresentable.swift */,
+				1847DCE4283F88640075FD5D /* FontAwesomeView.swift */,
+			);
+			path = Fontawesome;
+			sourceTree = "<group>";
+		};
 		86262553281042DD009BA2DC /* WebView */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,8 +241,8 @@
 		8642B9FB2807FF6F00004711 /* Mercer | Mettl */ = {
 			isa = PBXGroup;
 			children = (
-				8642BA142808013400004711 /* AppDelegate */,
 				E34A58CE28374147009AF40B /* API */,
+				8642BA142808013400004711 /* AppDelegate */,
 				86BB7CCD280D548700BB3B74 /* Coordinators */,
 				8642BA132808013100004711 /* Resources */,
 				8642BA102808012800004711 /* Scene */,
@@ -226,6 +279,7 @@
 				8664990C2809872600A95496 /* AppConstant */,
 				8652ED662832590F00CD0E05 /* AssistiveTouchButton */,
 				86876FFD28083DC800049206 /* Extensions */,
+				1847DCE0283F88170075FD5D /* Fontawesome */,
 				865BE7F2282D18BA00126678 /* UserStore */,
 			);
 			path = "Shared Components";
@@ -453,6 +507,8 @@
 			name = Dev_Mercer_Mettl;
 			packageProductDependencies = (
 				86B277FE2834FD5800C24D9B /* SideMenu */,
+				1847DCFE283FC28A0075FD5D /* Pendo */,
+				187A80A32840D4460057B91E /* IQKeyboardManagerSwift */,
 			);
 			productName = "Mercer | Mettl";
 			productReference = 8642B9F92807FF6F00004711 /* Dev_Mercer_Mettl.app */;
@@ -484,6 +540,8 @@
 			mainGroup = 8642B9F02807FF6F00004711;
 			packageReferences = (
 				86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */,
+				1847DCFD283FC28A0075FD5D /* XCRemoteSwiftPackageReference "pendo-mobile-ios" */,
+				187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 8642B9FA2807FF6F00004711 /* Products */;
 			projectDirPath = "";
@@ -518,12 +576,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8642BA202808022100004711 /* Roboto-Thin.ttf in Resources */,
+				1847DCF4283F88650075FD5D /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				8642BA1F2808022100004711 /* Roboto-Bold.ttf in Resources */,
 				868770052808485700049206 /* IntroCollectionViewCell.xib in Resources */,
+				1847DCEF283F88650075FD5D /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				8642BA1E2808022100004711 /* Roboto-Regular.ttf in Resources */,
 				8642BA1C2808022100004711 /* Roboto-Medium.ttf in Resources */,
 				8642BA092807FF7200004711 /* LaunchScreen.storyboard in Resources */,
 				8642BA212808022100004711 /* Roboto-Black.ttf in Resources */,
+				1847DCF6283F88650075FD5D /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				8642BA1D2808022100004711 /* Roboto-Light.ttf in Resources */,
 				8642BA062807FF7200004711 /* Assets.xcassets in Resources */,
 				8642BA042807FF6F00004711 /* Main.storyboard in Resources */,
@@ -566,15 +627,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				8607112B2833805D00D105CD /* UIViewController+Extension.swift in Sources */,
+				1847DCF9283F88650075FD5D /* FontAwesomeImageRepresentable.swift in Sources */,
 				86BB7CD1280D548700BB3B74 /* Scenes.swift in Sources */,
+				1847DCFA283F88650075FD5D /* FontAwesomeSegmentedControl.swift in Sources */,
+				1847DCFC283F88650075FD5D /* FontAwesome.swift in Sources */,
 				E34A58E928375313009AF40B /* JSONNull.swift in Sources */,
 				8652ED682832590F00CD0E05 /* AssistiveTouch.swift in Sources */,
+				1847DCF5283F88650075FD5D /* FontAwesomeTextRepresentable.swift in Sources */,
 				868770062808485700049206 /* IntroCollectionViewCell.swift in Sources */,
 				8B25AD24283BFF7200DB6681 /* UIButton+Extension.swift in Sources */,
+				1847DCF7283F88650075FD5D /* FontAwesomeBarButtonItem.swift in Sources */,
+				1847DCF1283F88650075FD5D /* FontAwesomeImageView.swift in Sources */,
 				E34A58D328374241009AF40B /* APIParser.swift in Sources */,
 				E34A58E728374C82009AF40B /* APIProvider.swift in Sources */,
 				86B277F92834FB3200C24D9B /* SideMenuViewController.swift in Sources */,
 				8642BA012807FF6F00004711 /* LandingViewController.swift in Sources */,
+				1847DCF2283F88650075FD5D /* FontAwesomeView.swift in Sources */,
 				866499092809807800A95496 /* UIImageView+Extension.swift in Sources */,
 				E34A58E5283749CB009AF40B /* APIAdaptables.swift in Sources */,
 				E34A58D9283744E9009AF40B /* UserRequests.swift in Sources */,
@@ -582,10 +650,12 @@
 				8676CB622817E40700A04229 /* SplashCoordinator.swift in Sources */,
 				86BB7CD0280D548700BB3B74 /* Coordinators.swift in Sources */,
 				865BE7F4282D18E100126678 /* Userstore.swift in Sources */,
+				1847DCF3283F88650075FD5D /* FontAwesomeTabBarItem.swift in Sources */,
 				8664990A2809807800A95496 /* UIView+Extension.swift in Sources */,
 				86876FFF28083DC800049206 /* UIFont+Extension.swift in Sources */,
 				E34A58DD2837461A009AF40B /* UserTask.swift in Sources */,
 				86B27801283504E700C24D9B /* ValidatekeyCoordinator.swift in Sources */,
+				1847DCF8283F88650075FD5D /* Enum.swift in Sources */,
 				868770072808485700049206 /* IntroCollection.swift in Sources */,
 				E34A58DF2837467E009AF40B /* APIResponse.swift in Sources */,
 				862625552810436C009BA2DC /* WebViewController.swift in Sources */,
@@ -593,11 +663,13 @@
 				8676CB652817F7E300A04229 /* LandingCoordinator.swift in Sources */,
 				8664990E2809876100A95496 /* AppConstant.swift in Sources */,
 				8642B9FD2807FF6F00004711 /* AppDelegate.swift in Sources */,
+				1847DCF0283F88650075FD5D /* FontAwesomeStateRequirement.swift in Sources */,
 				E34A58D728374267009AF40B /* APIBase.swift in Sources */,
 				86BB7CD3280D563C00BB3B74 /* AppAdaptables.swift in Sources */,
 				8642B9FF2807FF6F00004711 /* SceneDelegate.swift in Sources */,
 				86876FFC2808301C00049206 /* SplashViewController.swift in Sources */,
 				860886792817D9B300076776 /* RootCoordinator.swift in Sources */,
+				1847DCFB283F88650075FD5D /* FontAwesomeExtension.swift in Sources */,
 				8664990B2809807800A95496 /* UIColor+Extension.swift in Sources */,
 				E34A58DB28374506009AF40B /* APIResponder.swift in Sources */,
 				E3B7165E283CC2510077002C /* UITextField+Extension.swift in Sources */,
@@ -636,7 +708,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SM44RL5GS4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mercer | Mettl copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Mercer_Mettl;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -666,7 +738,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = SM44RL5GS4;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Mercer | Mettl copy-Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Mercer_Mettl;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -906,6 +978,23 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1847DCFD283FC28A0075FD5D /* XCRemoteSwiftPackageReference "pendo-mobile-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pendo-io/pendo-mobile-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.15.2;
+			};
+		};
+		187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 7.0.0;
+				minimumVersion = 6.0.0;
+			};
+		};
 		86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
@@ -917,6 +1006,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1847DCFE283FC28A0075FD5D /* Pendo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1847DCFD283FC28A0075FD5D /* XCRemoteSwiftPackageReference "pendo-mobile-ios" */;
+			productName = Pendo;
+		};
+		187A80A32840D4460057B91E /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
 		86B277FE2834FD5800C24D9B /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */;

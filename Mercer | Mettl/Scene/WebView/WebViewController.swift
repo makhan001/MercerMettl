@@ -9,15 +9,11 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
-    @IBOutlet weak var customView: UIView!
-
+    @IBOutlet weak var viewWeb: UIView!
+    
     var webView = WKWebView()
     weak var router: NextSceneDismisser?
-    //let url = "https://tests.mettl.pro/v2/"
-    //let url = "https://mettl.xyz/v2/"
-   // let url = "https://tests.mettl.xyz/v2/"
     var webUrl:String = ""
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +26,7 @@ class WebViewController: UIViewController {
         setup()
     }
     override var preferredStatusBarStyle : UIStatusBarStyle {
-      return .darkContent
+        return .darkContent
         
     }
 }
@@ -39,16 +35,17 @@ class WebViewController: UIViewController {
 extension WebViewController {
     func setup() {
         self.loadWebView()
-        self.customView.addSubview(webView)
+        self.viewWeb.addSubview(webView)
         print("webUrl is \(self.webUrl)")
     }
-
+    
     func assistiveTouch(){
         let assistiveTouch = AssistiveTouchButton(frame: CGRect(x: view.frame.width - 50, y: view.frame.height - 150, width: 40, height: 40))
-        assistiveTouch.tintColor = UIColor(named: "DarkBlue")
+        assistiveTouch.setTitleColor(UIColor.setColor(colorType: .darkBlue), for: .normal)
         assistiveTouch.addTarget(self, action: #selector(tap(sender:)), for: .touchUpInside)
-        assistiveTouch.setImage(UIImage(named: "ic-mercer-web-lock"), for: .normal)
-        assistiveTouch.backgroundColor = .white
+        assistiveTouch.titleLabel?.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
+        assistiveTouch.setTitle(String.fontAwesomeIcon(name: .lockOpen), for: .normal)
+        assistiveTouch.backgroundColor = UIColor.setColor(colorType: .skyDark)
         assistiveTouch.cornerRadius = 20
         view.addSubview(assistiveTouch)
     }
@@ -56,7 +53,7 @@ extension WebViewController {
     private func loadWebView() {
         if let url = URL(string: webUrl) {
             let myURLRequest = URLRequest(url: url)
-            self.webView = WKWebView(frame: self.customView.frame)
+            self.webView = WKWebView(frame: self.viewWeb.frame)
             self.webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
             if let userAgent = UserStore.userAgent {
                 self.webView.customUserAgent = "\(userAgent)\(AppConstant.bypassPath)"
@@ -89,12 +86,12 @@ extension WebViewController {
 // MARK: - Closure and Delegate Callbacks
 extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        customView.isHidden = true
+        viewWeb.isHidden = true
         self.view.lock()
     }
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        customView.isHidden = false
+        viewWeb.isHidden = false
         self.view.unlock()
         self.navigationItem.rightBarButtonItem = nil
     }

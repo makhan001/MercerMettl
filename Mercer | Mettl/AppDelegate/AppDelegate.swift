@@ -7,6 +7,8 @@
 
 import UIKit
 import WebKit
+import Pendo
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +34,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool
+    {
+        if url.scheme?.range(of: "pendo") != nil {
+            PendoManager.shared().initWith(url)
+            return true
+        }
+        // your code here...
+        return true
+    }
 }
 //
 extension AppDelegate {
@@ -41,8 +53,10 @@ extension AppDelegate {
     
     private func initialSetUp() {
         Thread.sleep(forTimeInterval: 0.5)
-        setRootController()
+        pendoSetup()
         getUserAgent()
+        setRootController()
+        keyboardManagerSetup()
     }
     
     // MARK:- setRootController
@@ -58,9 +72,22 @@ extension AppDelegate {
         webView.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
             if let unwrappedUserAgent = result as? String {
                 UserStore.save(userAgent: unwrappedUserAgent)
+                print("userAgent: \(UserStore.userAgent ?? "")")
             } else {
                 print("failed to get the user agent")
             }
         })
+    }
+    
+    
+    // MARK:- Pendo SDK Up
+    func pendoSetup() {
+        PendoManager.shared().setup(AppConstant.pendoAppKey)
+    }
+    
+    // MARK:- Keyboard Manager setup
+    func keyboardManagerSetup() {
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.toolbarTintColor = UIColor.setColor(colorType: .darkBlue)
     }
 }

@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func setStatusBarColor(color: UIColor = UIColor(named: "DarkBlueBG") ?? .black) {
+    func setStatusBarColor(color: UIColor = UIColor.setColor(colorType: .darkBlueBG) ) {
         if #available(iOS 13.0, *) {
             let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
             let statusBarFrame = window?.windowScene?.statusBarManager?.statusBarFrame

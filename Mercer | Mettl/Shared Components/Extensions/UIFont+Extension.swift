@@ -12,7 +12,7 @@ extension UIColor {
     static let appBasecolor : UIColor = UIColor(named: "AppBasecolor") ?? UIColor()
 }
 
-// FontFamily Sertups
+// FontFamily Setups
 enum customFontSize : CGFloat {
     case vvvsmall = 8
     case extraSmall = 10

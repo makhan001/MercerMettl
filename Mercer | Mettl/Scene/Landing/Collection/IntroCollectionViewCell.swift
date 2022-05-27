@@ -2,7 +2,7 @@
 //  ColorCollectionViewCell.swift
 //  Iscra
 //
-//  Created by Lokesh Patil on 25/10/21.
+//  Created by m@k on 25/10/21.
 //
 
 import UIKit

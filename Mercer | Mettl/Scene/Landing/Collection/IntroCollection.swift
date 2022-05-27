@@ -2,7 +2,7 @@
 //  ColorCollectionView.swift
 //  Iscra
 //
-//  Created by Lokesh Patil on 25/10/21.
+//  Created by m@k on 25/10/21.
 //
 
 import UIKit
@@ -73,6 +73,9 @@ extension IntroCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
         let indexPathOfVisible = collectionView.indexPath(for: collectionView.visibleCells.first ?? UICollectionViewCell())
         if indexPath.row < indexPathOfVisible?.row ?? 0 {
             collectionView.scrollToItem(at: indexPathOfVisible!, at: .right, animated: false)
+        }
+        else {
+            self.didScrolledAtIndex?(indexPath.row)
         }
     }
     

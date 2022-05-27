@@ -46,4 +46,22 @@ extension UIColor {
     static var randomColor: UIColor {
         return UIColor(red: .random(in: 0...2), green: .random(in: 0...2), blue: .random(in: 0...2), alpha: 1.0)
     }
+    
+    //MARK: - Color Setups
+    enum colorPalette : String {
+        case quill = "Quill"
+        case skyDark = "SkyDark"
+        case darkBlue = "DarkBlue"
+        case darkBlueBG = "DarkBlueBG"
+        case primeryRed = "PrimeryRed"
+        case quillLight = "QuillLight"
+        case primaryBlue = "PrimaryBlue"
+        case quillLighter = "QuillLighter"
+        case quillLightest = "quillLightest"
+        case primaryBlueDark = "PrimaryBlueDark"
+    }
+    
+    static func setColor(colorType: colorPalette) -> UIColor {
+        return UIColor(named: colorType.rawValue) ?? UIColor()
+    }
 }

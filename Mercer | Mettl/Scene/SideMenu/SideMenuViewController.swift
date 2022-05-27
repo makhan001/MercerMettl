@@ -9,19 +9,21 @@ import UIKit
 import SafariServices
 
 class SideMenuViewController: UIViewController {
+    @IBOutlet weak var lblHelp: UILabel!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var btnHelp: UIButton!
-    @IBOutlet weak var lblHelp: UILabel!
-    @IBOutlet weak var btnAboutUs: UIButton!
     @IBOutlet weak var lblAboutUs: UILabel!
+    @IBOutlet weak var btnAboutUs: UIButton!
     @IBOutlet weak var lblNeedHelp: UILabel!
     @IBOutlet weak var lblContactOn: UILabel!
     @IBOutlet weak var lblPowerdBy: UILabel!
     @IBOutlet weak var lblCopyRights: UILabel!
-    @IBOutlet weak var btnContactNumber: UIButton!
+    @IBOutlet weak var imgLeftArrow: UIImageView!
     @IBOutlet weak var lblContactNumber: UILabel!
+    @IBOutlet weak var btnContactNumber: UIButton!
     @IBOutlet weak var lblUSContactNumber: UILabel!
-
+    @IBOutlet weak var btnUSContactNumber: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -31,6 +33,13 @@ class SideMenuViewController: UIViewController {
 // MARK: - Instance Method
 extension SideMenuViewController {
     private func setup() {
+        configureFonts()
+        [ btnBack, btnHelp, btnAboutUs, btnContactNumber, btnUSContactNumber].forEach {
+            $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        }
+    }
+    
+    private func configureFonts() {
         lblPowerdBy.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblCopyRights.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblNeedHelp.font = UIFont.setFont(fontType: .medium, fontSize: .small)
@@ -39,16 +48,13 @@ extension SideMenuViewController {
         lblAboutUs.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblContactNumber.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblUSContactNumber.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-
-        [ btnBack, btnHelp, btnAboutUs, btnContactNumber].forEach {
-            $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
-        }
+        imgLeftArrow.image = UIImage.fontAwesomeIcon(name:FontAwesome.angleDoubleLeft, style: .solid, textColor: .white, size: CGSize(width: 30, height: 30))
     }
 }
 
 // MARK: - Button Action
 extension SideMenuViewController {
-
+    
     @objc func buttonPressed(_ sender: UIButton) {
         switch  sender {
         case btnBack:
@@ -58,7 +64,9 @@ extension SideMenuViewController {
         case btnAboutUs:
             OpenSafari(Url: AppConstant.aboutUsUrl )
         case btnContactNumber:
-                callNumber()
+            callNumber(phoneNumber: lblContactNumber.text ?? "")
+        case btnUSContactNumber:
+            callNumber(phoneNumber: lblUSContactNumber.text ?? "")
         default:
             break
         }
@@ -70,8 +78,8 @@ extension SideMenuViewController {
             }
         }
         
-        func callNumber() {
-            UIApplication.shared.open(NSURL(string: "tel://555-123-1234")! as URL)
+        func callNumber(phoneNumber:String) {
+            UIApplication.shared.open(NSURL(string: "tel://\(phoneNumber)")! as URL)
         }
     }
 }
