@@ -21,7 +21,6 @@ class ValidateKeyViewController: UIViewController {
     
     let viewModel = ValidateKeyViewModel(provider: OnboardingServiceProvider())
     weak var router: NextSceneDismisser?
-    let url = "https://tests.mettl.xyz/v2/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +36,7 @@ extension ValidateKeyViewController {
         self.configureButton()
         self.configureLabel()
         self.configureTextField()
+        startPendoSession(visitorid: PendoConfiguration.visitorId)
     }
     
     private func configureTextField() {

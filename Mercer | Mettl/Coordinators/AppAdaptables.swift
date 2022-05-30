@@ -61,3 +61,4 @@ protocol RowJournalSectionDisplayable {
 typealias Dismisser = ControllerDismisser & CoordinatorDimisser
 typealias NextSceneDismisser = PushNextController & ControllerDismisser & PopPreviousController
 typealias NextSceneDismisserPresenter = NextSceneDismisser & Dismisser
+

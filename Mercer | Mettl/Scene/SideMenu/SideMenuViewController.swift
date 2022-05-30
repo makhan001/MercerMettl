@@ -34,6 +34,7 @@ class SideMenuViewController: UIViewController {
 extension SideMenuViewController {
     private func setup() {
         configureFonts()
+        startPendoSession(visitorid: PendoConfiguration.visitorId)
         [ btnBack, btnHelp, btnAboutUs, btnContactNumber, btnUSContactNumber].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }

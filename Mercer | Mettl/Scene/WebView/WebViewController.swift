@@ -36,6 +36,7 @@ extension WebViewController {
     func setup() {
         self.loadWebView()
         self.viewWeb.addSubview(webView)
+        startPendoSession(visitorid: PendoConfiguration.visitorId)
         print("webUrl is \(self.webUrl)")
     }
     

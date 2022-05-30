@@ -29,6 +29,7 @@ extension LandingViewController {
     private func setup() {
         configureFonts()
         configureCollection()
+        startPendoSession(visitorid: PendoConfiguration.visitorId)
         [ btnGetStarted ].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }

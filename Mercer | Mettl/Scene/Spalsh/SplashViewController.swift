@@ -31,6 +31,7 @@ extension SplashViewController {
         self.imgView.alpha = 0
         self.imgView.fadeIn(1.5)
         scheduleTimer()
+        startPendoSession(visitorid: PendoConfiguration.visitorId)
     }
     
     private func scheduleTimer() -> Void{

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1833A76A2844F8E600AC4F3E /* PendoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833A7692844F8E600AC4F3E /* PendoConfiguration.swift */; };
 		1847DCEF283F88650075FD5D /* Font Awesome 5 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1847DCE1283F88630075FD5D /* Font Awesome 5 Brands-Regular-400.otf */; };
 		1847DCF0283F88650075FD5D /* FontAwesomeStateRequirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCE2283F88630075FD5D /* FontAwesomeStateRequirement.swift */; };
 		1847DCF1283F88650075FD5D /* FontAwesomeImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCE3283F88640075FD5D /* FontAwesomeImageView.swift */; };
@@ -105,6 +106,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1833A7692844F8E600AC4F3E /* PendoConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendoConfiguration.swift; sourceTree = "<group>"; };
 		1847DCE1283F88630075FD5D /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
 		1847DCE2283F88630075FD5D /* FontAwesomeStateRequirement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeStateRequirement.swift; sourceTree = "<group>"; };
 		1847DCE3283F88640075FD5D /* FontAwesomeImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeImageView.swift; sourceTree = "<group>"; };
@@ -192,6 +194,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1833A7682844F88900AC4F3E /* Pendo */ = {
+			isa = PBXGroup;
+			children = (
+				1833A7692844F8E600AC4F3E /* PendoConfiguration.swift */,
+			);
+			path = Pendo;
+			sourceTree = "<group>";
+		};
 		1847DCE0283F88170075FD5D /* Fontawesome */ = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +286,7 @@
 		8642BA122808012E00004711 /* Shared Components */ = {
 			isa = PBXGroup;
 			children = (
+				1833A7682844F88900AC4F3E /* Pendo */,
 				8664990C2809872600A95496 /* AppConstant */,
 				8652ED662832590F00CD0E05 /* AssistiveTouchButton */,
 				86876FFD28083DC800049206 /* Extensions */,
@@ -663,6 +674,7 @@
 				8676CB652817F7E300A04229 /* LandingCoordinator.swift in Sources */,
 				8664990E2809876100A95496 /* AppConstant.swift in Sources */,
 				8642B9FD2807FF6F00004711 /* AppDelegate.swift in Sources */,
+				1833A76A2844F8E600AC4F3E /* PendoConfiguration.swift in Sources */,
 				1847DCF0283F88650075FD5D /* FontAwesomeStateRequirement.swift in Sources */,
 				E34A58D728374267009AF40B /* APIBase.swift in Sources */,
 				86BB7CD3280D563C00BB3B74 /* AppAdaptables.swift in Sources */,

@@ -7,8 +7,10 @@
 
 import Foundation
 import UIKit
+import Pendo
 
 extension UIViewController {
+    // MARK:- Status bar color setup.
     func setStatusBarColor(color: UIColor = UIColor.setColor(colorType: .darkBlueBG) ) {
         if #available(iOS 13.0, *) {
             let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
@@ -23,5 +25,14 @@ extension UIViewController {
             self.view.addSubview(statusBarView)
             statusBarView.backgroundColor = color
         }
+    }
+    
+    // MARK:- Pendo Analytics
+    func startPendoSession(visitorid: String = "", accountid: String = "", visitordata: [String: Any] = ["":""], accountdata: [String: Any] = ["":""]) {
+        PendoManager.shared().startSession(
+            visitorid,
+            accountId: accountid,
+            visitorData: visitordata,
+            accountData: accountdata)
     }
 }

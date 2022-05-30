@@ -5,7 +5,6 @@
 //  Created by m@k on 18/04/22.
 //
 
-
 import Foundation
 import UIKit
 
@@ -137,8 +136,8 @@ public final class Router: NSObject, RouterType, UINavigationControllerDelegate 
     public func navigationController(_ navigationController: UINavigationController, didShow _: UIViewController, animated _: Bool) {
         // Ensure the view controller is popping
         guard let poppedViewController = navigationController.transitionCoordinator?.viewController(forKey: .from),
-            !navigationController.viewControllers.contains(poppedViewController) else {
-                return
+              !navigationController.viewControllers.contains(poppedViewController) else {
+            return
         }
         runCompletion(for: poppedViewController)
     }
@@ -195,9 +194,7 @@ class Coordinator<Link>: PresentableCoordinator<Link>, CoordinatorType {
 }
 
 public class NavigationController: UINavigationController {
-    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
 }

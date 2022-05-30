@@ -82,7 +82,7 @@ extension AppDelegate {
     
     // MARK:- Pendo SDK Up
     func pendoSetup() {
-        PendoManager.shared().setup(AppConstant.pendoAppKey)
+        PendoManager.shared().setup(PendoConfiguration.pendoAppKey)
     }
     
     // MARK:- Keyboard Manager setup
