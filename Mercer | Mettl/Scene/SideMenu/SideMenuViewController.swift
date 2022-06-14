@@ -79,8 +79,21 @@ extension SideMenuViewController {
             }
         }
         
-        func callNumber(phoneNumber:String) {
-            UIApplication.shared.open(NSURL(string: "tel://\(phoneNumber)")! as URL)
+        func callNumber(phoneNumber: String) {
+            var newPhone = ""
+            if phoneNumber != "" {
+                for i in phoneNumber {
+                    switch (i){
+                    case "0","1","2","3","4","5","6","7","8","9" : newPhone = newPhone + String(i)
+                    default : print("Removed invalid character.")
+                    }
+                }
+            }
+            guard let url = URL(string: "telprompt://\(newPhone)"),
+                  UIApplication.shared.canOpenURL(url) else {
+                return
+            }
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
 }

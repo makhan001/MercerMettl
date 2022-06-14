@@ -7,17 +7,17 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CF44B346-92F2-4BB2-ADE8-16481F6EB9BB"
+            uuid = "E5166020-79FA-418E-BB0E-BF16B82EF576"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Mercer | Mettl/Shared Components/Extensions/UIViewController+Extension.swift"
+            filePath = "Mercer | Mettl/Shared Components/Pendo/PendoConfiguration.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "startPendoSession(visitorid:accountid:visitordata:accountdata:)"
-            landmarkType = "7">
+            startingLineNumber = "8"
+            endingLineNumber = "8"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
