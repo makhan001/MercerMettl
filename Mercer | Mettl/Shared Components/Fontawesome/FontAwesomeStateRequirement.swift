@@ -22,7 +22,8 @@
 
 import UIKit
 
-protocol FontAwesomeStateRequirement: class {
+
+protocol FontAwesomeStateRequirement: AnyObject {
 
     static func supportedStates() -> [UIControl.State]
 

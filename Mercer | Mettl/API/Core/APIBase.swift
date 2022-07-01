@@ -28,7 +28,7 @@ public enum Environment {
         case .dev:
             return "https://tests.mettl.xyz"
         case .staging:
-            return "https://tests.mettl.pro"
+            return "https://tests.mettl.com"
         case .production:
             return "https://tests.mettl.pro"
         }
@@ -123,6 +123,7 @@ final class SessionDispatcher: NSObject, URLSessionDelegate {
         let (ok, code) = statusOK(response: response)
         if !ok {
             let error = APIError(errorCode: code, responseData: APIErroResponseData(message: handleErrorMessage(errorCode: code), error: handleErrorMessage(errorCode: code)), statusCode: response.statusCode)
+            print(error)
             completion(nil, error)
             return
         }
@@ -188,7 +189,10 @@ final class SessionDispatcher: NSObject, URLSessionDelegate {
     
     private func addDefaultHeaders() {
         headers["Content-Type"] = "application/json"
-    }
+        headers["Accept"] = "application/json"
+        headers["Origin"] = self.host
+        headers["Referer"] = (self.host) + "/\(APIVersion.v2)/"
+      }
     
     private func params(in request: RequestRepresentable, for urlRequest: inout URLRequest) {
         switch request.parameters {

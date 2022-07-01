@@ -38,14 +38,21 @@ extension ValidateKeyViewController {
         self.configureTextField()
         startPendoSession(visitorid: PendoConfiguration.visitorId)
     }
-    
+   
     private func configureTextField() {
         self.txtValidateKey.delegate = self
-        self.txtValidateKey.text = "369flx4jcw"
+        switch APIEnvironment {
+        case .dev:
+          self.txtValidateKey.text = "369flx4jcw"
+        case .production:
+          self.txtValidateKey.text = "3xjj9m1yps"
+        case .staging:
+          self.txtValidateKey.text = "3r1m8yxiww"
+        }
         self.txtValidateKey.font = UIFont.setFont(fontType: .regular, fontSize: .semimedium)
         self.txtValidateKey.setLeftPaddingPoints(10.0)
         self.txtValidateKey.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
-    }
+      }
     
     private func configureLabel() {
         self.lblWelcome.font = UIFont.setFont(fontType: .light, fontSize: .large)
