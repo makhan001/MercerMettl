@@ -9,15 +9,14 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
-    @IBOutlet weak var viewWeb: UIView!
     
+    @IBOutlet weak var viewWeb: UIView!
     var webView = WKWebView()
     weak var router: NextSceneDismisser?
     var webUrl:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     //   assistiveTouch()
         setStatusBarColor()
     }
     
@@ -40,47 +39,25 @@ extension WebViewController {
         print("webUrl is \(self.webUrl)")
     }
     
-    func assistiveTouch(){
-        let assistiveTouch = AssistiveTouchButton(frame: CGRect(x: view.frame.width - 50, y: view.frame.height - 150, width: 40, height: 40))
-        assistiveTouch.setTitleColor(UIColor.setColor(colorType: .darkBlue), for: .normal)
-        assistiveTouch.addTarget(self, action: #selector(tap(sender:)), for: .touchUpInside)
-        assistiveTouch.titleLabel?.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
-        assistiveTouch.setTitle(String.fontAwesomeIcon(name: .lockOpen), for: .normal)
-        assistiveTouch.backgroundColor = UIColor.setColor(colorType: .skyDark)
-        assistiveTouch.cornerRadius = 20
-        view.addSubview(assistiveTouch)
-    }
-    
     private func loadWebView() {
         if let url = URL(string: webUrl) {
-            let myURLRequest = URLRequest(url: url)
-            self.webView = WKWebView(frame: self.viewWeb.frame)
-            self.webView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-            if let userAgent = UserStore.userAgent {
-                self.webView.customUserAgent = "\(userAgent)\(AppConstant.bypassPath)"
-            }
-            self.webView.navigationDelegate = self
-            self.webView.load(myURLRequest)
-            self.getUpdatedUserAgentKey()
+            let preferences = WKPreferences()
+            let configuration = WKWebViewConfiguration()
+            
+            // Setup webcallback massage name
+            configuration.userContentController.add(self, name: "MercelMettlApp")
+            configuration.preferences = preferences
+            self.webView = WKWebView(frame: view.bounds, configuration: configuration)
+            
+            // Update userAgent String
+            webView.customUserAgent = (webView.value(forKey: "userAgent") ?? "") as! String + "/mettlMercerRRMobileApp"
+            webView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
+            
+            // Load url handling
+            let req = NSURLRequest(url:url as URL)
+            webView.load(req as URLRequest)
+            webView.navigationDelegate = self
         }
-    }
-    
-    private func getUpdatedUserAgentKey() {
-        webView.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
-            if let unwrappedUserAgent = result as? String {
-                print("userAgent: \(UserStore.userAgent ?? "")")
-                print("updated userAgent: \(unwrappedUserAgent)")
-            } else {
-                print("failed to get the user agent")
-            }
-        })
-    }
-}
-
-// MARK: - Button Action
-extension WebViewController {
-    @objc func tap(sender: UIButton) {
-        self.router?.dismiss(controller: .validate)
     }
 }
 
@@ -98,4 +75,46 @@ extension WebViewController: WKNavigationDelegate {
     }
 }
 
+// MARK: - Callbacks from webview
+extension WebViewController: WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("message.body ====>>>>>  \(message.body)")
+        if message.name == "MercelMettlApp", let messageBody2 = message.body as? Any {
+            if let dict = messageBody2 as? Dictionary<String, AnyObject> {
+                if let eventName = dict["eventName"] {
+                  //  showtoast(Message: eventName as! String)
+                    
+                    if eventName as! String == "showUnlockDialog" {
+                        AssessmentManager.shared.endAssessmentMode()
+            //self.showAlertController(title: AppConstant.logoutAlertTitle, message: AppConstant.logoutAlertMessage)
+            //            UIAccessibility.requestGuidedAccessSession(enabled: false) { didSucceed in
+            //               print("Enable App Lock request - \(didSucceed ? "Succeeded" : "Failed")")
+            //            }
+                        self.showLogoutAlertController(title: AppConstant.logoutAlertTitle, message: AppConstant.logoutAlertMessage, router: router)
+                    }
+                    
+                    if eventName as! String == "enableLockMode" {
+                       // let key = "onMessageReceived("\(asd)","\(asd)")"
+                       // self.webView.evaluateJavaScript("key")
+
+                    }
+                }
+                if let data = dict["data"] {
+                    if data != nil {
+                        if let frequency = data["frequency"] {
+                            print("frequency ===>>>>\(frequency)")
+                        }
+                    }
+                }
+            }
+        }
+       
+        
+    }
+    
+    private func callBack(callbackID: Int, success: Bool, reasonOrValue: AnyObject!) {
+          
+           webView.evaluateJavaScript("Goldengate.callBack(\(callbackID), \(success))", completionHandler: nil)
+      }
+}
 

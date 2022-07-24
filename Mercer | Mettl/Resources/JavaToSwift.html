@@ -1,0 +1,253 @@
+
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two way communication.</title>
+</head>
+
+<body>
+
+
+<!--<h1>Hello World !!!</h1>-->
+
+<!--<script src="./api/v1/FindBrowser.js">-->
+<!--</script>-->
+
+<!--<script src="https://cdn.rawgit.com/muaz-khan/DetectRTC/master/DetectRTC.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/UAParser.js/0.7.28/ua-parser.min.js"></script>-->
+
+
+<!--</script>-->
+
+
+<!--<script>-->
+
+<!--        const userAgent =  navigator.userAgent;-->
+
+
+<!--        let result = (new UAParser()).getResult();-->
+
+<!--        console.log('result', result);-->
+
+<!--        const getUAData = () => {-->
+<!--            const { fullVersion, version, name, isPrivateBrowsing, isChrome } = result.browser;-->
+
+<!--            const osName = result.os.name;-->
+<!--            const osVersion = result.os.version;-->
+
+
+<!--            const data = 'Full Version: ' + fullVersion-->
+<!--                + " Version: " + version +-->
+<!--                " Name: " + name +-->
+<!--                " Is Private Browsing: " + isPrivateBrowsing +-->
+<!--                " Is Chrome: " + isChrome +-->
+<!--                " OS Name: " + osName + " " + osVersion;-->
+
+<!--            return data;-->
+<!--        }-->
+
+<!--        const getDetectRtc = () => {-->
+<!--            const { fullVersion, version, name, isPrivateBrowsing, isChrome } = DetectRTC.browser;-->
+
+<!--            const osName = DetectRTC.osName;-->
+<!--            const osVersion = DetectRTC.osVersion;-->
+
+
+<!--            const data = 'Full Version: ' + fullVersion-->
+<!--                + " Version: " + version +-->
+<!--                " Name: " + name +-->
+<!--                " Is Private Browsing: " + isPrivateBrowsing +-->
+<!--                " Is Chrome: " + isChrome +-->
+<!--                " OS Name: " + osName + " " + osVersion;-->
+
+<!--            return data;-->
+<!--        }-->
+
+
+<!--        document.body.innerHTML = getDetectRtc() + "<BR/><BR/>" + getUAData() + "<BR/><BR/>" + userAgent;-->
+<!--    </script>-->
+
+
+<style>
+.container {
+  height: 400px;
+  position: relative;
+  background: red;
+  border: 3px solid green;
+}
+
+.vertical-center {
+  margin: 0;
+  position: absolute;
+  background: yellow;
+  top: 50%;
+  left: 25%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+
+</style>
+
+<div class="container">
+    <img id="image" width="100%" height="400">
+    <br>
+    <br>
+    <h6 id="errorText"></h6>
+    <br>
+    <br>
+    <div class="vertical-center">
+
+        <input type="button" value="Show Toast" onclick="showToast('Hello World !!!')">
+        <br>
+        <br>
+
+        <input type="button" value="Enable Lock Mode" onclick="enableLockMode()">
+        <br>
+        <br>
+
+
+        <input id="testID3" type="button" value="Disable Lock Mode" onclick="disableLockMode()">
+        <br>
+        <br>
+
+
+        <input type="button" value="Enable Screen Capture" onclick="enableScreenCapture()">
+        <br>
+        <br>
+
+        <input type="button" value="Start Screen Capture" onclick="startScreenCapture()">
+        <br>
+        <br>
+
+
+        <input type="button" value="Stop Screen Capture" onclick="stopScreenCapture()">
+        <br>
+        <br>
+
+        <input type="button" value="Reset Image" onclick="changeImage('data:image/png;base64,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')">
+        <br>
+        <br>
+
+        <input type="button" value="Update Web View" onclick="updateWebView()">
+        <br>
+        <br>
+
+        <a  id="testID" href="javascript:MercerMettlApp.execute('openLink','https://mettl.com/terms-of-services')">Terms Of Services</a>
+        <br>
+        <br>
+
+        <input type="button" value="Close App" onclick="closeApp()">
+        <br>
+        <br>
+
+        <input type="button" value="Open Link" onclick="MercerMettlApp.execute('openLink','https://mettl.com/terms-of-services')">
+        <br>
+        <br>
+        <p id="testID2"style="font-size:15pt;">JavaScript can hide HTML elements.</p>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+    
+    function notify(eventName, data) {
+        if (true) {
+            var finalData = {"eventName":eventName, "data": data}
+            return  webkit.messageHandlers.MercelMettlApp.postMessage(finalData);
+        } else {
+            return MercerMettlApp.execute(eventName, data);
+        }
+    }
+
+    function enableScreenCapture(){
+        notify("enableScreenCapture",{"a":"Hello mettl", "b":123, "c":12.6});
+    }
+    
+    function enableLockMode(){
+       notify("toast","");
+    }
+    
+    
+
+    function showToast(msg){
+        notify("showToast",msg);
+    }
+
+    function enableLockMode(){
+       notify("toast","");
+    }
+
+    function disableLockMode(){
+        notify("disableLockMode","");
+    }
+
+   
+
+    function startScreenCapture(){
+        notify("startScreenCapture",{"frequency":10000});
+    }
+
+    function stopScreenCapture(){
+        notify("stopScreenCapture","");
+    }
+
+    function onMessageReceived(actionName,actionData){
+        if(actionName=="screenImage"){
+
+          console.log(actionName);
+
+<!--          var jsonText = replaceJsonToken(actionData);-->
+<!--          var obj = JSON.parse(jsonText);-->
+          var dataUrl = decodeURIComponent(actionData);
+          changeImage(dataUrl);
+          setText("errorText","");
+        }else{
+            console.log(actionName,actionData);
+            setText("errorText","actionName=["+actionName+"] actionData=["+actionData+"]");
+        }
+    }
+
+    function replaceJsonToken(text){
+        var s = text;
+        s = s.replace(/\\n/g, "\\n")
+               .replace(/\\'/g, "\\'")
+               .replace(/\\"/g, '\\"')
+               .replace(/\\&/g, "\\&")
+               .replace(/\\r/g, "\\r")
+               .replace(/\\t/g, "\\t")
+               .replace(/\\b/g, "\\b")
+               .replace(/\\f/g, "\\f");
+        // remove non-printable and other non-valid JSON chars
+        s = s.replace(/[\u0000-\u0019]+/g,"");
+        return s;
+    }
+
+    function changeImage(src){
+          var img = document.getElementById("image");
+          img.src = src;
+    }
+
+    function setText(id,text){
+          const textError = document.getElementById(id);
+          textError.innerHTML = text;
+    }
+
+    function updateWebView(){
+      //  MercerMettlApp.execute("updateWebView");
+        notify("updateWebView","");
+
+    }
+
+    function closeApp(){
+       // MercerMettlApp.execute("closeApp");
+        notify("closeApp","");
+
+    }
+
+</script>
+
+
+
+</body></html>

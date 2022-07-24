@@ -39,7 +39,7 @@ public enum Environment {
     case production
 }
 
-let APIEnvironment: Environment = .dev
+let APIEnvironment: Environment = .production
 typealias APIResult<T:Codable> = (_ result:T?, _ error:APIError?) -> Void
 
 public enum HTTPMethod: String {

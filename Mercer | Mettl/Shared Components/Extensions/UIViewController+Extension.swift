@@ -35,4 +35,27 @@ extension UIViewController {
             visitorData: visitordata,
             accountData: accountdata)
     }
+    
+    // MARK:- Alert Extension
+    func showAlertController(title: String, message: String) {
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        let action = UIAlertAction.init(title: "Ok", style: .default) { UIAlertAction in
+        }
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
+    func showLogoutAlertController(title: String, message: String, router: NextSceneDismisser?) {
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        let no = UIAlertAction.init(title: "No", style: .default) { UIAlertAction in
+        }
+        let yes = UIAlertAction.init(title: "Yes", style: .destructive) { UIAlertAction in
+            AssessmentManager.shared.endAssessmentMode()
+            router?.dismiss(controller: .landing)
+        }
+        alert.addAction(yes)
+        alert.addAction(no)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

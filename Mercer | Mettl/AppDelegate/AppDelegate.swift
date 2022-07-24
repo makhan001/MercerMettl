@@ -53,10 +53,10 @@ extension AppDelegate {
     
     private func initialSetUp() {
         Thread.sleep(forTimeInterval: 0.5)
-        pendoSetup()
-        getUserAgent()
+        //pendoSetup()
         setRootController()
         keyboardManagerSetup()
+        AssessmentManager.shared.setUpAssessment()
     }
     
     // MARK:- setRootController
@@ -65,18 +65,6 @@ extension AppDelegate {
         if let window = window {
             self.rootController.start(window: window)
         }
-    }
-    
-    // MARK:- webView UserAgent
-    func getUserAgent() {
-        webView.evaluateJavaScript("navigator.userAgent", completionHandler: { (result, error) in
-            if let unwrappedUserAgent = result as? String {
-                UserStore.save(userAgent: unwrappedUserAgent)
-                print("userAgent: \(UserStore.userAgent ?? "")")
-            } else {
-                print("failed to get the user agent")
-            }
-        })
     }
     
     

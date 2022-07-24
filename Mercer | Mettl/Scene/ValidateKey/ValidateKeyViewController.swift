@@ -43,11 +43,14 @@ extension ValidateKeyViewController {
         self.txtValidateKey.delegate = self
         switch APIEnvironment {
         case .dev:
-          self.txtValidateKey.text = "369flx4jcw"
+          //self.txtValidateKey.text = "369flx4jcw"
+            self.txtValidateKey.text =   "4cvno5m0ao"
         case .production:
-          self.txtValidateKey.text = "3xjj9m1yps"
+          //self.txtValidateKey.text = "3xjj9m1yps"
+            self.txtValidateKey.text =   "4cvno5m0ao"
         case .staging:
-          self.txtValidateKey.text = "3r1m8yxiww"
+          //  self.txtValidateKey.text = "3r1m8yxiww"
+            self.txtValidateKey.text =   "4cvno5m0ao"
         }
         self.txtValidateKey.font = UIFont.setFont(fontType: .regular, fontSize: .semimedium)
         self.txtValidateKey.setLeftPaddingPoints(10.0)
@@ -91,6 +94,11 @@ extension ValidateKeyViewController {
     }
     
     private func startWebView() {
+        
+//        UIAccessibility.requestGuidedAccessSession(enabled: true) { didSucceed in
+//           print("Enable App Lock request - \(didSucceed ? "Succeeded" : "Failed")")
+//        }
+        AssessmentManager.shared.beginAssessmnetMode()
         self.router?.push(scene: .webview)
     }
     

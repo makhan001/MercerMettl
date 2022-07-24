@@ -15,6 +15,8 @@ class AppConstant: NSObject {
     // MARK: -  Alert & Error Messages
     static let emptyInvitationKey = "Please enter a valid Invitation Key"
     static let incorrectInvitationKey = "Invalid Invitation Key. Please Verify the Key and try again."
+    static let logoutAlertTitle = "Logout?"
+    static let logoutAlertMessage = "Are you sure you want to exit your test?"
     
     // MARK: - Landing View Constants
     static let title1 = " Next-Gen Platform"
