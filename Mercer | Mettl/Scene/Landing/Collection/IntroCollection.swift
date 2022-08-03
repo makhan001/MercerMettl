@@ -73,8 +73,7 @@ extension IntroCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
         let indexPathOfVisible = collectionView.indexPath(for: collectionView.visibleCells.first ?? UICollectionViewCell())
         if indexPath.row < indexPathOfVisible?.row ?? 0 {
             collectionView.scrollToItem(at: indexPathOfVisible!, at: .right, animated: false)
-        }
-        else {
+        } else {
             self.didScrolledAtIndex?(indexPath.row)
         }
     }

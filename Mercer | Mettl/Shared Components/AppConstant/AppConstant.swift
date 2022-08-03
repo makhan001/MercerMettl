@@ -48,4 +48,5 @@ class AppConstant: NSObject {
     // MARK: - Sidemenu Constants
     static let helpUrl = "https://mettl.com/contact-us/?utm_medium=ppc&utm_source=adwords&utm_campaign=6496978781&ads_cmpid=6496978781&ads_adid=80644414969&ads_targetid=kwd-372040230718&ads_network=g&ads_creative=381927335886&ads_kw_term=mettl&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAkLCPzeOv_1Chq2G1s1dBVEF1eRAY4l9HJTICqRh3cWhEjtu4eN0rUaAmYyEALw_wcB"
     static let aboutUsUrl = "https://mettl.com/?utm_medium=ppc&utm_source=adwords&utm_campaign=6496978781&ads_cmpid=6496978781&ads_adid=80644414969&ads_targetid=kwd-372040230718&ads_network=g&ads_creative=381927335886&ads_kw_term=mettl&gclid=Cj0KCQjw3v6SBhCsARIsACyrRAkLCPzeOv_1Chq2G1s1dBVEF1eRAY4l9HJTICqRh3cWhEjtu4eN0rUaAmYyEALw_wcB"
+    
 }

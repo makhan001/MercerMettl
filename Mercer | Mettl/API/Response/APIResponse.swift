@@ -30,8 +30,8 @@ struct ClientThemeInfo: Codable {
     var clientID: Int?
     var clientURL: JSONNull?
     var removeMettlBranding, allowClientTheme: Bool?
-    var clientThemePath, feviconPath, testBackgroundImagePath, clientThemeJSON: JSONNull?
-    var logoPath: String?
+    var clientThemePath, clientThemeJSON: JSONNull?
+    var logoPath, feviconPath, testBackgroundImagePath: String?
     var primarySupportNumber, secondarySupportNumber: JSONNull?
 
     enum CodingKeys: String, CodingKey {

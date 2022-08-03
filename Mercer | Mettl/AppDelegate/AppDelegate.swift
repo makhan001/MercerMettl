@@ -44,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // your code here...
         return true
     }
+    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.portrait
+        }
 }
 //
 extension AppDelegate {
@@ -57,6 +60,8 @@ extension AppDelegate {
         setRootController()
         keyboardManagerSetup()
         AssessmentManager.shared.setUpAssessment()
+        let value = UIInterfaceOrientation.portrait.rawValue
+        UIDevice.current.setValue(value, forKey: "orientation")
     }
     
     // MARK:- setRootController

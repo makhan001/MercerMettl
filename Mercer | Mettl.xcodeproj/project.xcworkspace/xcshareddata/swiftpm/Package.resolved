@@ -1,32 +1,34 @@
 {
-  "pins" : [
-    {
-      "identity" : "iqkeyboardmanager",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/hackiftekhar/IQKeyboardManager.git",
-      "state" : {
-        "revision" : "474f849accae40fe61b5302d9b057dd48ee073ba",
-        "version" : "6.5.9"
+  "object": {
+    "pins": [
+      {
+        "package": "IQKeyboardManagerSwift",
+        "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager.git",
+        "state": {
+          "branch": null,
+          "revision": "474f849accae40fe61b5302d9b057dd48ee073ba",
+          "version": "6.5.9"
+        }
+      },
+      {
+        "package": "Pendo",
+        "repositoryURL": "https://github.com/pendo-io/pendo-mobile-ios",
+        "state": {
+          "branch": null,
+          "revision": "a833918f77d32cc87b5a16e32142c451bd98d338",
+          "version": "2.16.0"
+        }
+      },
+      {
+        "package": "SideMenu",
+        "repositoryURL": "https://github.com/jonkykong/SideMenu.git",
+        "state": {
+          "branch": "master",
+          "revision": "8bd4fd128923cf5494fa726839af8afe12908ad9",
+          "version": null
+        }
       }
-    },
-    {
-      "identity" : "pendo-mobile-ios",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/pendo-io/pendo-mobile-ios",
-      "state" : {
-        "revision" : "a833918f77d32cc87b5a16e32142c451bd98d338",
-        "version" : "2.16.0"
-      }
-    },
-    {
-      "identity" : "sidemenu",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/jonkykong/SideMenu.git",
-      "state" : {
-        "branch" : "master",
-        "revision" : "8bd4fd128923cf5494fa726839af8afe12908ad9"
-      }
-    }
-  ],
-  "version" : 2
+    ]
+  },
+  "version": 1
 }

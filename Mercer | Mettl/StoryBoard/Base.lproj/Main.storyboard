@@ -196,6 +196,13 @@ Assessment Platform</string>
                                     <constraint firstItem="gR2-LI-0Ii" firstAttribute="centerX" secondItem="UsI-sJ-wcL" secondAttribute="centerX" id="yqy-XF-NJr"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8xG-N3-naX">
+                                <rect key="frame" x="205.33333333333337" y="44" width="222.66666666666663" height="200"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="nkL-Re-vHB"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="DarkBlueBG"/>
@@ -219,9 +226,12 @@ Assessment Platform</string>
                             <constraint firstItem="Gf8-dI-zAe" firstAttribute="top" secondItem="TH1-UN-2WX" secondAttribute="bottom" id="RbM-mu-jjv"/>
                             <constraint firstItem="UsI-sJ-wcL" firstAttribute="top" secondItem="Gf8-dI-zAe" secondAttribute="bottom" id="S3B-jr-oAh"/>
                             <constraint firstAttribute="bottom" secondItem="lvk-uV-mag" secondAttribute="bottom" id="URg-tl-3nV"/>
+                            <constraint firstItem="8xG-N3-naX" firstAttribute="leading" secondItem="TH1-UN-2WX" secondAttribute="trailing" constant="10" id="Ut8-hl-q92"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UsI-sJ-wcL" secondAttribute="bottom" id="YXp-vW-0L4"/>
+                            <constraint firstAttribute="trailing" secondItem="8xG-N3-naX" secondAttribute="trailing" id="bAN-vq-LrI"/>
                             <constraint firstItem="lvk-uV-mag" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lsv-h0-rqk"/>
                             <constraint firstItem="pCp-et-nBW" firstAttribute="leading" secondItem="TH1-UN-2WX" secondAttribute="leading" id="n4b-1N-q4H"/>
+                            <constraint firstItem="8xG-N3-naX" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wMp-hh-Amr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -232,11 +242,12 @@ Assessment Platform</string>
                         <outlet property="lblMercerMettl" destination="Nne-UJ-4Vd" id="50R-At-3Tp"/>
                         <outlet property="lblWelcome" destination="pCp-et-nBW" id="Anh-KW-PZi"/>
                         <outlet property="pageControl" destination="epW-j3-7F7" id="67z-af-iD0"/>
+                        <outlet property="viewOpenEnvironmentSetup" destination="8xG-N3-naX" id="sxf-5t-fqR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="81"/>
+            <point key="canvasLocation" x="902.80373831775694" y="80.993520518358537"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="KQI-Se-aYM">

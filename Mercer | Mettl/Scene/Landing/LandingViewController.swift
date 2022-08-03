@@ -14,6 +14,7 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var btnGetStarted: UIButton!
     @IBOutlet weak var imgRightArrow: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
+    @IBOutlet weak var viewOpenEnvironmentSetup: UIView!
     @IBOutlet weak var collectionView: IntroCollectionView!
     
     weak var router: NextSceneDismisser?
@@ -33,6 +34,11 @@ extension LandingViewController {
         [ btnGetStarted ].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
+        
+        // Open environment bottomSheet
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tripleTapped))
+           tap.numberOfTapsRequired = 3
+        viewOpenEnvironmentSetup.addGestureRecognizer(tap)
     }
     
     private func configureFonts() {
@@ -46,6 +52,8 @@ extension LandingViewController {
         collectionView.configure()
         collectionView.didScrolledAtIndex = didScrolledAtIndex
     }
+    
+    
 }
 
 // MARK: - Button Action
@@ -61,6 +69,41 @@ extension LandingViewController {
     
     private func getStartedAction() {
         router?.push(scene: .validate)
+    }
+    
+    // Environment bottomsheet action
+    @objc func tripleTapped() {
+        openEnvironmentAlert()
+    }
+
+    
+    private func openEnvironmentAlert(){
+        let alert = UIAlertController(title: "Select Server(API) Enviroment ",
+                                              message: "",
+                                              preferredStyle: .actionSheet)
+
+                alert.addAction(
+                    UIAlertAction(
+                        title: "Production (Pro)",
+                        style: .default,
+                        handler: {(action: UIAlertAction!) in
+                            APIEnvironment = .production
+                            print(APIEnvironment.host)
+                }))
+
+                alert.addAction(UIAlertAction(title: "Staging (Com)", style: .default, handler: {(action: UIAlertAction!) in
+                    APIEnvironment = .staging
+                    print(APIEnvironment.host)
+                }))
+
+                alert.addAction(UIAlertAction(title: "Development (xyz)", style: .default, handler: {(action: UIAlertAction!) in
+                    APIEnvironment = .dev
+                    print(APIEnvironment.host)
+                }))
+                alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {(action: UIAlertAction!) in
+                    }))
+        alert.view.tintColor = UIColor(named: "DarkBlue")
+                self.present(alert, animated: true, completion: nil)
     }
 }
 

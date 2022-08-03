@@ -372,9 +372,9 @@
 		8642BA222808025700004711 /* Landing */ = {
 			isa = PBXGroup;
 			children = (
-				868770012808485700049206 /* Collection */,
 				8676CB642817F7E300A04229 /* LandingCoordinator.swift */,
 				8642BA002807FF6F00004711 /* LandingViewController.swift */,
+				868770012808485700049206 /* Collection */,
 			);
 			path = Landing;
 			sourceTree = "<group>";
@@ -800,15 +800,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H329B4UMS8;
+				DEVELOPMENT_TEAM = FNN65ZRAY5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Mercer | Mettl";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -830,15 +832,17 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = H329B4UMS8;
+				DEVELOPMENT_TEAM = FNN65ZRAY5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Mercer | Mettl";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -982,6 +986,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Mercer_Mettl;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera permission to record candidate movements. ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone permission to record candidate voice. ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1018,6 +1024,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Mercer_Mettl;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera permission to record candidate movements. ";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone permission to record candidate voice. ";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1034,7 +1042,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEV";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercer.mercermettl.rr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Mercer_Mettl_AdhocProvProf;
+				PROVISIONING_PROFILE_SPECIFIER = "Mercer Mettl DistProvProf";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
