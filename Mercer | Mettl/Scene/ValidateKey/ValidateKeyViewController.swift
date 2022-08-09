@@ -26,6 +26,10 @@ class ValidateKeyViewController: UIViewController {
         super.viewDidLoad()
         self.setup()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
 }
 
 // MARK: - Instance Method
@@ -41,13 +45,13 @@ extension ValidateKeyViewController {
    
     private func configureTextField() {
         self.txtValidateKey.delegate = self
-      switch APIEnvironment {
+        switch APIEnvironment {
         case .dev:
              //self.txtValidateKey.text = "369flx4jcw"
              self.txtValidateKey.text =   "4cvno5m0ao"
         case .production:
-         //self.txtValidateKey.text = "3xjj9m1yps"   // With proctoring key
-         self.txtValidateKey.text =   "4cvno5m0ao"  // Without proctoring key
+         self.txtValidateKey.text = "3xjj9m1yps"   // With proctoring key
+        // self.txtValidateKey.text =   "4cvno5m0ao"  // Without proctoring key
           // self.txtValidateKey.text = "3xhd8cqz28" // Without proctoring key
         case .staging:
             self.txtValidateKey.text = "3r1m8yxiww"
@@ -95,11 +99,6 @@ extension ValidateKeyViewController {
     }
     
     private func startWebView() {
-        
-//        UIAccessibility.requestGuidedAccessSession(enabled: true) { didSucceed in
-//           print("Enable App Lock request - \(didSucceed ? "Succeeded" : "Failed")")
-//        }
- //   AssessmentManager.shared.beginAssessmnetMode()
         self.router?.push(scene: .webview)
     }
     

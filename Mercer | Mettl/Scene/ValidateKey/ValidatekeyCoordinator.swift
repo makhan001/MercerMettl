@@ -10,8 +10,9 @@ import Foundation
 final class ValidatekeyCoordinator: Coordinator<Scenes> {
     
     weak var delegate: CoordinatorDimisser?
-    let controller: ValidateKeyViewController = ValidateKeyViewController.from(from: .main, with: .validateKey) 
-    let webview: WebViewController = WebViewController.from(from: .main, with: .webview)
+    let controller: ValidateKeyViewController = ValidateKeyViewController.from(from: .main, with: .validateKey)
+    private var webview: WebViewCoordinator!
+    
     
     override func start() {
         super.start()
@@ -21,12 +22,17 @@ final class ValidatekeyCoordinator: Coordinator<Scenes> {
     
     private func onStart() {
         controller.router = self
-        webview.router = self
     }
     
     private func startWebview() {
-        self.webview.webUrl = controller.viewModel.webUrl
+        let router = Router()
+        webview = WebViewCoordinator(router: router)
+        add(webview)
+        webview.delegate = self
+        webview.start()
+        webview.start(strUrl: controller.viewModel.webUrl)
         self.router.present(webview, animated: true)
+        
     }
 }
 
@@ -40,8 +46,7 @@ extension ValidatekeyCoordinator: NextSceneDismisser {
     
     func dismiss(controller: Scenes) {
         switch  controller {
-        case .webview:
-            router.dismissModule(animated: true, completion: nil)
+        case .webview: router.dismissModule(animated: true, completion: nil)
         default:
             delegate?.dismiss(coordinator: self)
         }

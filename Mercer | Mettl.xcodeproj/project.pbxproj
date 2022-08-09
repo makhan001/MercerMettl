@@ -90,6 +90,14 @@
 		86BB7CD3280D563C00BB3B74 /* AppAdaptables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB7CD2280D563C00BB3B74 /* AppAdaptables.swift */; };
 		8B25AD24283BFF7200DB6681 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */; };
 		8B25AD25283BFF7200DB6681 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */; };
+		B1443B2728A0EF800089181A /* AssessmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1567DCE28856DCA0085BA25 /* AssessmentManager.swift */; };
+		B1443B2B28A0F0900089181A /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = B1443B2A28A0F0900089181A /* SideMenu */; };
+		B1443B2D28A0F0900089181A /* Pendo in Frameworks */ = {isa = PBXBuildFile; productRef = B1443B2C28A0F0900089181A /* Pendo */; };
+		B1443B2F28A0F0900089181A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1443B2E28A0F0900089181A /* IQKeyboardManagerSwift */; };
+		B1443B3228A113A30089181A /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1443B3128A113A30089181A /* WebViewCoordinator.swift */; };
+		B1443B3328A113A30089181A /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1443B3128A113A30089181A /* WebViewCoordinator.swift */; };
+		B1443B3528A121950089181A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B1443B3428A121950089181A /* .swiftlint.yml */; };
+		B1443B3628A121950089181A /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B1443B3428A121950089181A /* .swiftlint.yml */; };
 		B15422A52877FF9500E68094 /* ValidatekeyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B27800283504E700C24D9B /* ValidatekeyCoordinator.swift */; };
 		B15422A62877FF9F00E68094 /* PendoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833A7692844F8E600AC4F3E /* PendoConfiguration.swift */; };
 		B15422A72877FFA900E68094 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCEE283F88650075FD5D /* FontAwesome.swift */; };
@@ -155,10 +163,10 @@
 		1847DCED283F88640075FD5D /* FontAwesomeExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesomeExtension.swift; sourceTree = "<group>"; };
 		1847DCEE283F88650075FD5D /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		8607112A2833805D00D105CD /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
-		860886752817BF2C00076776 /* Prod_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prod_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		860886752817BF2C00076776 /* Prod_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Prod_Mercer_Mettl.app; path = "/Users/mohd-ali-khan/Documents/Projects/Git/mettl-rr-ios-app/build/Debug-iphoneos/Prod_Mercer_Mettl.app"; sourceTree = "<absolute>"; };
 		860886782817D9B300076776 /* RootCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootCoordinator.swift; sourceTree = "<group>"; };
 		862625542810436C009BA2DC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		8642B9F92807FF6F00004711 /* Dev_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dev_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8642B9F92807FF6F00004711 /* Dev_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Dev_Mercer_Mettl.app; path = "/Users/mohd-ali-khan/Documents/Projects/Git/mettl-rr-ios-app/build/Debug-iphoneos/Dev_Mercer_Mettl.app"; sourceTree = "<absolute>"; };
 		8642B9FC2807FF6F00004711 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8642B9FE2807FF6F00004711 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		8642BA002807FF6F00004711 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -192,6 +200,8 @@
 		86BB7CCF280D548700BB3B74 /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
 		86BB7CD2280D563C00BB3B74 /* AppAdaptables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdaptables.swift; sourceTree = "<group>"; };
 		8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		B1443B3128A113A30089181A /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
+		B1443B3428A121950089181A /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B1567DCE28856DCA0085BA25 /* AssessmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentManager.swift; sourceTree = "<group>"; };
 		B1567DD0288686DE0085BA25 /* JavaToSwift.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JavaToSwift.html; sourceTree = "<group>"; };
 		B1567DD22887D8B70085BA25 /* MettlAssessment.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MettlAssessment.entitlements; sourceTree = "<group>"; };
@@ -215,6 +225,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1443B2D28A0F0900089181A /* Pendo in Frameworks */,
+				B1443B2F28A0F0900089181A /* IQKeyboardManagerSwift in Frameworks */,
+				B1443B2B28A0F0900089181A /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				862625542810436C009BA2DC /* WebViewController.swift */,
+				B1443B3128A113A30089181A /* WebViewCoordinator.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -274,17 +288,7 @@
 				B1567DD3288805660085BA25 /* Dev_Mercer_Mettl.entitlements */,
 				B1567DD22887D8B70085BA25 /* MettlAssessment.entitlements */,
 				8642B9FB2807FF6F00004711 /* Mercer | Mettl */,
-				8642B9FA2807FF6F00004711 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		8642B9FA2807FF6F00004711 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8642B9F92807FF6F00004711 /* Dev_Mercer_Mettl.app */,
-				860886752817BF2C00076776 /* Prod_Mercer_Mettl.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		8642B9FB2807FF6F00004711 /* Mercer | Mettl */ = {
@@ -343,6 +347,7 @@
 				8642BA052807FF7200004711 /* Assets.xcassets */,
 				8642BA152808022100004711 /* Fonts */,
 				8642BA0A2807FF7200004711 /* Info.plist */,
+				B1443B3428A121950089181A /* .swiftlint.yml */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -540,6 +545,7 @@
 				860886512817BF2C00076776 /* Sources */,
 				860886632817BF2C00076776 /* Frameworks */,
 				860886672817BF2C00076776 /* Resources */,
+				B1443B3028A0F0C10089181A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -547,6 +553,9 @@
 			);
 			name = Prod_Mercer_Mettl;
 			packageProductDependencies = (
+				B1443B2A28A0F0900089181A /* SideMenu */,
+				B1443B2C28A0F0900089181A /* Pendo */,
+				B1443B2E28A0F0900089181A /* IQKeyboardManagerSwift */,
 			);
 			productName = "Mercer | Mettl";
 			productReference = 860886752817BF2C00076776 /* Prod_Mercer_Mettl.app */;
@@ -559,6 +568,7 @@
 				8642B9F52807FF6F00004711 /* Sources */,
 				8642B9F62807FF6F00004711 /* Frameworks */,
 				8642B9F72807FF6F00004711 /* Resources */,
+				B1443B2628A0EB710089181A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -599,11 +609,11 @@
 			);
 			mainGroup = 8642B9F02807FF6F00004711;
 			packageReferences = (
-				86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */,
+				86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu.git" */,
 				1847DCFD283FC28A0075FD5D /* XCRemoteSwiftPackageReference "pendo-mobile-ios" */,
-				187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */,
 			);
-			productRefGroup = 8642B9FA2807FF6F00004711 /* Products */;
+			productRefGroup = 8642B9F02807FF6F00004711;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -628,6 +638,7 @@
 				8608866D2817BF2C00076776 /* LaunchScreen.storyboard in Resources */,
 				8608866E2817BF2C00076776 /* Roboto-Black.ttf in Resources */,
 				B15422BA2878008F00E68094 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
+				B1443B3628A121950089181A /* .swiftlint.yml in Resources */,
 				8608866F2817BF2C00076776 /* Roboto-Light.ttf in Resources */,
 				860886702817BF2C00076776 /* Assets.xcassets in Resources */,
 				860886712817BF2C00076776 /* Main.storyboard in Resources */,
@@ -638,6 +649,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1443B3528A121950089181A /* .swiftlint.yml in Resources */,
 				8642BA202808022100004711 /* Roboto-Thin.ttf in Resources */,
 				B1567DD1288686DE0085BA25 /* JavaToSwift.html in Resources */,
 				1847DCF4283F88650075FD5D /* Font Awesome 5 Free-Regular-400.otf in Resources */,
@@ -656,6 +668,43 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B1443B2628A0EB710089181A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		B1443B3028A0F0C10089181A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		860886512817BF2C00076776 /* Sources */ = {
@@ -681,9 +730,11 @@
 				860886582817BF2C00076776 /* UIView+Extension.swift in Sources */,
 				860886592817BF2C00076776 /* UIFont+Extension.swift in Sources */,
 				B15422A52877FF9500E68094 /* ValidatekeyCoordinator.swift in Sources */,
+				B1443B2728A0EF800089181A /* AssessmentManager.swift in Sources */,
 				B15422A62877FF9F00E68094 /* PendoConfiguration.swift in Sources */,
 				8608865B2817BF2C00076776 /* IntroCollection.swift in Sources */,
 				E3B7165F283CC2510077002C /* UITextField+Extension.swift in Sources */,
+				B1443B3328A113A30089181A /* WebViewCoordinator.swift in Sources */,
 				8608865C2817BF2C00076776 /* WebViewController.swift in Sources */,
 				B15422AE2878000C00E68094 /* APIAdaptables.swift in Sources */,
 				B15422C1287800B000E68094 /* FontAwesomeTabBarItem.swift in Sources */,
@@ -741,6 +792,7 @@
 				E34A58D9283744E9009AF40B /* UserRequests.swift in Sources */,
 				86B277FC2834FCE400C24D9B /* ValidateKeyViewController.swift in Sources */,
 				8676CB622817E40700A04229 /* SplashCoordinator.swift in Sources */,
+				B1443B3228A113A30089181A /* WebViewCoordinator.swift in Sources */,
 				86BB7CD0280D548700BB3B74 /* Coordinators.swift in Sources */,
 				865BE7F4282D18E100126678 /* Userstore.swift in Sources */,
 				1847DCF3283F88650075FD5D /* FontAwesomeTabBarItem.swift in Sources */,
@@ -1090,7 +1142,7 @@
 				minimumVersion = 2.15.2;
 			};
 		};
-		187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+		187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -1099,7 +1151,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+		86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu.git";
 			requirement = {
@@ -1117,13 +1169,28 @@
 		};
 		187A80A32840D4460057B91E /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			package = 187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */;
 			productName = IQKeyboardManagerSwift;
 		};
 		86B277FE2834FD5800C24D9B /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */;
+			package = 86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu.git" */;
 			productName = SideMenu;
+		};
+		B1443B2A28A0F0900089181A /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu.git" */;
+			productName = SideMenu;
+		};
+		B1443B2C28A0F0900089181A /* Pendo */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1847DCFD283FC28A0075FD5D /* XCRemoteSwiftPackageReference "pendo-mobile-ios" */;
+			productName = Pendo;
+		};
+		B1443B2E28A0F0900089181A /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

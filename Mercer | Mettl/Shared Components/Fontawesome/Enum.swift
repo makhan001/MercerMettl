@@ -2947,8 +2947,7 @@ public enum FontAwesome: String, CaseIterable {
             case .youtube: return "\u{f167}"
             case .youtubeSquare: return "\u{f431}"
             case .zhihu: return "\u{f63f}"
-            default:
-                return ""
+            
         }
     }
 
@@ -4415,7 +4414,6 @@ public enum FontAwesome: String, CaseIterable {
             case .youtubeSquare: return [.brands]
             case .zhihu: return [.brands]
 
-            default: return []
         }
     }
 }

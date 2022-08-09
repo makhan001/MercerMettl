@@ -16,6 +16,7 @@ class WebViewController: UIViewController {
     var webUrl:String = ""
     var timer = Timer()
     var imgArr = [UIImage]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarColor()
@@ -45,14 +46,13 @@ extension WebViewController {
             let preferences = WKPreferences()
             let configuration = WKWebViewConfiguration()
             // let frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.viewWeb.frame.height)
-            
             // Setup webcallback massage name
             configuration.userContentController.add(self, name: "MercelMettlApp")
             configuration.preferences = preferences
             configuration.allowsInlineMediaPlayback = true
             
             self.webView = WKWebView(frame: view.bounds, configuration: configuration)
-            
+            self.webView.tintColor = UIColor(named: "PrimaryBlueDark")
             // Update userAgent String
             webView.customUserAgent = (webView.value(forKey: "userAgent") ?? "") as! String + "/mettlMercerRRMobileApp"
             webView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
@@ -82,7 +82,6 @@ extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, decideMediaCapturePermissionsFor origin: WKSecurityOrigin, initiatedBy frame: WKFrameInfo, type: WKMediaCaptureType) async -> WKPermissionDecision {
         return .grant
     }
-    
 }
 
 // MARK: - Callbacks from webview
@@ -97,35 +96,29 @@ extension WebViewController: WKScriptMessageHandler {
                         print("Enable lock mode")
                     case .SHOW_UNLOCK_DIALOG:
                         self.showLogoutAlertController(title: AppConstant.logoutAlertTitle, message: AppConstant.logoutAlertMessage, router: router)
-                        print("imgArr \(imgArr)")
                         timer.invalidate()
                         break
                     case .ENABLE_LOCK_MODE:
-                        //                        UIAccessibility.requestGuidedAccessSession(enabled: true) { didSucceed in
-                        //                            if didSucceed {
-                        //                                self.callJSMethod(actionName: MercerMettlWebActionName.LOCKED)
-                        //                                self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
-                        //                            }
-                        //                        }
-                        
-                        self.callJSMethod(actionName: MercerMettlWebActionName.LOCKED)
-                        self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
-                        break
+                        UIAccessibility.requestGuidedAccessSession(enabled: true) { didSucceed in
+                            if didSucceed {
+                                self.callJSMethod(actionName: MercerMettlWebActionName.LOCKED)
+                                self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
+                            } else {
+                                self.router?.dismiss(controller: .validate)
+                            }
+                        }
                     case .some(.SHOW_TOAST):
                         print("SHOW_TOAST")
                         break
                     case .some(.DISABLE_LOCK_MODE):
                         print("DISABLE_LOCK_MODE")
-                        //                        UIAccessibility.requestGuidedAccessSession(enabled: false) { didSucceed in
-                        //                            if didSucceed {
-                        //                                print("imgArr\(self.imgArr)")
-                        //                                self.timer.invalidate()
-                        //                                self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKED_BY_USER)
-                        //                            }
-                        //                        }
-                        print("imgArr\(self.imgArr)")
-                        self.timer.invalidate()
-                        self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKED_BY_USER)
+                        UIAccessibility.requestGuidedAccessSession(enabled: false) { didSucceed in
+                            if didSucceed {
+                                print("imgArr\(self.imgArr)")
+                                self.timer.invalidate()
+                                self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKED_BY_USER)
+                            }
+                        }
                         break
                     case .some(.ENABLE_SCREEN_CAPTURE):
                         
@@ -140,17 +133,13 @@ extension WebViewController: WKScriptMessageHandler {
                         break
                     case .some(.CLOSE_APP):
                         router?.dismiss(controller: .landing)
-                        //                        UIAccessibility.requestGuidedAccessSession(enabled: false) { didSucceed in
-                        //                            if didSucceed {
-                        //                                print("imgArr\(self.imgArr)")
-                        //                                self.timer.invalidate()
-                        //                                self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKED_BY_USER)
-                        //                                self.router?.dismiss(controller: .landing)
-                        //                            }
-                        //                        }
-                        self.timer.invalidate()
-                        self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKED_BY_USER)
-                        self.router?.dismiss(controller: .landing)
+                        UIAccessibility.requestGuidedAccessSession(enabled: false) { didSucceed in
+                            if didSucceed {
+                                self.timer.invalidate()
+                                self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKED_BY_USER)
+                                self.router?.dismiss(controller: .landing)
+                            }
+                        }
                         break
                     case .some(.UPDATE_WEB_VIEW):
                         print("UPDATE_WEB_VIEW")
@@ -163,14 +152,13 @@ extension WebViewController: WKScriptMessageHandler {
                         break
                     }
                 }
-                
-                if let data = dict["data"] {
-                    if data != nil {
-                        if let frequency = data["frequency"] {
-                            print("frequency ===>>>>\(frequency)")
-                        }
-                    }
-                }
+//                if let data = dict["data"] {
+//                    if data != nil {
+//                        if let frequency = data["frequency"] {
+//                            print("frequency ===>>>>\(frequency)")
+//                        }
+//                    }
+//                }
             }
         }
     }
@@ -188,7 +176,6 @@ extension WebViewController: WKScriptMessageHandler {
     @objc func timerAction() {
         guard let screenshot = self.view.captureScreenShot() else { return }
         imgArr.append(screenshot)
-        showAlertController(title: "\(imgArr.count)", message: "Capture count")
     }
 }
 
