@@ -56,9 +56,8 @@ extension WebViewController {
             // Update userAgent String
             webView.customUserAgent = (webView.value(forKey: "userAgent") ?? "") as! String + "/mettlMercerRRMobileApp"
             webView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
-            
             // Load url handling
-            let req = NSURLRequest(url:url as URL)
+            let req = NSURLRequest(url: url as URL)
             webView.load(req as URLRequest)
             webView.navigationDelegate = self
         }
@@ -71,13 +70,11 @@ extension WebViewController: WKNavigationDelegate {
         viewWeb.isHidden = true
         self.view.lock()
     }
-    
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         viewWeb.isHidden = false
         self.view.unlock()
         self.navigationItem.rightBarButtonItem = nil
     }
-    
     @available(iOS 15.0, *)
     func webView(_ webView: WKWebView, decideMediaCapturePermissionsFor origin: WKSecurityOrigin, initiatedBy frame: WKFrameInfo, type: WKMediaCaptureType) async -> WKPermissionDecision {
         return .grant

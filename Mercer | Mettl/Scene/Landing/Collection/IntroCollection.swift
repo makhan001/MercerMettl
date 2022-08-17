@@ -31,58 +31,63 @@ class IntroCollectionView: UICollectionView {
                                       subTitle: AppConstant.subTitle5,
                                       image: "ic-mercer-intro-icon5")]
     var didScrolledAtIndex:((Int) -> Void)?
-    
+    let x = 500
+
     func configure() {
         self.register(UINib(nibName: "IntroCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "IntroCollectionViewCell")
         self.delegate = self
         self.dataSource = self
         reloadData()
-        startTimer()
-    }
-    func startTimer() {
-        let _ =  Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
+        Timer.scheduledTimer(timeInterval: 2.5, target: self, selector: #selector(self.scrollAutomatically), userInfo: nil, repeats: true)
     }
     
-    var x = 1
-    @objc func autoScroll() {
-        if self.x < self.introItem.count {
-            let indexPath = IndexPath(item: x, section: 0)
-            self.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
-            self.x = self.x + 1
-        } else {
-            self.x = 0
-            self.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: false)
-        }
+    @objc func scrollAutomatically(_ timer1: Timer) {
+            for cell in self.visibleCells {
+                let indexPath: IndexPath? = self.indexPath(for: cell)
+                if ((indexPath?.row)!  < introItem.count*x - 1){
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+                    self.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }
+                else{
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                    self.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                }
+            }
+    }
+    
+    func arrayIndexForRow(_ row : Int)-> Int {
+        return row % introItem.count
     }
 }
 
 extension IntroCollectionView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return introItem.count
+       return introItem.count*x
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = self.dequeueReusableCell(withReuseIdentifier: "IntroCollectionViewCell", for: indexPath) as? IntroCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.configure(item: introItem[indexPath.row])
+        let arrayIndex = arrayIndexForRow(indexPath.row)
+        let modelObject = introItem[arrayIndex]
+        cell.configure(item: modelObject)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        let indexPathOfVisible = collectionView.indexPath(for: collectionView.visibleCells.first ?? UICollectionViewCell())
-        if indexPath.row < indexPathOfVisible?.row ?? 0 {
-            collectionView.scrollToItem(at: indexPathOfVisible!, at: .right, animated: false)
-        } else {
-            self.didScrolledAtIndex?(indexPath.row)
-        }
+        let arrayIndex = arrayIndexForRow(indexPath.row)
+        self.didScrolledAtIndex?(arrayIndex)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let visibleRect = CGRect(origin: self.contentOffset, size: self.self.bounds.size)
         let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
         if let visibleIndexPath = self.indexPathForItem(at: visiblePoint) {
-            self.didScrolledAtIndex?(visibleIndexPath.row)
+            let arrayIndex = arrayIndexForRow(visibleIndexPath.row)
+            self.didScrolledAtIndex?(arrayIndex)
         }
     }
     
