@@ -23,7 +23,7 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var btnContactNumber: UIButton!
     @IBOutlet weak var lblUSContactNumber: UILabel!
     @IBOutlet weak var btnUSContactNumber: UIButton!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -39,7 +39,7 @@ extension SideMenuViewController {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
     }
-    
+
     private func configureFonts() {
         lblPowerdBy.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblCopyRights.font = UIFont.setFont(fontType: .regular, fontSize: .small)
@@ -49,21 +49,24 @@ extension SideMenuViewController {
         lblAboutUs.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblContactNumber.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblUSContactNumber.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        imgLeftArrow.image = UIImage.fontAwesomeIcon(name:FontAwesome.angleDoubleLeft, style: .solid, textColor: .white, size: CGSize(width: 30, height: 30))
+        imgLeftArrow.image = UIImage.fontAwesomeIcon(name: FontAwesome.angleDoubleLeft,
+                                                     style: .solid,
+                                                     textColor: .white,
+                                                     size: CGSize(width: 30, height: 30))
     }
 }
 
 // MARK: - Button Action
 extension SideMenuViewController {
-    
+
     @objc func buttonPressed(_ sender: UIButton) {
         switch  sender {
         case btnBack:
             dismiss(animated: true, completion: nil)
         case btnHelp:
-            OpenSafari(Url: AppConstant.helpUrl)
+            openSafari(url: AppConstant.helpUrl)
         case btnAboutUs:
-            OpenSafari(Url: AppConstant.aboutUsUrl )
+            openSafari(url: AppConstant.aboutUsUrl )
         case btnContactNumber:
             callNumber(phoneNumber: lblContactNumber.text ?? "")
         case btnUSContactNumber:
@@ -71,20 +74,18 @@ extension SideMenuViewController {
         default:
             break
         }
-        
-        func OpenSafari(Url:String){
-            if let url = URL(string: Url) {
+        func openSafari(url: String) {
+            if let url = URL(string: url) {
                 let safariViewController = SFSafariViewController(url: url)
                 self.present(safariViewController, animated: true)
             }
         }
-        
         func callNumber(phoneNumber: String) {
             var newPhone = ""
             if phoneNumber != "" {
-                for i in phoneNumber {
-                    switch (i){
-                    case "0","1","2","3","4","5","6","7","8","9" : newPhone = newPhone + String(i)
+                for index in phoneNumber {
+                    switch index {
+                    case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9": newPhone = newPhone + String(index)
                     default : print("Removed invalid character.")
                     }
                 }

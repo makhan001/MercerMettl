@@ -8,11 +8,9 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-    @IBOutlet weak var imgView:UIImageView!
-    
+    @IBOutlet weak var imgView: UIImageView!
     var secondsRemaining = 2
     weak var router: NextSceneDismisser?
-
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -33,13 +31,13 @@ extension SplashViewController {
         scheduleTimer()
         startPendoSession(visitorid: PendoConfiguration.visitorId)
     }
-    
-    private func scheduleTimer() -> Void{
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { (Timer) in
+    // swiftlint:disable redundant_void_return
+    private func scheduleTimer() -> Void {
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
             if self.secondsRemaining > 0 {
                 self.secondsRemaining -= 1
             } else {
-                Timer.invalidate()
+                timer.invalidate()
                 self.router?.push(scene: .landing)
             }
         }

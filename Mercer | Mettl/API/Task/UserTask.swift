@@ -7,11 +7,12 @@
 
 import Foundation
 
-
 final class UserTask {
     private let dispatcher = SessionDispatcher()
-    
-    func validate(key: String, completion:@escaping APIResult<SuccessResponseModel> ) {
-        dispatcher.execute(requst: UserRequests(requestType: .validateKey(key)), modeling: SuccessResponseModel.self, completion:   completion)
+
+    func validate(key: String, completion: @escaping APIResult<SuccessResponseModel> ) {
+        dispatcher.execute(requst: UserRequests(requestType: .validateKey(key)),
+                           modeling: SuccessResponseModel.self,
+                           completion: completion)
     }
 }

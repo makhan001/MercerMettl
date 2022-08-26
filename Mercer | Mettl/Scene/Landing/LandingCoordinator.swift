@@ -8,22 +8,17 @@
 import Foundation
 
 final class LandingCoordinator: Coordinator<Scenes> {
-    
     weak var delegate: CoordinatorDimisser?
     let controller: LandingViewController = LandingViewController.from(from: .main, with: .landing)
-    
     private var validateKey1: ValidatekeyCoordinator!
-    
     override func start() {
         super.start()
         router.setRootModule(controller, hideBar: true)
         self.onStart()
     }
-    
     private func onStart() {
         controller.router = self
     }
-    
     private func startValidateview() {
         let router = Router()
         validateKey1 = ValidatekeyCoordinator(router: router)
@@ -41,7 +36,6 @@ extension LandingCoordinator: NextSceneDismisser {
         default: break
         }
     }
-    
     func dismiss(controller: Scenes) {
         switch  controller {
         case .webview:
@@ -58,4 +52,3 @@ extension LandingCoordinator: CoordinatorDimisser {
         router.dismissModule(animated: true, completion: nil)
     }
 }
-

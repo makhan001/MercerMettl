@@ -15,20 +15,20 @@ protocol RequestRepresentable {
 }
 
 extension RequestRepresentable {
-    var headers:[String:String]? { return nil   }
-    var method: HTTPMethod         { return .post  }
-    var parameters: Parameters   { return .none }
-    
+    var headers: [String: String]? { return nil   }
+    var method: HTTPMethod { return .post  }
+    var parameters: Parameters { return .none }
+
     func encodeBody<T: Codable>(data: T) -> Data? {
         let data = try? JSONEncoder().encode(data.self)
         return data
     }
-    
-    func encode(body:[String:Any]) ->Data? {
+
+    func encode(body: [String: Any]) -> Data? {
         return try? JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions())
     }
-    
-    func encode(body:Any) -> Data? {
+
+    func encode(body: Any) -> Data? {
         return try? JSONSerialization.data(withJSONObject: body, options: JSONSerialization.WritingOptions())
     }
 }

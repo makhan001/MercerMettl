@@ -8,20 +8,20 @@
 import Foundation
 
 final class WebViewCoordinator: Coordinator<Scenes> {
-    
+
     weak var delegate: CoordinatorDimisser?
     let controller: WebViewController = WebViewController.from(from: .main, with: .webview)
-    
+
     override func start() {
         super.start()
         self.router.setRootModule(controller, hideBar: true)
         self.onStart()
     }
-    
+
     private func onStart() {
         controller.router = self
     }
-    
+
     func start(strUrl: String) {
         controller.router = self
         controller.webUrl = strUrl
@@ -35,7 +35,7 @@ extension WebViewCoordinator: NextSceneDismisser {
         default: break
         }
     }
-    
+
     func dismiss(controller: Scenes) {
         delegate?.dismiss(coordinator: self)
         //        switch  controller {

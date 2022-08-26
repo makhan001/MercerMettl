@@ -6,8 +6,9 @@
 //
 
 import Foundation
+// swiftlint:disable identifier_name
 
-/// API Version
+// API Version
 public enum APIVersion {
     var version: String {
         switch self {
@@ -33,14 +34,14 @@ public enum Environment {
             return "https://tests.mettl.pro"
         }
     }
-    
+
     case staging
     case dev
     case production
 }
 
 var APIEnvironment: Environment = .production
-typealias APIResult<T:Codable> = (_ result:T?, _ error:APIError?) -> Void
+typealias APIResult<T: Codable> = (_ result: T?, _ error: APIError?) -> Void
 
 public enum HTTPMethod: String {
     case post = "POST"
@@ -60,35 +61,41 @@ final class SessionDispatcher: NSObject, URLSessionDelegate {
     var headers: [String: String] = [:]
     let host: String
     var apiRequest: RequestRepresentable!
-    
+
     override init() {
         self.host = APIEnvironment.host
     }
-    
+
     var session: URLSession {
         let config = URLSessionConfiguration.default
         config.requestCachePolicy = .reloadIgnoringLocalAndRemoteCacheData
-        let s = URLSession(configuration: config)
-        return s
+        let urlSession = URLSession(configuration: config)
+        return urlSession
     }
-    
-    func execute<T:Decodable>(requst: RequestRepresentable, modeling _: T.Type, completion:@escaping APIResult<T>) {
+
+    func execute<T: Decodable>(requst: RequestRepresentable,
+                               modeling _: T.Type,
+                               completion:@escaping APIResult<T>) {
         switch requst.parameters {
-        case let .body (data):
+        case let .body(data):
             if let obj = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments) {
-                print("parameters of request",obj)
+                print("parameters of request", obj)
             }
         default:
             break
         }
-        
+
         let  task = session.dataTask(with: prepareRequest(request: requst), completionHandler: { data, http, err in
-            if err != nil { completion(nil, APIError(errorCode: .uknown, responseData: APIErroResponseData(message: err?.localizedDescription, error: err?.localizedDescription), statusCode: 0)) }
+            if err != nil { completion(nil,
+                                       APIError(errorCode: .uknown,
+                                                responseData: APIErroResponseData(message: err?.localizedDescription,
+                                                                                  error: err?.localizedDescription),
+                                                     statusCode: 0)) }
             guard let  resp = http as? HTTPURLResponse else {
                 completion(nil, APIError(errorCode: .uknown, responseData: nil, statusCode: 0))
                 return
             }
-            
+
             guard let data = data else {
                 completion(nil, APIError(errorCode: .uknown, responseData: nil, statusCode: resp.statusCode))
                 return
@@ -100,7 +107,7 @@ final class SessionDispatcher: NSObject, URLSessionDelegate {
         })
         task.resume()
     }
-    
+
     private func handleErrorMessage(errorCode: ErrorCode) -> String {
         switch errorCode {
         case .authorize:
@@ -117,34 +124,39 @@ final class SessionDispatcher: NSObject, URLSessionDelegate {
             return AppConstant.ErrorMessage
         }
     }
-    
-    func handleReponse<T:Codable>(data:Data, response:HTTPURLResponse,completion:@escaping APIResult<T>) {
+
+    func handleReponse<T: Codable>(data: Data,
+                                   response: HTTPURLResponse,
+                                   completion: @escaping APIResult<T>) {
         print("received response status code:\(response.statusCode)")
         let (ok, code) = statusOK(response: response)
         if !ok {
-            let error = APIError(errorCode: code, responseData: APIErroResponseData(message: handleErrorMessage(errorCode: code), error: handleErrorMessage(errorCode: code)), statusCode: response.statusCode)
+            let error = APIError(errorCode: code,
+                                 responseData: APIErroResponseData(message: handleErrorMessage(errorCode: code),
+                                                                   error: handleErrorMessage(errorCode: code)),
+                                 statusCode: response.statusCode)
             print(error)
             completion(nil, error)
             return
         }
-        
+
         let (model, err) = Parser<T>.from(data)
         if err == nil {
             completion(model, nil)
             return
         }
-        
+
         if let obj = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) {
             print(obj)
         }
         completion(nil, APIError(errorCode: .parsing, responseData: nil, statusCode: response.statusCode))
     }
-    
+
     func statusOK(response: HTTPURLResponse) -> (Bool, ErrorCode) {
-        var code:ErrorCode
-        var ok:Bool
+        var code: ErrorCode
+        var ok: Bool
         switch response.statusCode {
-        case 200,203,201:
+        case 200, 203, 201:
             code = .uknown
             ok = true
         case 403:
@@ -153,7 +165,7 @@ final class SessionDispatcher: NSObject, URLSessionDelegate {
         case 400:
             code = .badRequest
             ok = false
-        case 500,502 :
+        case 500, 502 :
             code = .server
             ok = false
         default:
@@ -162,20 +174,19 @@ final class SessionDispatcher: NSObject, URLSessionDelegate {
         }
         return (ok, code)
     }
-    
+
     private func prepareRequest(request: RequestRepresentable) -> URLRequest {
-        let s = "\(host)/api/\(APIVersion.v1)/\(request.endpoint)"
-        let scaped = s.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        let string = "\(host)/api/\(APIVersion.v1)/\(request.endpoint)"
+        let scaped = string.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         let url = URL(string: scaped!)
-        var r = URLRequest(url: url!)
-        self.headers(in: request, for: &r)
-        self.params(in: request, for: &r)
+        var requestUrl = URLRequest(url: url!)
+        self.headers(in: request, for: &requestUrl)
+        self.params(in: request, for: &requestUrl)
         print("sending header:", headers)
-        print("sending request:", s)
-        return r
+        print("sending request:", string)
+        return requestUrl
     }
-    
-    
+
     private func headers(in request: RequestRepresentable, for urlRequest: inout URLRequest) {
         urlRequest.httpMethod = request.method.rawValue
         addDefaultHeaders()
@@ -186,19 +197,18 @@ final class SessionDispatcher: NSObject, URLSessionDelegate {
             urlRequest.setValue(value, forHTTPHeaderField: "\(key)")
         })
     }
-    
+
     private func addDefaultHeaders() {
         headers["Content-Type"] = "application/json"
         headers["Accept"] = "application/json"
         headers["Origin"] = self.host
         headers["Referer"] = (self.host) + "/\(APIVersion.v2)/"
-      }
-    
+    }
+
     private func params(in request: RequestRepresentable, for urlRequest: inout URLRequest) {
         switch request.parameters {
         case let .body(data):
             urlRequest.httpBody = data
-            
         case let .url(urlencoded):
             var urlComponents = URLComponents(url: urlRequest.url!, resolvingAgainstBaseURL: true)
             urlencoded.forEach { key, value in
@@ -210,5 +220,3 @@ final class SessionDispatcher: NSObject, URLSessionDelegate {
         }
     }
 }
-
-

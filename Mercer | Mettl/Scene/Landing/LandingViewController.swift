@@ -16,9 +16,7 @@ class LandingViewController: UIViewController {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var viewOpenEnvironmentSetup: UIView!
     @IBOutlet weak var collectionView: IntroCollectionView!
-    
     weak var router: NextSceneDismisser?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
@@ -34,26 +32,24 @@ extension LandingViewController {
         [ btnGetStarted ].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
-        
         // Open environment bottomSheet
         let tap = UITapGestureRecognizer(target: self, action: #selector(tripleTapped))
            tap.numberOfTapsRequired = 3
         viewOpenEnvironmentSetup.addGestureRecognizer(tap)
     }
-    
     private func configureFonts() {
         self.lblWelcome.font = UIFont.setFont(fontType: .light, fontSize: .large)
         self.lblMercerMettl.font = UIFont.setFont(fontType: .regular, fontSize: .vxllarge)
         self.lblGetStarted.font = UIFont.setFont(fontType: .medium, fontSize: .medium)
-        self.imgRightArrow.image = UIImage.fontAwesomeIcon(name:FontAwesome.arrowRight, style: .solid, textColor: .white, size: CGSize(width: 30, height: 30))
+        self.imgRightArrow.image = UIImage.fontAwesomeIcon(name: FontAwesome.arrowRight,
+                                                           style: .solid,
+                                                           textColor: .white,
+                                                           size: CGSize(width: 30, height: 30))
     }
-    
     private func configureCollection() {
         collectionView.configure()
         collectionView.didScrolledAtIndex = didScrolledAtIndex
     }
-    
-    
 }
 
 // MARK: - Button Action
@@ -66,22 +62,18 @@ extension LandingViewController {
             break
         }
     }
-    
     private func getStartedAction() {
         router?.push(scene: .validate)
     }
-    
     // Environment bottomsheet action
     @objc func tripleTapped() {
         openEnvironmentAlert()
     }
-
-    
-    private func openEnvironmentAlert(){
+    private func openEnvironmentAlert() {
+        // swiftlint:disable unused_closure_parameter
         let alert = UIAlertController(title: "Select Server(API) Enviroment ",
                                               message: "",
                                               preferredStyle: .actionSheet)
-
                 alert.addAction(
                     UIAlertAction(
                         title: "Production (Pro)",
@@ -90,24 +82,27 @@ extension LandingViewController {
                             APIEnvironment = .production
                             print(APIEnvironment.host)
                 }))
-
-                alert.addAction(UIAlertAction(title: "Staging (Com)", style: .default, handler: {(action: UIAlertAction!) in
+                alert.addAction(UIAlertAction(title: "Staging (Com)",
+                                              style: .default,
+                                              handler: {(action: UIAlertAction!) in
                     APIEnvironment = .staging
                     print(APIEnvironment.host)
                 }))
 
-                alert.addAction(UIAlertAction(title: "Development (xyz)", style: .default, handler: {(action: UIAlertAction!) in
+                alert.addAction(UIAlertAction(title: "Development (xyz)",
+                                              style: .default,
+                                              handler: {(action: UIAlertAction!) in
                     APIEnvironment = .dev
                     print(APIEnvironment.host)
                 }))
-                alert.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: {(action: UIAlertAction!) in
+                alert.addAction(UIAlertAction(title: "Cancel",
+                                              style: .destructive,
+                                              handler: {(action: UIAlertAction!) in
                     }))
         alert.view.tintColor = UIColor(named: "DarkBlue")
                 self.present(alert, animated: true, completion: nil)
     }
 }
-
-//sfasasd as dasd asd asd d
 // MARK: - Closure and Delegate Callbacks
 extension LandingViewController {
     func didScrolledAtIndex(_ index: Int) {

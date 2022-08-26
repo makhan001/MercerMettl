@@ -31,23 +31,23 @@ extension ReusableReminder {
 }
 
 protocol ControllerDismisser: AnyObject {
-    func dismiss(controller:Scenes)
+    func dismiss(controller: Scenes)
 }
 
-protocol PushNextController:AnyObject {
-    func push(scene:Scenes)
+protocol PushNextController: AnyObject {
+    func push(scene: Scenes)
 }
 
 @objc protocol PopPreviousController: AnyObject {
     @objc optional func popController()
 }
 
-protocol CoordinatorDimisser:AnyObject {
-    func dismiss(coordinator:Coordinator<Scenes>)
+protocol CoordinatorDimisser: AnyObject {
+    func dismiss(coordinator: Coordinator<Scenes>)
 }
 
 protocol ScenePresenter {
-    func present(scene:Scenes)
+    func present(scene: Scenes)
 }
 
 protocol RowSectionDisplayable {
@@ -61,4 +61,3 @@ protocol RowJournalSectionDisplayable {
 typealias Dismisser = ControllerDismisser & CoordinatorDimisser
 typealias NextSceneDismisser = PushNextController & ControllerDismisser & PopPreviousController
 typealias NextSceneDismisserPresenter = NextSceneDismisser & Dismisser
-

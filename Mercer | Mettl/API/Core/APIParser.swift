@@ -23,7 +23,7 @@ public struct Parser<T: Decodable> {
     static func to<T: Encodable>(_ model: T) -> (Data?, Error?) {
         do { return (try JSONEncoder().encode(model), nil) } catch { return (nil, error) }
     }
-    static func to<T:Encodable>(_ model:T) -> Data? {
+    static func to<T: Encodable>(_ model: T) -> Data? {
         return try? JSONEncoder().encode(model)
     }
 }

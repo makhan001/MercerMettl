@@ -17,18 +17,15 @@ class ValidateKeyViewController: UIViewController {
     @IBOutlet weak var imgSidemenuBar: UIImageView!
     @IBOutlet weak var txtValidateKey: UITextField!
     @IBOutlet weak var lblMercerAssessment: UILabel!
-    @IBOutlet weak var activityIndicatorView:UIActivityIndicatorView!
-    
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     let viewModel = ValidateKeyViewModel(provider: OnboardingServiceProvider())
     weak var router: NextSceneDismisser?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
 }
 
@@ -42,17 +39,16 @@ extension ValidateKeyViewController {
         self.configureTextField()
         startPendoSession(visitorid: PendoConfiguration.visitorId)
     }
-   
     private func configureTextField() {
         self.txtValidateKey.delegate = self
         switch APIEnvironment {
         case .dev:
-             //self.txtValidateKey.text = "369flx4jcw"
-             self.txtValidateKey.text =   "4cvno5m0ao"
+            // self.txtValidateKey.text = "369flx4jcw"
+        self.txtValidateKey.text =   "4cvno5m0ao"
         case .production:
-         self.txtValidateKey.text = "3xjj9m1yps"   // With proctoring key
-        // self.txtValidateKey.text =   "4cvno5m0ao"  // Without proctoring key
-          // self.txtValidateKey.text = "3xhd8cqz28" // Without proctoring key
+            // self.txtValidateKey.text = "3xjj9m1yps"   // With proctoring key
+        self.txtValidateKey.text =   "4cvno5m0ao"  // Without proctoring key
+            // self.txtValidateKey.text = "3xhd8cqz28" // Without proctoring key
         case .staging:
             self.txtValidateKey.text = "3r1m8yxiww"
           //  self.txtValidateKey.text =   "4cvno5m0ao"
@@ -61,47 +57,43 @@ extension ValidateKeyViewController {
         self.txtValidateKey.setLeftPaddingPoints(10.0)
         self.txtValidateKey.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
       }
-    
     private func configureLabel() {
         self.lblWelcome.font = UIFont.setFont(fontType: .light, fontSize: .large)
         self.lblMercerAssessment.font = UIFont.setFont(fontType: .medium, fontSize: .vxllarge)
         self.lblProvideKey.font = UIFont.setFont(fontType: .regular, fontSize: .mediumSmall)
         self.lblErrorMsg.font = UIFont.setFont(fontType: .regular, fontSize: .small)
     }
-    
     private func configureButton() {
         self.btnValidate.titleLabel?.font =  UIFont.setFont(fontType: .regular, fontSize: .semimedium)
         self.btnProceed.titleLabel?.font =  UIFont.setFont(fontType: .medium, fontSize: .medium)
-        self.imgSidemenuBar.image = UIImage.fontAwesomeIcon(name:FontAwesome.bars, style: .solid, textColor: UIColor.setColor(colorType: .skyDark), size: CGSize(width: 30, height: 30))
+        self.imgSidemenuBar.image = UIImage.fontAwesomeIcon(name: FontAwesome.bars,
+                                                            style: .solid,
+                                                            textColor: UIColor.setColor(colorType: .skyDark),
+                                                            size: CGSize(width: 30, height: 30))
         [ btnValidate, btnSideMenu, btnProceed].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
         }
     }
-    
     private func validateData() -> Bool {
         self.txtValidateKey.borderWidth = 1
         self.txtValidateKey.layer.cornerRadius = 5
         guard let text = txtValidateKey.text, text != "" else {
             lblErrorMsg.text = AppConstant.emptyInvitationKey
-            txtValidateKey.borderColor = UIColor.setColor(colorType: .primeryRed)   
+            txtValidateKey.borderColor = UIColor.setColor(colorType: .primeryRed)
             return false
         }
-        
         guard let text = txtValidateKey.text, text.count > 6 else {
             lblErrorMsg.text = AppConstant.incorrectInvitationKey
-            txtValidateKey.borderColor = UIColor.setColor(colorType: .primeryRed)   
+            txtValidateKey.borderColor = UIColor.setColor(colorType: .primeryRed)
             return false
         }
-        
         self.txtValidateKey.borderColor = .gray
         self.lblErrorMsg.text = ""
         return true
     }
-    
     private func startWebView() {
         self.router?.push(scene: .webview)
     }
-    
     private func showIndicator(_ show: Bool, _ onAPISuccess: Bool = true) {
         self.btnValidate.setTitle("", for: .normal)
         show ? self.activityIndicatorView.startAnimating() : self.activityIndicatorView.stopAnimating()
@@ -122,9 +114,10 @@ extension ValidateKeyViewController {
 }
 
 // MARK: - Textfield Delegate
-extension ValidateKeyViewController : UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
+extension ValidateKeyViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool {
         let length =  (textField.text?.count ?? 0) +  (string.count - range.length)
         if length > 20 {
             return false
@@ -139,10 +132,9 @@ extension ValidateKeyViewController : UITextFieldDelegate {
             return true
         }
         let alphaNumericRegEx = "[a-zA-Z0-9]"
-        let predicate = NSPredicate(format:"SELF MATCHES %@", alphaNumericRegEx)
+        let predicate = NSPredicate(format: "SELF MATCHES %@", alphaNumericRegEx)
         return predicate.evaluate(with: string)
     }
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             self.view.endEditing(true)
             return false
@@ -163,7 +155,6 @@ extension ValidateKeyViewController {
             break
         }
     }
-    
     private func validateKeyAction() {
         if validateData() {
             self.viewModel.validate(key: txtValidateKey.text ?? "")
@@ -171,21 +162,20 @@ extension ValidateKeyViewController {
 
         }
     }
-    
     private func sideMenuAction() {
-        let menu = self.storyboard?.instantiateViewController(withIdentifier: "Left_menu") as! SideMenuNavigationController
+        // swiftlint:disable line_length
+        guard let menu = self.storyboard?.instantiateViewController(withIdentifier: "Left_menu") as? SideMenuNavigationController
+        else { return }
         menu.menuWidth = self.view.frame.width - 10
         menu.presentationStyle = .menuSlideIn
         menu.leftSide = true
         present(menu, animated: true, completion: nil)
     }
-    
     private func validateKey() {
         if validateData() {
             print("Yeah its done")
         }
     }
-    
     private func updateViewAfterValidateKey() {
         if viewModel.webUrl != "", viewModel.webUrl.count > 1 {
             self.showIndicator(false)
@@ -217,4 +207,3 @@ extension ValidateKeyViewController: OnboardingViewRepresentable {
         }
     }
 }
-

@@ -8,13 +8,13 @@
 import UIKit
 
 extension UIImageView {
-    func addBorder(_ color:UIColor, _ cornerRadius: CGFloat = 0.0) {
+    func addBorder(_ color: UIColor, _ cornerRadius: CGFloat = 0.0) {
         self.layer.borderColor = color.cgColor
         self.layer.borderWidth = 0.5
         self.layer.cornerRadius = cornerRadius
         self.layer.masksToBounds = true
     }
-    
+
   /*  func downloadImage(from url:String, with defaultImage:UIImage?) {
         guard let _ = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             if defaultImage != nil {

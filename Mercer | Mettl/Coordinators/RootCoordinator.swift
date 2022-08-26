@@ -13,15 +13,12 @@ class RootCoordinator {
     private var splashCoordinator: SplashCoordinator
 
     init() {
-        splashCoordinator = SplashCoordinator(router:Router())
+        splashCoordinator = SplashCoordinator(router: Router())
     }
-
-    func start(window:UIWindow) {
+    func start(window: UIWindow) {
         self.window = window
         splashCoordinator.start()
         window.rootViewController = splashCoordinator.toPresentable()
         window.makeKeyAndVisible()
     }
 }
-
-

@@ -21,10 +21,6 @@
 // THE SOFTWARE.
 
 import UIKit
-
-
 protocol FontAwesomeStateRequirement: AnyObject {
-
     static func supportedStates() -> [UIControl.State]
-
 }

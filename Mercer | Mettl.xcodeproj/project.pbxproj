@@ -90,6 +90,7 @@
 		86BB7CD3280D563C00BB3B74 /* AppAdaptables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86BB7CD2280D563C00BB3B74 /* AppAdaptables.swift */; };
 		8B25AD24283BFF7200DB6681 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */; };
 		8B25AD25283BFF7200DB6681 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */; };
+		B10356EF28B4B66500C22206 /* WebAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10356EE28B4B66500C22206 /* WebAction.swift */; };
 		B1443B2728A0EF800089181A /* AssessmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1567DCE28856DCA0085BA25 /* AssessmentManager.swift */; };
 		B1443B2B28A0F0900089181A /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = B1443B2A28A0F0900089181A /* SideMenu */; };
 		B1443B2D28A0F0900089181A /* Pendo in Frameworks */ = {isa = PBXBuildFile; productRef = B1443B2C28A0F0900089181A /* Pendo */; };
@@ -144,6 +145,23 @@
 		E3B7165F283CC2510077002C /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3B7165D283CC2510077002C /* UITextField+Extension.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		B1143EBB28A24CA40071CAB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8642B9F12807FF6F00004711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8642B9F82807FF6F00004711;
+			remoteInfo = Dev_Mercer_Mettl;
+		};
+		B1143EC828A24CB90071CAB7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8642B9F12807FF6F00004711 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8608864B2817BF2C00076776;
+			remoteInfo = Prod_Mercer_Mettl;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1833A7692844F8E600AC4F3E /* PendoConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendoConfiguration.swift; sourceTree = "<group>"; };
 		1847DCE1283F88630075FD5D /* Font Awesome 5 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 5 Brands-Regular-400.otf"; sourceTree = "<group>"; };
@@ -195,9 +213,12 @@
 		86BB7CCE280D548700BB3B74 /* Coordinators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
 		86BB7CCF280D548700BB3B74 /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
 		86BB7CD2280D563C00BB3B74 /* AppAdaptables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdaptables.swift; sourceTree = "<group>"; };
-		86DC592F28A389FC00B3A02F /* Dev_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dev_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		86DC593028A389FC00B3A02F /* Prod_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prod_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86F95E2228B76249004CCD4D /* Dev_Mercer_MettlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Dev_Mercer_MettlTests.xctest; path = "/Users/applepc/Documents/Projects/Git/Mercer_Mettl/Mercermettl/MercerMettl/build/Debug-iphoneos/Dev_Mercer_MettlTests.xctest"; sourceTree = "<absolute>"; };
+		86F95E2328B76249004CCD4D /* Prod_Mercer_MettlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Prod_Mercer_MettlTests.xctest; path = "/Users/applepc/Documents/Projects/Git/Mercer_Mettl/Mercermettl/MercerMettl/build/Debug-iphoneos/Prod_Mercer_MettlTests.xctest"; sourceTree = "<absolute>"; };
 		8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		B10356EE28B4B66500C22206 /* WebAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAction.swift; sourceTree = "<group>"; };
+		B1143ED328AF668C0071CAB7 /* Dev_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dev_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1143ED428AF668C0071CAB7 /* Prod_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prod_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1443B3128A113A30089181A /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
 		B1567DCE28856DCA0085BA25 /* AssessmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentManager.swift; sourceTree = "<group>"; };
 		B1567DD0288686DE0085BA25 /* JavaToSwift.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JavaToSwift.html; sourceTree = "<group>"; };
@@ -235,6 +256,20 @@
 				86B277FF2834FD5800C24D9B /* SideMenu in Frameworks */,
 				1847DCFF283FC28A0075FD5D /* Pendo in Frameworks */,
 				187A80A42840D4460057B91E /* IQKeyboardManagerSwift in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1143EB428A24CA40071CAB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1143EC128A24CB90071CAB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,8 +320,8 @@
 				B1567DD3288805660085BA25 /* Dev_Mercer_Mettl.entitlements */,
 				B1567DD22887D8B70085BA25 /* MettlAssessment.entitlements */,
 				8642B9FB2807FF6F00004711 /* Mercer | Mettl */,
-				86DC592F28A389FC00B3A02F /* Dev_Mercer_Mettl.app */,
-				86DC593028A389FC00B3A02F /* Prod_Mercer_Mettl.app */,
+				B1143ED328AF668C0071CAB7 /* Dev_Mercer_Mettl.app */,
+				B1143ED428AF668C0071CAB7 /* Prod_Mercer_Mettl.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -328,6 +363,7 @@
 		8642BA122808012E00004711 /* Shared Components */ = {
 			isa = PBXGroup;
 			children = (
+				B10356ED28B4B64900C22206 /* WebAction */,
 				B1567DCD28856D950085BA25 /* AACManager */,
 				1833A7682844F88900AC4F3E /* Pendo */,
 				8664990C2809872600A95496 /* AppConstant */,
@@ -468,6 +504,14 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		B10356ED28B4B64900C22206 /* WebAction */ = {
+			isa = PBXGroup;
+			children = (
+				B10356EE28B4B66500C22206 /* WebAction.swift */,
+			);
+			path = WebAction;
+			sourceTree = "<group>";
+		};
 		B1567DCD28856D950085BA25 /* AACManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -556,7 +600,7 @@
 				B1443B2E28A0F0900089181A /* IQKeyboardManagerSwift */,
 			);
 			productName = "Mercer | Mettl";
-			productReference = 86DC593028A389FC00B3A02F /* Prod_Mercer_Mettl.app */;
+			productReference = B1143ED428AF668C0071CAB7 /* Prod_Mercer_Mettl.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8642B9F82807FF6F00004711 /* Dev_Mercer_Mettl */ = {
@@ -579,8 +623,44 @@
 				187A80A32840D4460057B91E /* IQKeyboardManagerSwift */,
 			);
 			productName = "Mercer | Mettl";
-			productReference = 86DC592F28A389FC00B3A02F /* Dev_Mercer_Mettl.app */;
+			productReference = B1143ED328AF668C0071CAB7 /* Dev_Mercer_Mettl.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B1143EB628A24CA40071CAB7 /* Dev_Mercer_MettlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1143EBD28A24CA40071CAB7 /* Build configuration list for PBXNativeTarget "Dev_Mercer_MettlTests" */;
+			buildPhases = (
+				B1143EB328A24CA40071CAB7 /* Sources */,
+				B1143EB428A24CA40071CAB7 /* Frameworks */,
+				B1143EB528A24CA40071CAB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1143EBC28A24CA40071CAB7 /* PBXTargetDependency */,
+			);
+			name = Dev_Mercer_MettlTests;
+			productName = Dev_Mercer_MettlTests;
+			productReference = 86F95E2228B76249004CCD4D /* Dev_Mercer_MettlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B1143EC328A24CB90071CAB7 /* Prod_Mercer_MettlTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1143ECA28A24CB90071CAB7 /* Build configuration list for PBXNativeTarget "Prod_Mercer_MettlTests" */;
+			buildPhases = (
+				B1143EC028A24CB90071CAB7 /* Sources */,
+				B1143EC128A24CB90071CAB7 /* Frameworks */,
+				B1143EC228A24CB90071CAB7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B1143EC928A24CB90071CAB7 /* PBXTargetDependency */,
+			);
+			name = Prod_Mercer_MettlTests;
+			productName = Prod_Mercer_MettlTests;
+			productReference = 86F95E2328B76249004CCD4D /* Prod_Mercer_MettlTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -589,11 +669,19 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1320;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
 					8642B9F82807FF6F00004711 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					B1143EB628A24CA40071CAB7 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 8642B9F82807FF6F00004711;
+					};
+					B1143EC328A24CB90071CAB7 = {
+						CreatedOnToolsVersion = 13.4;
+						TestTargetID = 8608864B2817BF2C00076776;
 					};
 				};
 			};
@@ -617,6 +705,8 @@
 			targets = (
 				8642B9F82807FF6F00004711 /* Dev_Mercer_Mettl */,
 				8608864B2817BF2C00076776 /* Prod_Mercer_Mettl */,
+				B1143EB628A24CA40071CAB7 /* Dev_Mercer_MettlTests */,
+				B1143EC328A24CB90071CAB7 /* Prod_Mercer_MettlTests */,
 			);
 		};
 /* End PBXProject section */
@@ -663,6 +753,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1143EB528A24CA40071CAB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1143EC228A24CB90071CAB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -681,8 +785,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		B1443B3028A0F0C10089181A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -699,9 +802,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "
-
-";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -778,6 +879,7 @@
 				8652ED682832590F00CD0E05 /* AssistiveTouch.swift in Sources */,
 				1847DCF5283F88650075FD5D /* FontAwesomeTextRepresentable.swift in Sources */,
 				868770062808485700049206 /* IntroCollectionViewCell.swift in Sources */,
+				B10356EF28B4B66500C22206 /* WebAction.swift in Sources */,
 				8B25AD24283BFF7200DB6681 /* UIButton+Extension.swift in Sources */,
 				1847DCF7283F88650075FD5D /* FontAwesomeBarButtonItem.swift in Sources */,
 				1847DCF1283F88650075FD5D /* FontAwesomeImageView.swift in Sources */,
@@ -822,7 +924,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B1143EB328A24CA40071CAB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B1143EC028A24CB90071CAB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B1143EBC28A24CA40071CAB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8642B9F82807FF6F00004711 /* Dev_Mercer_Mettl */;
+			targetProxy = B1143EBB28A24CA40071CAB7 /* PBXContainerItemProxy */;
+		};
+		B1143EC928A24CB90071CAB7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8608864B2817BF2C00076776 /* Prod_Mercer_Mettl */;
+			targetProxy = B1143EC828A24CB90071CAB7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		8642BA022807FF6F00004711 /* Main.storyboard */ = {
@@ -1030,7 +1159,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MettlAssessment.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = FNN65ZRAY5;
@@ -1055,7 +1184,7 @@
 				OTHER_SWIFT_FLAGS = "-D DEV";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mercer.mercermettl.rr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Mercer_Mettl_AdhocProvProf;
+				PROVISIONING_PROFILE_SPECIFIER = "Mercer Mettl DevProvProf";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1100,6 +1229,82 @@
 			};
 			name = Release;
 		};
+		B1143EBE28A24CA40071CAB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FNN65ZRAY5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mercer.mercermettl.rr.Dev-Mercer-MettlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dev_Mercer_Mettl.app/Dev_Mercer_Mettl";
+			};
+			name = Debug;
+		};
+		B1143EBF28A24CA40071CAB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FNN65ZRAY5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mercer.mercermettl.rr.Dev-Mercer-MettlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Dev_Mercer_Mettl.app/Dev_Mercer_Mettl";
+			};
+			name = Release;
+		};
+		B1143ECB28A24CB90071CAB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FNN65ZRAY5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mercer.mercermettl.rr.Prod-Mercer-MettlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prod_Mercer_Mettl.app/Prod_Mercer_Mettl";
+			};
+			name = Debug;
+		};
+		B1143ECC28A24CB90071CAB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FNN65ZRAY5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mercer.mercermettl.rr.Prod-Mercer-MettlTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Prod_Mercer_Mettl.app/Prod_Mercer_Mettl";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1126,6 +1331,24 @@
 			buildConfigurations = (
 				8642BA0E2807FF7200004711 /* Debug */,
 				8642BA0F2807FF7200004711 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1143EBD28A24CA40071CAB7 /* Build configuration list for PBXNativeTarget "Dev_Mercer_MettlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1143EBE28A24CA40071CAB7 /* Debug */,
+				B1143EBF28A24CA40071CAB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1143ECA28A24CB90071CAB7 /* Build configuration list for PBXNativeTarget "Prod_Mercer_MettlTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1143ECB28A24CB90071CAB7 /* Debug */,
+				B1143ECC28A24CB90071CAB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

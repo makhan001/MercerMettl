@@ -37,6 +37,14 @@ struct ClientThemeInfo: Codable {
     enum CodingKeys: String, CodingKey {
         case clientID = "clientId"
         case clientURL = "clientUrl"
-        case removeMettlBranding, allowClientTheme, clientThemePath, feviconPath, testBackgroundImagePath, clientThemeJSON, logoPath, primarySupportNumber, secondarySupportNumber
+        case removeMettlBranding,
+             allowClientTheme,
+             clientThemePath,
+             feviconPath,
+             testBackgroundImagePath,
+             clientThemeJSON,
+             logoPath,
+             primarySupportNumber,
+             secondarySupportNumber
     }
 }

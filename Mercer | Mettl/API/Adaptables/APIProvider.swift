@@ -7,12 +7,9 @@
 
 import Foundation
 
-import Foundation
-
 final class OnboardingServiceProvider: OnboardingServiceProvidable {
     var delegate: OnboardingServiceProvierDelegate?
     private let task = UserTask()
-    
     func validate(key: String) {
         self.task.validate(key: key) { [weak self](resp, err) in
             if err != nil {

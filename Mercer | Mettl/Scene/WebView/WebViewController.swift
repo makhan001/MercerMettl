@@ -9,38 +9,34 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
-    
     @IBOutlet weak var viewWeb: UIView!
     var webView = WKWebView()
     weak var router: NextSceneDismisser?
-    var webUrl:String = ""
+    var webUrl: String = ""
     var timer = Timer()
     var imgArr = [UIImage]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStatusBarColor()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setup()
     }
-    override var preferredStatusBarStyle : UIStatusBarStyle {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .darkContent
-        
     }
 }
 
 // MARK: - Instance Method
 extension WebViewController {
     func setup() {
+        self.assistiveTouch()
         self.loadWebView()
         self.viewWeb.addSubview(webView)
         startPendoSession(visitorid: PendoConfiguration.visitorId)
         print("webUrl is \(self.webUrl)")
     }
-    
     private func loadWebView() {
         if let url = URL(string: webUrl) {
             let preferences = WKPreferences()
@@ -50,10 +46,10 @@ extension WebViewController {
             configuration.userContentController.add(self, name: "MercelMettlApp")
             configuration.preferences = preferences
             configuration.allowsInlineMediaPlayback = true
-            
-            self.webView = WKWebView(frame: view.bounds, configuration: configuration)
+            self.webView = WKWebView(frame: self.webView.bounds, configuration: configuration)
             self.webView.tintColor = UIColor(named: "PrimaryBlueDark")
             // Update userAgent String
+            // swiftlint:disable force_cast
             webView.customUserAgent = (webView.value(forKey: "userAgent") ?? "") as! String + "/mettlMercerRRMobileApp"
             webView.configuration.defaultWebpagePreferences.allowsContentJavaScript = true
             // Load url handling
@@ -62,8 +58,27 @@ extension WebViewController {
             webView.navigationDelegate = self
         }
     }
+    func assistiveTouch() {
+        let assistiveTouch = AssistiveTouchButton(frame: CGRect(x: view.frame.width - 50,
+                                                                y: view.frame.height - 300,
+                                                                width: 40,
+                                                                height: 40))
+        assistiveTouch.setTitleColor(UIColor.setColor(colorType: .darkBlue), for: .normal)
+        assistiveTouch.addTarget(self, action: #selector(tap(sender:)), for: .touchUpInside)
+        assistiveTouch.titleLabel?.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
+        assistiveTouch.setTitle(String.fontAwesomeIcon(name: .lockOpen), for: .normal)
+        assistiveTouch.backgroundColor = UIColor.setColor(colorType: .skyDark)
+        assistiveTouch.cornerRadius = 20
+        view.addSubview(assistiveTouch)
+    }
+    @objc func tap(sender: UIButton) {
+        UIAccessibility.requestGuidedAccessSession(enabled: false) { _ in
+            self.timer.invalidate()
+            self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKEDBYUSER)
+            self.router?.dismiss(controller: .landing)
+        }
+    }
 }
-
 // MARK: - Closure and Delegate Callbacks
 extension WebViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
@@ -76,131 +91,127 @@ extension WebViewController: WKNavigationDelegate {
         self.navigationItem.rightBarButtonItem = nil
     }
     @available(iOS 15.0, *)
-    func webView(_ webView: WKWebView, decideMediaCapturePermissionsFor origin: WKSecurityOrigin, initiatedBy frame: WKFrameInfo, type: WKMediaCaptureType) async -> WKPermissionDecision {
+    func webView(_ webView: WKWebView, decideMediaCapturePermissionsFor
+                 origin: WKSecurityOrigin,
+                 initiatedBy
+                 frame: WKFrameInfo,
+                 type: WKMediaCaptureType) async -> WKPermissionDecision {
         return .grant
     }
 }
 
 // MARK: - Callbacks from webview
 extension WebViewController: WKScriptMessageHandler {
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+    // swiftlint:disable cyclomatic_complexity
+    // swiftlint:disable function_body_length
+    func userContentController(_ userContentController: WKUserContentController,
+                               didReceive message: WKScriptMessage) {
         print("MercelMettlApp MessageBody Callback====>>>>>  \(message.body)")
-        if message.name == "MercelMettlApp", let messageBody2 = message.body as? Any {
-            if let dict = messageBody2 as? Dictionary<String, AnyObject> {
-                if let eventName = dict["eventName"] as? String{
+        if message.name == "MercelMettlApp" {
+            if let dict = message.body as? [String: Any] {
+                if let eventName = dict["eventName"] as? String {
                     switch MercerMettlWebCallBackActionName(rawValue: eventName) {
                     case .none:
-                        print("Enable lock mode")
-                    case .SHOW_UNLOCK_DIALOG:
-                        self.showLogoutAlertController(title: AppConstant.logoutAlertTitle, message: AppConstant.logoutAlertMessage, router: router)
+                        print("NONE ")
+                        showAlertController(title: "CallbackAlert", message: "none")
+                    case .SHOWUNLOCKDIALOG:
+                        self.showLogoutAlertController(title: AppConstant.logoutAlertTitle,
+                                                       message: AppConstant.logoutAlertMessage,
+                                                       router: router)
                         timer.invalidate()
-                        break
-                    case .ENABLE_LOCK_MODE:
+                    case .ENABLELOCKMODE:
                         UIAccessibility.requestGuidedAccessSession(enabled: true) { didSucceed in
                             if didSucceed {
                                 self.callJSMethod(actionName: MercerMettlWebActionName.LOCKED)
-                                self.timer = Timer.scheduledTimer(timeInterval: 5.0, target: self, selector: #selector(self.timerAction), userInfo: nil, repeats: true)
                             } else {
                                 self.router?.dismiss(controller: .validate)
                             }
                         }
-                    case .some(.SHOW_TOAST):
+                    case .SHOWTOAST:
                         print("SHOW_TOAST")
-                        break
-                    case .some(.DISABLE_LOCK_MODE):
+                        showAlertController(title: "CallbackAlert", message: "SHOW_TOAST")
+                    case .DISABLELOCKMODE:
                         print("DISABLE_LOCK_MODE")
                         UIAccessibility.requestGuidedAccessSession(enabled: false) { didSucceed in
                             if didSucceed {
-                                print("imgArr\(self.imgArr)")
                                 self.timer.invalidate()
-                                self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKED_BY_USER)
+                                self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKEDBYUSER)
                             }
                         }
-                        break
-                    case .some(.ENABLE_SCREEN_CAPTURE):
-                        
-                        callJSMethod(actionName: MercerMettlWebActionName.SCREEN_PERMISSION_SUCCESS)
-                        print("ENABLE_SCREEN_CAPTURE")
-                        break
-                    case .some(.START_SCREEN_CAPTURE):
-                        print("START_SCREEN_CAPTURE")
-                        break
-                    case .some(.STOP_SCREEN_CAPTURE):
+                    case .ENABLESCREENCAPTURE:
+                        showScreenCaptureAlertController(title: AppConstant.screenCaptureTitle,
+                                                         message: AppConstant.screenCaptureMessage)
+                    case .STARTSCREENCAPTURE:
+                        if let strData = dict["data"] as? String,
+                           let data = strData.data(using: .utf8),
+                           let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+                           let frequency = json["frequency"] as? Double {
+                            let seconds = frequency/1000
+                            self.timer = Timer.scheduledTimer(timeInterval: seconds,
+                                                              target: self,
+                                                              selector: #selector(self.screenCaptureAction),
+                                                              userInfo: nil,
+                                                              repeats: true)
+                        }
+                    case .STOPSCREENCAPTURE:
                         print("STOP_SCREEN_CAPTURE")
-                        break
-                    case .some(.CLOSE_APP):
-                        router?.dismiss(controller: .landing)
+                        showAlertController(title: "CallbackAlert", message: "STOP_SCREEN_CAPTURE")
+                    case .CLOSEAPP:
+                        // router?.dismiss(controller: .landing)
                         UIAccessibility.requestGuidedAccessSession(enabled: false) { didSucceed in
                             if didSucceed {
                                 self.timer.invalidate()
-                                self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKED_BY_USER)
+                                self.callJSMethod(actionName: MercerMettlWebActionName.UNLOCKEDBYUSER)
                                 self.router?.dismiss(controller: .landing)
                             }
                         }
-                        break
-                    case .some(.UPDATE_WEB_VIEW):
+                    case .UPDATEWEBVIEW:
                         print("UPDATE_WEB_VIEW")
-                        break
-                    case .some(.OPEN_LINK):
-                        print("OPEN_LINK")
-                        break
+                        showAlertController(title: "CallbackAlert", message: "UPDATE_WEB_VIEW")
+                    case .OPENLINK:
+                        showAlertController(title: "CallbackAlert", message: "OPEN_LINK")
                     case .some(.DEFAULT):
-                        print("DEFAULT")
-                        break
+                        showAlertController(title: "CallbackAlert", message: "DEFAULT")
                     }
                 }
-//                if let data = dict["data"] {
-//                    if data != nil {
-//                        if let frequency = data["frequency"] {
-//                            print("frequency ===>>>>\(frequency)")
-//                        }
-//                    }
-//                }
             }
         }
     }
-    
-    public func callJSMethod(actionName : MercerMettlWebActionName ) {
+    public func callJSMethod(actionName: MercerMettlWebActionName ,
+                             data: String = "") {
         //  callJSMethod(method: "onMessageReceived('locked', '')")
-        let functionName = "onMessageReceived('\(actionName.rawValue)', '')"
-        callJSMethod(method: functionName)
+        // "onMessageReceived('locked','{'type':'userDenied/systemDenied','message':'error message'}'))"
+        let functionName = "onMessageReceived('\(actionName.rawValue)', '\(data)')"
+        // showAlertController(title: "screenshot", message:functionName)
+        evaluateJSMethod(method: functionName)
     }
-    
-    public func callJSMethod(method : String) {
-        webView.evaluateJavaScript(method, completionHandler: {(result,error) in })
+    public func evaluateJSMethod(method: String) {
+        webView.evaluateJavaScript(method, completionHandler: {(result, error) in
+            print(result ?? "")
+            print(error ?? "")
+        })
     }
-    
-    @objc func timerAction() {
+    @objc func screenCaptureAction() {
         guard let screenshot = self.view.captureScreenShot() else { return }
-        imgArr.append(screenshot)
+        // imgArr.append(screenshot)
+        let base64Img = convertImageToBase64String(img: screenshot)
+        callJSMethod(actionName: .SCREENIMAGE, data: base64Img)
     }
 }
-
-//MARK: - JS to swift Action name
-public enum  MercerMettlWebActionName: String {
-    case LOCKED = "locked"
-    case DENY_BY_USER = "unlocked"
-    case UNLOCKED_BY_USER = "unlockedByUser"
-    case TEST_RESUME = "testResume"
-    case SCREEN_PERMISSION_SUCCESS = "screenPermissionSuccess"
-    case SCREEN_PERMISSION_ERROR = "screenPermissionError"
-    case SCREEN_IMAGE = "screenImage"
-    case SCREEN_IMAGE_ERROR = "screenImageError"
-    case SCREEN_PERMISSION_REVOKE = "screenPermissionRevoke"
-    case MULTIPLE_SCREEN_DETECTED = "multipleScreenDetected"
-}
-
-//MARK: - JS to swift Action name
-public enum MercerMettlWebCallBackActionName: String {
-    case SHOW_TOAST = "showToast"
-    case ENABLE_LOCK_MODE = "enableLockMode"
-    case DISABLE_LOCK_MODE = "disableLockMode"
-    case SHOW_UNLOCK_DIALOG = "showUnlockDialog"
-    case ENABLE_SCREEN_CAPTURE = "enableScreenCapture"
-    case START_SCREEN_CAPTURE = "startScreenCapture"
-    case STOP_SCREEN_CAPTURE = "stopScreenCapture"
-    case CLOSE_APP = "closeApp"
-    case UPDATE_WEB_VIEW = "updateWebView"
-    case OPEN_LINK = "openLink"
-    case DEFAULT = "default"
+// MARK: - Screen Capture Alert.
+extension WebViewController {
+    func showScreenCaptureAlertController(title: String, message: String) {
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
+        let noButton = UIAlertAction.init(title: "Cancel", style: .destructive) { _ in
+            self.callJSMethod(actionName: MercerMettlWebActionName.SCREENPERMISSIONERROR,
+                              data: "{'type':'userDenied/systemDenied','message':'error message'}")
+        }
+        let yes = UIAlertAction.init(title: "Start now", style: .default) { _ in
+            self.callJSMethod(actionName: MercerMettlWebActionName.SCREENPERMISSIONSUCCESS)
+        }
+        alert.view.tintColor = UIColor(named: "DarkBlue")
+        alert.addAction(yes)
+        alert.addAction(noButton)
+        self.present(alert, animated: true, completion: nil)
+    }
 }

@@ -107,7 +107,6 @@ public extension UIFont {
 
         FontLoader.loadFont(style.fontFilename())
     }
-    
     /// Get a UIFont object of FontAwesome for a given text style
     ///
     /// - parameter forTextStyle: The preferred text style
@@ -118,7 +117,6 @@ public extension UIFont {
         let pointSize = userFont.pointSize
         loadFontAwesome(ofStyle: style)
         let awesomeFont = UIFont(name: style.fontName(), size: pointSize)!
-        
         if #available(iOS 11.0, *), #available(watchOSApplicationExtension 4.0, *), #available(tvOS 11.0, *) {
             return UIFontMetrics.default.scaledFont(for: awesomeFont)
         } else {
@@ -140,7 +138,8 @@ public extension String {
         return String(name.unicode[name.unicode.startIndex..<toIndex])
     }
 
-    /// Get a FontAwesome icon string with the given CSS icon code. Icon code can be found here: http://fontawesome.io/icons/
+    /// Get a FontAwesome icon string with the given CSS icon code.
+    /// Icon code can be found here: http://fontawesome.io/icons/
     ///
     /// - parameter code: The preferred icon name.
     /// - returns: A string that will appear as icon with FontAwesome.
@@ -172,9 +171,13 @@ public extension UIImage {
     /// - parameter size: The image size.
     /// - parameter backgroundColor: The background color (optional).
     /// - returns: A string that will appear as icon with FontAwesome
-    static func fontAwesomeIcon(name: FontAwesome, style: FontAwesomeStyle, textColor: UIColor, size: CGSize, backgroundColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear) -> UIImage {
-
-        // Prevent application crash when passing size where width or height is set equal to or less than zero, by clipping width and height to a minimum of 1 pixel.
+    static func fontAwesomeIcon(name: FontAwesome,
+                                style: FontAwesomeStyle,
+                                textColor: UIColor,
+                                size: CGSize,
+                                backgroundColor: UIColor = UIColor.clear,
+                                borderWidth: CGFloat = 0,
+                                borderColor: UIColor = UIColor.clear) -> UIImage {
         var size = size
         if size.width <= 0 { size.width = 1 }
         if size.height <= 0 { size.height = 1 }
@@ -211,9 +214,21 @@ public extension UIImage {
     /// - parameter size: The image size.
     /// - parameter backgroundColor: The background color (optional).
     /// - returns: A string that will appear as icon with FontAwesome
-    static func fontAwesomeIcon(code: String, style: FontAwesomeStyle, textColor: UIColor, size: CGSize, backgroundColor: UIColor = UIColor.clear, borderWidth: CGFloat = 0, borderColor: UIColor = UIColor.clear) -> UIImage? {
+    static func fontAwesomeIcon(code: String,
+                                style: FontAwesomeStyle,
+                                textColor: UIColor,
+                                size: CGSize,
+                                backgroundColor: UIColor = UIColor.clear,
+                                borderWidth: CGFloat = 0,
+                                borderColor: UIColor = UIColor.clear) -> UIImage? {
         guard let name = String.fontAwesome(code: code) else { return nil }
-        return fontAwesomeIcon(name: name, style: style, textColor: textColor, size: size, backgroundColor: backgroundColor, borderWidth: borderWidth, borderColor: borderColor)
+        return fontAwesomeIcon(name: name,
+                               style: style,
+                               textColor: textColor,
+                               size: size,
+                               backgroundColor: backgroundColor,
+                               borderWidth: borderWidth,
+                               borderColor: borderColor)
     }
 }
 
@@ -252,7 +267,9 @@ private class FontLoader {
         if !CTFontManagerRegisterFontsForURL(fontURL, .process, &error) {
             let errorDescription: CFString = CFErrorCopyDescription(error!.takeUnretainedValue())
             guard let nsError = error?.takeUnretainedValue() as AnyObject as? NSError else { return }
-            NSException(name: NSExceptionName.internalInconsistencyException, reason: errorDescription as String, userInfo: [NSUnderlyingErrorKey: nsError]).raise()
+            NSException(name: NSExceptionName.internalInconsistencyException,
+                        reason: errorDescription as String,
+                        userInfo: [NSUnderlyingErrorKey: nsError]).raise()
         }
     }
 }
@@ -266,7 +283,9 @@ extension URL {
         }
 
         // If this framework is added using CocoaPods, resources is placed under a subdirectory
-        if let fontURL = bundle.url(forResource: fontName, withExtension: "otf", subdirectory: "FontAwesome.swift.bundle") {
+        if let fontURL = bundle.url(forResource: fontName,
+                                    withExtension: "otf",
+                                    subdirectory: "FontAwesome.swift.bundle") {
             return fontURL
         }
 

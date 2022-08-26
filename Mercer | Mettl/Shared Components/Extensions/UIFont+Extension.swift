@@ -9,11 +9,11 @@ import UIKit
 
 // Color Setup section
 extension UIColor {
-    static let appBasecolor : UIColor = UIColor(named: "AppBasecolor") ?? UIColor()
+    static let appBasecolor: UIColor = UIColor(named: "AppBasecolor") ?? UIColor()
 }
 
 // FontFamily Setups
-enum customFontSize : CGFloat {
+enum CustomFontSize: CGFloat {
     case vvvsmall = 8
     case extraSmall = 10
     case verySmall = 11
@@ -30,7 +30,7 @@ enum customFontSize : CGFloat {
     case vxllarge = 28
 }
 
-enum customFont : String {
+enum CustomFont: String {
     case bold = "Roboto-Bold"
     case thin = "Roboto-Thin"
     case light = "Roboto-Light"
@@ -40,14 +40,11 @@ enum customFont : String {
 }
 
 extension UIFont {
-    static func setFont(fontType: customFont, fontSize : customFontSize) -> UIFont {
-        if UIDevice.current.userInterfaceIdiom == .pad
-        {
-            return  UIFont(name: fontType.rawValue, size: fontSize.rawValue + fontSize.rawValue) ?? UIFont()
-        }
-        else {
+    static func setFont(fontType: CustomFont,
+                        fontSize: CustomFontSize) -> UIFont {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            return  UIFont(name: fontType.rawValue, size: fontSize.rawValue + fontSize.rawValue) ?? UIFont() } else {
             return UIFont(name: fontType.rawValue, size: fontSize.rawValue) ?? UIFont()
         }
     }
 }
-

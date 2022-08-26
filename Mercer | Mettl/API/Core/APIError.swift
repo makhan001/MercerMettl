@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct APIErroResponseData:Codable {
-    let message:String?
-    let error:String?
-    static func from(data:Data) -> APIErroResponseData? {
+struct APIErroResponseData: Codable {
+    let message: String?
+    let error: String?
+    static func from(data: Data) -> APIErroResponseData? {
         return try? JSONDecoder().decode(APIErroResponseData.self, from: data)
     }
 }
 
-public struct APIError:Error {
-    let errorCode:ErrorCode
-    var responseData:APIErroResponseData?
-    var statusCode:Int
+public struct APIError: Error {
+    let errorCode: ErrorCode
+    var responseData: APIErroResponseData?
+    var statusCode: Int
 }
 
 public enum ErrorCode {
