@@ -41,17 +41,21 @@ extension ValidateKeyViewController {
     }
     private func configureTextField() {
         self.txtValidateKey.delegate = self
-        switch APIEnvironment {
-        case .dev:
-            // self.txtValidateKey.text = "369flx4jcw"
-        self.txtValidateKey.text =   "4cvno5m0ao"
-        case .production:
-            // self.txtValidateKey.text = "3xjj9m1yps"   // With proctoring key
-        self.txtValidateKey.text =   "4cvno5m0ao"  // Without proctoring key
+ switch APIEnvironment {
+        case .dev: //dev
+//            self.txtValidateKey.text = "369flx4jcw"
+//        self.txtValidateKey.text =   "4cvno5m0ao"
+        self.txtValidateKey.text =   ""
+        case .production:  // Com
+            //self.txtValidateKey.text = "3xjj9m1yps"   // With proctoring key
+            //  self.txtValidateKey.text =   "4cvno5m0ao"  // Without proctoring key
             // self.txtValidateKey.text = "3xhd8cqz28" // Without proctoring key
-        case .staging:
-            self.txtValidateKey.text = "3r1m8yxiww"
-          //  self.txtValidateKey.text =   "4cvno5m0ao"
+            //  self.txtValidateKey.text = "43t5r20su8"
+            // self.txtValidateKey.text =   "56hg0nu8zk"
+     self.txtValidateKey.text =   ""
+        case .staging:  // Pro
+//           self.txtValidateKey.text = "3r1m8yxiww"
+            self.txtValidateKey.text =   ""
         }
         self.txtValidateKey.font = UIFont.setFont(fontType: .regular, fontSize: .semimedium)
         self.txtValidateKey.setLeftPaddingPoints(10.0)
@@ -62,13 +66,23 @@ extension ValidateKeyViewController {
         self.lblMercerAssessment.font = UIFont.setFont(fontType: .medium, fontSize: .vxllarge)
         self.lblProvideKey.font = UIFont.setFont(fontType: .regular, fontSize: .mediumSmall)
         self.lblErrorMsg.font = UIFont.setFont(fontType: .regular, fontSize: .small)
+        self.btnProceed.setImage(UIImage.fontAwesomeIcon(name: FontAwesome.arrowRight,
+                                                         style: .solid,
+                                                         textColor: .white,
+                                                         size: CGSize(width: 30, height: 15)), for: .normal)
+        self.btnProceed.semanticContentAttribute  = .forceRightToLeft
+        self.txtValidateKey.borderWidth = 1
+        self.txtValidateKey.layer.cornerRadius = 5
+        self.txtValidateKey.borderColor = UIColor.setColor(colorType: .borderColor)
+        self.txtValidateKey.becomeFirstResponder()
     }
+    
     private func configureButton() {
         self.btnValidate.titleLabel?.font =  UIFont.setFont(fontType: .regular, fontSize: .semimedium)
         self.btnProceed.titleLabel?.font =  UIFont.setFont(fontType: .medium, fontSize: .medium)
-        self.imgSidemenuBar.image = UIImage.fontAwesomeIcon(name: FontAwesome.bars,
+        self.imgSidemenuBar.image = UIImage.fontAwesomeIcon(name: FontAwesome.arrowLeft,
                                                             style: .solid,
-                                                            textColor: UIColor.setColor(colorType: .skyDark),
+                                                            textColor: UIColor.white,
                                                             size: CGSize(width: 30, height: 30))
         [ btnValidate, btnSideMenu, btnProceed].forEach {
             $0?.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
@@ -80,20 +94,31 @@ extension ValidateKeyViewController {
         guard let text = txtValidateKey.text, text != "" else {
             lblErrorMsg.text = AppConstant.emptyInvitationKey
             txtValidateKey.borderColor = UIColor.setColor(colorType: .primeryRed)
+            txtValidateKey.textColor = UIColor.setColor(colorType: .primeryRed)
             return false
         }
         guard let text = txtValidateKey.text, text.count > 6 else {
             lblErrorMsg.text = AppConstant.incorrectInvitationKey
             txtValidateKey.borderColor = UIColor.setColor(colorType: .primeryRed)
+            txtValidateKey.textColor = UIColor.setColor(colorType: .primeryRed)
             return false
         }
-        self.txtValidateKey.borderColor = .gray
+        self.txtValidateKey.borderColor = UIColor.setColor(colorType: .borderColor)
+        txtValidateKey.textColor = UIColor.setColor(colorType: .darkBlueBG)
+
         self.lblErrorMsg.text = ""
         return true
     }
+    
     private func startWebView() {
-        self.router?.push(scene: .webview)
+        if checkDeviceMirroring() {
+            showAlertController(title: "Mercer | Mettl", message: AppConstant.mirroringAlertMessage)
+         }
+        else {
+            self.router?.push(scene: .webview)
+        }
     }
+    
     private func showIndicator(_ show: Bool, _ onAPISuccess: Bool = true) {
         self.btnValidate.setTitle("", for: .normal)
         show ? self.activityIndicatorView.startAnimating() : self.activityIndicatorView.stopAnimating()
@@ -101,7 +126,7 @@ extension ValidateKeyViewController {
         if !onAPISuccess {
             self.btnValidate.setTitle("Retry", for: .normal)
         }
-        self.btnValidate.isHidden = show
+            self.btnValidate.isHidden = show
     }
 }
 
@@ -159,17 +184,10 @@ extension ValidateKeyViewController {
         if validateData() {
             self.viewModel.validate(key: txtValidateKey.text ?? "")
             self.showIndicator(true)
-
         }
     }
     private func sideMenuAction() {
-        // swiftlint:disable line_length
-        guard let menu = self.storyboard?.instantiateViewController(withIdentifier: "Left_menu") as? SideMenuNavigationController
-        else { return }
-        menu.menuWidth = self.view.frame.width - 10
-        menu.presentationStyle = .menuSlideIn
-        menu.leftSide = true
-        present(menu, animated: true, completion: nil)
+        router?.dismiss(controller: .keyProceed)
     }
     private func validateKey() {
         if validateData() {
@@ -183,7 +201,7 @@ extension ValidateKeyViewController {
             self.btnValidate.setTitle("", for: .normal)
             btnValidate.titleLabel?.font = UIFont.fontAwesome(ofSize: 20, style: .solid)
             btnValidate.setTitle(String.fontAwesomeIcon(name: .checkCircle), for: .normal)
-            btnValidate.setTitleColor(.green, for: .normal)
+            btnValidate.setTitleColor(UIColor.setColor(colorType: .greenCorrect), for: .normal)
             self.btnProceed.isHidden = false
         } else {
             self.btnValidate.isUserInteractionEnabled = true
@@ -199,6 +217,7 @@ extension ValidateKeyViewController: OnboardingViewRepresentable {
         case let .errorMessage(text), let .requireFields(text: text):
             self.lblErrorMsg.text = text
             self.txtValidateKey.borderColor = UIColor.setColor(colorType: .primeryRed)
+            self.txtValidateKey.textColor =  UIColor.setColor(colorType: .primeryRed)
             self.showIndicator(false, false)
         case .validate:
             self.updateViewAfterValidateKey()

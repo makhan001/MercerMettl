@@ -7,7 +7,9 @@
 
 import UIKit
 import SafariServices
-
+protocol abboutUsTappedDelegate {
+    func aboutUsClicked()
+}
 class SideMenuViewController: UIViewController {
     @IBOutlet weak var lblHelp: UILabel!
     @IBOutlet weak var btnBack: UIButton!
@@ -23,7 +25,9 @@ class SideMenuViewController: UIViewController {
     @IBOutlet weak var btnContactNumber: UIButton!
     @IBOutlet weak var lblUSContactNumber: UILabel!
     @IBOutlet weak var btnUSContactNumber: UIButton!
-
+    @IBOutlet weak var viewBG: UIView!
+    var delegate: abboutUsTappedDelegate? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
@@ -41,18 +45,23 @@ extension SideMenuViewController {
     }
 
     private func configureFonts() {
-        lblPowerdBy.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        lblCopyRights.font = UIFont.setFont(fontType: .regular, fontSize: .small)
+        lblPowerdBy.font = UIFont.setFont(fontType: .regular, fontSize: .extraSmall)
+        lblCopyRights.font = UIFont.setFont(fontType: .regular, fontSize: .extraSmall)
         lblNeedHelp.font = UIFont.setFont(fontType: .medium, fontSize: .small)
         lblContactOn.font = UIFont.setFont(fontType: .medium, fontSize: .small)
         lblHelp.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblAboutUs.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblContactNumber.font = UIFont.setFont(fontType: .regular, fontSize: .small)
         lblUSContactNumber.font = UIFont.setFont(fontType: .regular, fontSize: .small)
-        imgLeftArrow.image = UIImage.fontAwesomeIcon(name: FontAwesome.angleDoubleLeft,
-                                                     style: .solid,
-                                                     textColor: .white,
-                                                     size: CGSize(width: 30, height: 30))
+        
+        lblAboutUs.attributedText = NSAttributedString(string: "About Mettl", attributes:
+                                                        [.underlineStyle: NSUnderlineStyle.single.rawValue])
+        lblHelp.attributedText = NSAttributedString(string: "Help", attributes:
+                                                        [.underlineStyle: NSUnderlineStyle.single.rawValue])
+        //      imgLeftArrow.image = UIImage.fontAwesomeIcon(name: FontAwesome.angleDoubleLeft,
+        //                                                     style: .solid,
+        //                                                     textColor: .white,
+        //                                                     size: CGSize(width: 30, height: 30))
     }
 }
 
@@ -66,7 +75,8 @@ extension SideMenuViewController {
         case btnHelp:
             openSafari(url: AppConstant.helpUrl)
         case btnAboutUs:
-            openSafari(url: AppConstant.aboutUsUrl )
+            delegate?.aboutUsClicked()
+            dismiss(animated: true, completion: nil)
         case btnContactNumber:
             callNumber(phoneNumber: lblContactNumber.text ?? "")
         case btnUSContactNumber:

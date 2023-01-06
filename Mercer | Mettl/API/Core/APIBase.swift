@@ -29,9 +29,10 @@ public enum Environment {
         case .dev:
             return "https://tests.mettl.xyz"
         case .staging:
-            return "https://tests.mettl.com"
-        case .production:
             return "https://tests.mettl.pro"
+        case .production:
+            return "https://tests.mettl.com"
+            
         }
     }
 

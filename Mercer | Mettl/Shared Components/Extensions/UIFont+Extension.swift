@@ -31,12 +31,12 @@ enum CustomFontSize: CGFloat {
 }
 
 enum CustomFont: String {
-    case bold = "Roboto-Bold"
-    case thin = "Roboto-Thin"
-    case light = "Roboto-Light"
-    case black = "Roboto-Black"
-    case medium = "Roboto-Medium"
-    case regular = "Roboto-Regular"
+    case bold = "NotoSans-Bold"
+    case thin = "NotoSans-Thin"
+    case light = "NotoSans-Light"
+    case black = "NotoSans-Black"
+    case medium = "NotoSans-Medium"
+    case regular = "NotoSans-Regular"
 }
 
 extension UIFont {

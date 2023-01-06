@@ -49,6 +49,9 @@ extension UIColor {
         case quillLighter = "QuillLighter"
         case quillLightest = "quillLightest"
         case primaryBlueDark = "PrimaryBlueDark"
+        case borderColor = "BorderColor"
+        case greenCorrect = "GreenCorrect"
+        case Scanerborder = "ScanerBorder"
     }
     static func setColor(colorType: ColorPalette) -> UIColor {
         return UIColor(named: colorType.rawValue) ?? UIColor()

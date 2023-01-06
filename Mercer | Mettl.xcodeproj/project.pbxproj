@@ -91,12 +91,15 @@
 		8B25AD24283BFF7200DB6681 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */; };
 		8B25AD25283BFF7200DB6681 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */; };
 		B10356EF28B4B66500C22206 /* WebAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10356EE28B4B66500C22206 /* WebAction.swift */; };
+		B135B2D0295ADD5500F0D57F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B135B2CF295ADD5500F0D57F /* Lottie */; };
+		B135B2D3295ADDDA00F0D57F /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B135B2D2295ADDDA00F0D57F /* Lottie */; };
 		B1443B2728A0EF800089181A /* AssessmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1567DCE28856DCA0085BA25 /* AssessmentManager.swift */; };
 		B1443B2B28A0F0900089181A /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = B1443B2A28A0F0900089181A /* SideMenu */; };
 		B1443B2D28A0F0900089181A /* Pendo in Frameworks */ = {isa = PBXBuildFile; productRef = B1443B2C28A0F0900089181A /* Pendo */; };
 		B1443B2F28A0F0900089181A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1443B2E28A0F0900089181A /* IQKeyboardManagerSwift */; };
 		B1443B3228A113A30089181A /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1443B3128A113A30089181A /* WebViewCoordinator.swift */; };
 		B1443B3328A113A30089181A /* WebViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1443B3128A113A30089181A /* WebViewCoordinator.swift */; };
+		B14E538C2952D6B800C96C64 /* ScreenMirroring.swift in Sources */ = {isa = PBXBuildFile; fileRef = B14E538B2952D6B800C96C64 /* ScreenMirroring.swift */; };
 		B15422A52877FF9500E68094 /* ValidatekeyCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B27800283504E700C24D9B /* ValidatekeyCoordinator.swift */; };
 		B15422A62877FF9F00E68094 /* PendoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1833A7692844F8E600AC4F3E /* PendoConfiguration.swift */; };
 		B15422A72877FFA900E68094 /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCEE283F88650075FD5D /* FontAwesome.swift */; };
@@ -130,6 +133,39 @@
 		B15422C3287800B700E68094 /* FontAwesomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1847DCE4283F88640075FD5D /* FontAwesomeView.swift */; };
 		B1567DCF28856DCA0085BA25 /* AssessmentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1567DCE28856DCA0085BA25 /* AssessmentManager.swift */; };
 		B1567DD1288686DE0085BA25 /* JavaToSwift.html in Resources */ = {isa = PBXBuildFile; fileRef = B1567DD0288686DE0085BA25 /* JavaToSwift.html */; };
+		B166382428C9CB9900FDC153 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B166382328C9CB9900FDC153 /* Lottie */; };
+		B166382728C9CC1900FDC153 /* ProgressLoader.json in Resources */ = {isa = PBXBuildFile; fileRef = B166382628C9CC1900FDC153 /* ProgressLoader.json */; };
+		B16D0E902923C0C70047BFF9 /* KeyProceedByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D0E8F2923C0C70047BFF9 /* KeyProceedByViewController.swift */; };
+		B16D0E9229260B820047BFF9 /* KeyProceedByViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D0E9129260B820047BFF9 /* KeyProceedByViewCoordinator.swift */; };
+		B198A1C2293E2042004D1710 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198A1C1293E2042004D1710 /* UIAlertController+Extension.swift */; };
+		B198A1C3293E2042004D1710 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B198A1C1293E2042004D1710 /* UIAlertController+Extension.swift */; };
+		B19A08D229388FD100ADE528 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A08D129388FD100ADE528 /* UIDevice+Extension.swift */; };
+		B19A08D329388FD100ADE528 /* UIDevice+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A08D129388FD100ADE528 /* UIDevice+Extension.swift */; };
+		B19A08D42938906E00ADE528 /* KeyProceedByViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D0E9129260B820047BFF9 /* KeyProceedByViewCoordinator.swift */; };
+		B19A08D52938908300ADE528 /* KeyProceedByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16D0E8F2923C0C70047BFF9 /* KeyProceedByViewController.swift */; };
+		B19A08D82938B40C00ADE528 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A08D72938B40C00ADE528 /* ScannerViewController.swift */; };
+		B19A08D92938B40C00ADE528 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A08D72938B40C00ADE528 /* ScannerViewController.swift */; };
+		B19A08DB2938B72900ADE528 /* ScannerAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B19A08DA2938B72900ADE528 /* ScannerAnimation.json */; };
+		B19A08DC2938B72900ADE528 /* ScannerAnimation.json in Resources */ = {isa = PBXBuildFile; fileRef = B19A08DA2938B72900ADE528 /* ScannerAnimation.json */; };
+		B19A08DE2938B86400ADE528 /* ScannerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A08DD2938B86400ADE528 /* ScannerCoordinator.swift */; };
+		B19A08DF2938B86400ADE528 /* ScannerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A08DD2938B86400ADE528 /* ScannerCoordinator.swift */; };
+		B19A08E12938EE0100ADE528 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A08E02938EE0100ADE528 /* ScannerViewModel.swift */; };
+		B19A08E22938EE0100ADE528 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19A08E02938EE0100ADE528 /* ScannerViewModel.swift */; };
+		B1B21A5828BCAA8400B84907 /* WebAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10356EE28B4B66500C22206 /* WebAction.swift */; };
+		B1E4204128CB75CF0023FF93 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203B28CB75CF0023FF93 /* NotoSans-Regular.ttf */; };
+		B1E4204228CB75CF0023FF93 /* NotoSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203B28CB75CF0023FF93 /* NotoSans-Regular.ttf */; };
+		B1E4204328CB75CF0023FF93 /* NotoSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203C28CB75CF0023FF93 /* NotoSans-Medium.ttf */; };
+		B1E4204428CB75CF0023FF93 /* NotoSans-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203C28CB75CF0023FF93 /* NotoSans-Medium.ttf */; };
+		B1E4204528CB75CF0023FF93 /* NotoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203D28CB75CF0023FF93 /* NotoSans-Black.ttf */; };
+		B1E4204628CB75CF0023FF93 /* NotoSans-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203D28CB75CF0023FF93 /* NotoSans-Black.ttf */; };
+		B1E4204728CB75CF0023FF93 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203E28CB75CF0023FF93 /* NotoSans-Bold.ttf */; };
+		B1E4204828CB75CF0023FF93 /* NotoSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203E28CB75CF0023FF93 /* NotoSans-Bold.ttf */; };
+		B1E4204928CB75CF0023FF93 /* NotoSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203F28CB75CF0023FF93 /* NotoSans-Thin.ttf */; };
+		B1E4204A28CB75CF0023FF93 /* NotoSans-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4203F28CB75CF0023FF93 /* NotoSans-Thin.ttf */; };
+		B1E4204B28CB75CF0023FF93 /* NotoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4204028CB75CF0023FF93 /* NotoSans-Light.ttf */; };
+		B1E4204C28CB75CF0023FF93 /* NotoSans-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B1E4204028CB75CF0023FF93 /* NotoSans-Light.ttf */; };
+		B1EA5C2A294862F300A3FF49 /* Scanner.json in Resources */ = {isa = PBXBuildFile; fileRef = B1EA5C29294862F300A3FF49 /* Scanner.json */; };
+		B1EA5C2B294862F300A3FF49 /* Scanner.json in Resources */ = {isa = PBXBuildFile; fileRef = B1EA5C29294862F300A3FF49 /* Scanner.json */; };
 		E34A58D328374241009AF40B /* APIParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A58D228374241009AF40B /* APIParser.swift */; };
 		E34A58D528374251009AF40B /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A58D428374251009AF40B /* APIError.swift */; };
 		E34A58D728374267009AF40B /* APIBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34A58D628374267009AF40B /* APIBase.swift */; };
@@ -213,17 +249,34 @@
 		86BB7CCE280D548700BB3B74 /* Coordinators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinators.swift; sourceTree = "<group>"; };
 		86BB7CCF280D548700BB3B74 /* Scenes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
 		86BB7CD2280D563C00BB3B74 /* AppAdaptables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppAdaptables.swift; sourceTree = "<group>"; };
-		86F95E2228B76249004CCD4D /* Dev_Mercer_MettlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Dev_Mercer_MettlTests.xctest; path = "/Users/applepc/Documents/Projects/Git/Mercer_Mettl/Mercermettl/MercerMettl/build/Debug-iphoneos/Dev_Mercer_MettlTests.xctest"; sourceTree = "<absolute>"; };
-		86F95E2328B76249004CCD4D /* Prod_Mercer_MettlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Prod_Mercer_MettlTests.xctest; path = "/Users/applepc/Documents/Projects/Git/Mercer_Mettl/Mercermettl/MercerMettl/build/Debug-iphoneos/Prod_Mercer_MettlTests.xctest"; sourceTree = "<absolute>"; };
 		8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		B10356EE28B4B66500C22206 /* WebAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAction.swift; sourceTree = "<group>"; };
 		B1143ED328AF668C0071CAB7 /* Dev_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dev_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1143ED428AF668C0071CAB7 /* Prod_Mercer_Mettl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prod_Mercer_Mettl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1443B3128A113A30089181A /* WebViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewCoordinator.swift; sourceTree = "<group>"; };
+		B14E538B2952D6B800C96C64 /* ScreenMirroring.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMirroring.swift; sourceTree = "<group>"; };
 		B1567DCE28856DCA0085BA25 /* AssessmentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssessmentManager.swift; sourceTree = "<group>"; };
 		B1567DD0288686DE0085BA25 /* JavaToSwift.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = JavaToSwift.html; sourceTree = "<group>"; };
 		B1567DD22887D8B70085BA25 /* MettlAssessment.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = MettlAssessment.entitlements; sourceTree = "<group>"; };
 		B1567DD3288805660085BA25 /* Dev_Mercer_Mettl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dev_Mercer_Mettl.entitlements; sourceTree = "<group>"; };
+		B166382628C9CC1900FDC153 /* ProgressLoader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProgressLoader.json; sourceTree = "<group>"; };
+		B16D0E8F2923C0C70047BFF9 /* KeyProceedByViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyProceedByViewController.swift; sourceTree = "<group>"; };
+		B16D0E9129260B820047BFF9 /* KeyProceedByViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyProceedByViewCoordinator.swift; sourceTree = "<group>"; };
+		B198A1C1293E2042004D1710 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		B19A08D129388FD100ADE528 /* UIDevice+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extension.swift"; sourceTree = "<group>"; };
+		B19A08D72938B40C00ADE528 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		B19A08DA2938B72900ADE528 /* ScannerAnimation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ScannerAnimation.json; sourceTree = "<group>"; };
+		B19A08DD2938B86400ADE528 /* ScannerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerCoordinator.swift; sourceTree = "<group>"; };
+		B19A08E02938EE0100ADE528 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		B1B21A5628BCA7A000B84907 /* Dev_Mercer_MettlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Dev_Mercer_MettlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1B21A5728BCA7A000B84907 /* Prod_Mercer_MettlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Prod_Mercer_MettlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1E4203B28CB75CF0023FF93 /* NotoSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Regular.ttf"; sourceTree = "<group>"; };
+		B1E4203C28CB75CF0023FF93 /* NotoSans-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Medium.ttf"; sourceTree = "<group>"; };
+		B1E4203D28CB75CF0023FF93 /* NotoSans-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Black.ttf"; sourceTree = "<group>"; };
+		B1E4203E28CB75CF0023FF93 /* NotoSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Bold.ttf"; sourceTree = "<group>"; };
+		B1E4203F28CB75CF0023FF93 /* NotoSans-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Thin.ttf"; sourceTree = "<group>"; };
+		B1E4204028CB75CF0023FF93 /* NotoSans-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSans-Light.ttf"; sourceTree = "<group>"; };
+		B1EA5C29294862F300A3FF49 /* Scanner.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Scanner.json; sourceTree = "<group>"; };
 		E34A58D228374241009AF40B /* APIParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIParser.swift; sourceTree = "<group>"; };
 		E34A58D428374251009AF40B /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E34A58D628374267009AF40B /* APIBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIBase.swift; sourceTree = "<group>"; };
@@ -243,9 +296,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B135B2D3295ADDDA00F0D57F /* Lottie in Frameworks */,
 				B1443B2D28A0F0900089181A /* Pendo in Frameworks */,
 				B1443B2F28A0F0900089181A /* IQKeyboardManagerSwift in Frameworks */,
 				B1443B2B28A0F0900089181A /* SideMenu in Frameworks */,
+				B135B2D0295ADD5500F0D57F /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +311,7 @@
 				86B277FF2834FD5800C24D9B /* SideMenu in Frameworks */,
 				1847DCFF283FC28A0075FD5D /* Pendo in Frameworks */,
 				187A80A42840D4460057B91E /* IQKeyboardManagerSwift in Frameworks */,
+				B166382428C9CB9900FDC153 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +378,8 @@
 				8642B9FB2807FF6F00004711 /* Mercer | Mettl */,
 				B1143ED328AF668C0071CAB7 /* Dev_Mercer_Mettl.app */,
 				B1143ED428AF668C0071CAB7 /* Prod_Mercer_Mettl.app */,
+				B1B21A5628BCA7A000B84907 /* Dev_Mercer_MettlTests.xctest */,
+				B1B21A5728BCA7A000B84907 /* Prod_Mercer_MettlTests.xctest */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,7 +400,9 @@
 		8642BA102808012800004711 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				B16D0E8E2923BF010047BFF9 /* KeyProccedBy */,
 				8642BA222808025700004711 /* Landing */,
+				B19A08D62938B3B000ADE528 /* QRCodeView */,
 				86B277F72834FB1400C24D9B /* SideMenu */,
 				86876FFA28082F8B00049206 /* Spalsh */,
 				86B277FA2834FCC700C24D9B /* ValidateKey */,
@@ -363,6 +423,8 @@
 		8642BA122808012E00004711 /* Shared Components */ = {
 			isa = PBXGroup;
 			children = (
+				B14E538A2952D69100C96C64 /* ScreenMIrroring */,
+				B166382528C9CBC000FDC153 /* LottiAnimationJSON */,
 				B10356ED28B4B64900C22206 /* WebAction */,
 				B1567DCD28856D950085BA25 /* AACManager */,
 				1833A7682844F88900AC4F3E /* Pendo */,
@@ -398,12 +460,8 @@
 		8642BA152808022100004711 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				8642BA1B2808022100004711 /* Roboto-Black.ttf */,
-				8642BA192808022100004711 /* Roboto-Bold.ttf */,
-				8642BA172808022100004711 /* Roboto-Light.ttf */,
-				8642BA162808022100004711 /* Roboto-Medium.ttf */,
-				8642BA182808022100004711 /* Roboto-Regular.ttf */,
-				8642BA1A2808022100004711 /* Roboto-Thin.ttf */,
+				B1E4203A28CB75CF0023FF93 /* Noto_Sans */,
+				B1E4204D28CB76950023FF93 /* Roboto */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -454,13 +512,15 @@
 		86876FFD28083DC800049206 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */,
 				866499082809807800A95496 /* UIColor+Extension.swift */,
+				B19A08D129388FD100ADE528 /* UIDevice+Extension.swift */,
 				86876FFE28083DC800049206 /* UIFont+Extension.swift */,
 				866499062809807700A95496 /* UIImageView+Extension.swift */,
+				E3B7165D283CC2510077002C /* UITextField+Extension.swift */,
 				866499072809807800A95496 /* UIView+Extension.swift */,
 				8607112A2833805D00D105CD /* UIViewController+Extension.swift */,
-				8B25AD23283BFF7200DB6681 /* UIButton+Extension.swift */,
-				E3B7165D283CC2510077002C /* UITextField+Extension.swift */,
+				B198A1C1293E2042004D1710 /* UIAlertController+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -512,12 +572,75 @@
 			path = WebAction;
 			sourceTree = "<group>";
 		};
+		B14E538A2952D69100C96C64 /* ScreenMIrroring */ = {
+			isa = PBXGroup;
+			children = (
+				B14E538B2952D6B800C96C64 /* ScreenMirroring.swift */,
+			);
+			path = ScreenMIrroring;
+			sourceTree = "<group>";
+		};
 		B1567DCD28856D950085BA25 /* AACManager */ = {
 			isa = PBXGroup;
 			children = (
 				B1567DCE28856DCA0085BA25 /* AssessmentManager.swift */,
 			);
 			path = AACManager;
+			sourceTree = "<group>";
+		};
+		B166382528C9CBC000FDC153 /* LottiAnimationJSON */ = {
+			isa = PBXGroup;
+			children = (
+				B1EA5C29294862F300A3FF49 /* Scanner.json */,
+				B19A08DA2938B72900ADE528 /* ScannerAnimation.json */,
+				B166382628C9CC1900FDC153 /* ProgressLoader.json */,
+			);
+			path = LottiAnimationJSON;
+			sourceTree = "<group>";
+		};
+		B16D0E8E2923BF010047BFF9 /* KeyProccedBy */ = {
+			isa = PBXGroup;
+			children = (
+				B16D0E8F2923C0C70047BFF9 /* KeyProceedByViewController.swift */,
+				B16D0E9129260B820047BFF9 /* KeyProceedByViewCoordinator.swift */,
+			);
+			path = KeyProccedBy;
+			sourceTree = "<group>";
+		};
+		B19A08D62938B3B000ADE528 /* QRCodeView */ = {
+			isa = PBXGroup;
+			children = (
+				B19A08D72938B40C00ADE528 /* ScannerViewController.swift */,
+				B19A08E02938EE0100ADE528 /* ScannerViewModel.swift */,
+				B19A08DD2938B86400ADE528 /* ScannerCoordinator.swift */,
+			);
+			path = QRCodeView;
+			sourceTree = "<group>";
+		};
+		B1E4203A28CB75CF0023FF93 /* Noto_Sans */ = {
+			isa = PBXGroup;
+			children = (
+				B1E4203D28CB75CF0023FF93 /* NotoSans-Black.ttf */,
+				B1E4203E28CB75CF0023FF93 /* NotoSans-Bold.ttf */,
+				B1E4204028CB75CF0023FF93 /* NotoSans-Light.ttf */,
+				B1E4203C28CB75CF0023FF93 /* NotoSans-Medium.ttf */,
+				B1E4203B28CB75CF0023FF93 /* NotoSans-Regular.ttf */,
+				B1E4203F28CB75CF0023FF93 /* NotoSans-Thin.ttf */,
+			);
+			path = Noto_Sans;
+			sourceTree = "<group>";
+		};
+		B1E4204D28CB76950023FF93 /* Roboto */ = {
+			isa = PBXGroup;
+			children = (
+				8642BA1B2808022100004711 /* Roboto-Black.ttf */,
+				8642BA192808022100004711 /* Roboto-Bold.ttf */,
+				8642BA172808022100004711 /* Roboto-Light.ttf */,
+				8642BA162808022100004711 /* Roboto-Medium.ttf */,
+				8642BA182808022100004711 /* Roboto-Regular.ttf */,
+				8642BA1A2808022100004711 /* Roboto-Thin.ttf */,
+			);
+			path = Roboto;
 			sourceTree = "<group>";
 		};
 		E34A58CE28374147009AF40B /* API */ = {
@@ -598,6 +721,8 @@
 				B1443B2A28A0F0900089181A /* SideMenu */,
 				B1443B2C28A0F0900089181A /* Pendo */,
 				B1443B2E28A0F0900089181A /* IQKeyboardManagerSwift */,
+				B135B2CF295ADD5500F0D57F /* Lottie */,
+				B135B2D2295ADDDA00F0D57F /* Lottie */,
 			);
 			productName = "Mercer | Mettl";
 			productReference = B1143ED428AF668C0071CAB7 /* Prod_Mercer_Mettl.app */;
@@ -621,6 +746,7 @@
 				86B277FE2834FD5800C24D9B /* SideMenu */,
 				1847DCFE283FC28A0075FD5D /* Pendo */,
 				187A80A32840D4460057B91E /* IQKeyboardManagerSwift */,
+				B166382328C9CB9900FDC153 /* Lottie */,
 			);
 			productName = "Mercer | Mettl";
 			productReference = B1143ED328AF668C0071CAB7 /* Dev_Mercer_Mettl.app */;
@@ -641,7 +767,7 @@
 			);
 			name = Dev_Mercer_MettlTests;
 			productName = Dev_Mercer_MettlTests;
-			productReference = 86F95E2228B76249004CCD4D /* Dev_Mercer_MettlTests.xctest */;
+			productReference = B1B21A5628BCA7A000B84907 /* Dev_Mercer_MettlTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		B1143EC328A24CB90071CAB7 /* Prod_Mercer_MettlTests */ = {
@@ -659,7 +785,7 @@
 			);
 			name = Prod_Mercer_MettlTests;
 			productName = Prod_Mercer_MettlTests;
-			productReference = 86F95E2328B76249004CCD4D /* Prod_Mercer_MettlTests.xctest */;
+			productReference = B1B21A5728BCA7A000B84907 /* Prod_Mercer_MettlTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -698,6 +824,9 @@
 				86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */,
 				1847DCFD283FC28A0075FD5D /* XCRemoteSwiftPackageReference "pendo-mobile-ios" */,
 				187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				B166382228C9CB9900FDC153 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B135B2CE295ADD5500F0D57F /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B135B2D1295ADDDA00F0D57F /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 8642B9F02807FF6F00004711;
 			projectDirPath = "";
@@ -720,15 +849,23 @@
 				B15422B92878008C00E68094 /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				860886692817BF2C00076776 /* Roboto-Bold.ttf in Resources */,
 				8608866A2817BF2C00076776 /* IntroCollectionViewCell.xib in Resources */,
+				B1E4204C28CB75CF0023FF93 /* NotoSans-Light.ttf in Resources */,
 				B15422B82878008800E68094 /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
+				B1EA5C2B294862F300A3FF49 /* Scanner.json in Resources */,
 				8608866B2817BF2C00076776 /* Roboto-Regular.ttf in Resources */,
+				B1E4204228CB75CF0023FF93 /* NotoSans-Regular.ttf in Resources */,
+				B19A08DC2938B72900ADE528 /* ScannerAnimation.json in Resources */,
 				8608866C2817BF2C00076776 /* Roboto-Medium.ttf in Resources */,
 				8608866D2817BF2C00076776 /* LaunchScreen.storyboard in Resources */,
 				8608866E2817BF2C00076776 /* Roboto-Black.ttf in Resources */,
 				B15422BA2878008F00E68094 /* Font Awesome 5 Free-Solid-900.otf in Resources */,
 				8608866F2817BF2C00076776 /* Roboto-Light.ttf in Resources */,
 				860886702817BF2C00076776 /* Assets.xcassets in Resources */,
+				B1E4204628CB75CF0023FF93 /* NotoSans-Black.ttf in Resources */,
+				B1E4204828CB75CF0023FF93 /* NotoSans-Bold.ttf in Resources */,
 				860886712817BF2C00076776 /* Main.storyboard in Resources */,
+				B1E4204A28CB75CF0023FF93 /* NotoSans-Thin.ttf in Resources */,
+				B1E4204428CB75CF0023FF93 /* NotoSans-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,17 +875,26 @@
 			files = (
 				8642BA202808022100004711 /* Roboto-Thin.ttf in Resources */,
 				B1567DD1288686DE0085BA25 /* JavaToSwift.html in Resources */,
+				B1E4204B28CB75CF0023FF93 /* NotoSans-Light.ttf in Resources */,
+				B1E4204928CB75CF0023FF93 /* NotoSans-Thin.ttf in Resources */,
 				1847DCF4283F88650075FD5D /* Font Awesome 5 Free-Regular-400.otf in Resources */,
 				8642BA1F2808022100004711 /* Roboto-Bold.ttf in Resources */,
+				B1E4204728CB75CF0023FF93 /* NotoSans-Bold.ttf in Resources */,
+				B1E4204128CB75CF0023FF93 /* NotoSans-Regular.ttf in Resources */,
 				868770052808485700049206 /* IntroCollectionViewCell.xib in Resources */,
 				1847DCEF283F88650075FD5D /* Font Awesome 5 Brands-Regular-400.otf in Resources */,
 				8642BA1E2808022100004711 /* Roboto-Regular.ttf in Resources */,
 				8642BA1C2808022100004711 /* Roboto-Medium.ttf in Resources */,
+				B19A08DB2938B72900ADE528 /* ScannerAnimation.json in Resources */,
 				8642BA092807FF7200004711 /* LaunchScreen.storyboard in Resources */,
 				8642BA212808022100004711 /* Roboto-Black.ttf in Resources */,
+				B1E4204328CB75CF0023FF93 /* NotoSans-Medium.ttf in Resources */,
 				1847DCF6283F88650075FD5D /* Font Awesome 5 Free-Solid-900.otf in Resources */,
+				B1E4204528CB75CF0023FF93 /* NotoSans-Black.ttf in Resources */,
 				8642BA1D2808022100004711 /* Roboto-Light.ttf in Resources */,
 				8642BA062807FF7200004711 /* Assets.xcassets in Resources */,
+				B166382728C9CC1900FDC153 /* ProgressLoader.json in Resources */,
+				B1EA5C2A294862F300A3FF49 /* Scanner.json in Resources */,
 				8642BA042807FF6F00004711 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -821,10 +967,12 @@
 				B15422B62878003300E68094 /* UserTask.swift in Sources */,
 				B15422B42878002C00E68094 /* APIResponse.swift in Sources */,
 				B15422B72878006000E68094 /* SideMenuViewController.swift in Sources */,
+				B1B21A5828BCAA8400B84907 /* WebAction.swift in Sources */,
 				860886552817BF2C00076776 /* LandingViewController.swift in Sources */,
 				B15422C3287800B700E68094 /* FontAwesomeView.swift in Sources */,
 				B15422BB2878009A00E68094 /* FontAwesomeBarButtonItem.swift in Sources */,
 				B15422A72877FFA900E68094 /* FontAwesome.swift in Sources */,
+				B19A08D42938906E00ADE528 /* KeyProceedByViewCoordinator.swift in Sources */,
 				860886562817BF2C00076776 /* UIImageView+Extension.swift in Sources */,
 				860886572817BF2C00076776 /* Coordinators.swift in Sources */,
 				860886582817BF2C00076776 /* UIView+Extension.swift in Sources */,
@@ -846,10 +994,12 @@
 				8608865D2817BF2C00076776 /* AppConstant.swift in Sources */,
 				8607112C2833805D00D105CD /* UIViewController+Extension.swift in Sources */,
 				8B25AD25283BFF7200DB6681 /* UIButton+Extension.swift in Sources */,
+				B19A08D92938B40C00ADE528 /* ScannerViewController.swift in Sources */,
 				8608865E2817BF2C00076776 /* AppDelegate.swift in Sources */,
 				8676CB662817F7E300A04229 /* LandingCoordinator.swift in Sources */,
 				B15422A92877FFCB00E68094 /* Enum.swift in Sources */,
 				8608865F2817BF2C00076776 /* AppAdaptables.swift in Sources */,
+				B19A08D329388FD100ADE528 /* UIDevice+Extension.swift in Sources */,
 				B15422B32878002600E68094 /* UserRequests.swift in Sources */,
 				B15422BD287800A300E68094 /* FontAwesomeImageRepresentable.swift in Sources */,
 				B15422B22878002200E68094 /* APIResponder.swift in Sources */,
@@ -857,10 +1007,14 @@
 				B15422B52878002F00E68094 /* JSONNull.swift in Sources */,
 				860886602817BF2C00076776 /* SceneDelegate.swift in Sources */,
 				860886612817BF2C00076776 /* SplashViewController.swift in Sources */,
+				B19A08D52938908300ADE528 /* KeyProceedByViewController.swift in Sources */,
+				B19A08E22938EE0100ADE528 /* ScannerViewModel.swift in Sources */,
 				860886622817BF2C00076776 /* UIColor+Extension.swift in Sources */,
 				B15422AA2877FFE200E68094 /* ValidateKeyViewController.swift in Sources */,
 				B15422C0287800AD00E68094 /* FontAwesomeStateRequirement.swift in Sources */,
 				B15422C2287800B300E68094 /* FontAwesomeTextRepresentable.swift in Sources */,
+				B198A1C3293E2042004D1710 /* UIAlertController+Extension.swift in Sources */,
+				B19A08DF2938B86400ADE528 /* ScannerCoordinator.swift in Sources */,
 				B15422B02878001C00E68094 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -870,8 +1024,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8607112B2833805D00D105CD /* UIViewController+Extension.swift in Sources */,
+				B14E538C2952D6B800C96C64 /* ScreenMirroring.swift in Sources */,
 				1847DCF9283F88650075FD5D /* FontAwesomeImageRepresentable.swift in Sources */,
 				86BB7CD1280D548700BB3B74 /* Scenes.swift in Sources */,
+				B19A08D229388FD100ADE528 /* UIDevice+Extension.swift in Sources */,
 				B1567DCF28856DCA0085BA25 /* AssessmentManager.swift in Sources */,
 				1847DCFA283F88650075FD5D /* FontAwesomeSegmentedControl.swift in Sources */,
 				1847DCFC283F88650075FD5D /* FontAwesome.swift in Sources */,
@@ -903,7 +1059,9 @@
 				86B27801283504E700C24D9B /* ValidatekeyCoordinator.swift in Sources */,
 				1847DCF8283F88650075FD5D /* Enum.swift in Sources */,
 				868770072808485700049206 /* IntroCollection.swift in Sources */,
+				B16D0E902923C0C70047BFF9 /* KeyProceedByViewController.swift in Sources */,
 				E34A58DF2837467E009AF40B /* APIResponse.swift in Sources */,
+				B19A08D82938B40C00ADE528 /* ScannerViewController.swift in Sources */,
 				862625552810436C009BA2DC /* WebViewController.swift in Sources */,
 				E34A58E2283749B4009AF40B /* ValidateKeyViewModel.swift in Sources */,
 				8676CB652817F7E300A04229 /* LandingCoordinator.swift in Sources */,
@@ -911,15 +1069,19 @@
 				8642B9FD2807FF6F00004711 /* AppDelegate.swift in Sources */,
 				1833A76A2844F8E600AC4F3E /* PendoConfiguration.swift in Sources */,
 				1847DCF0283F88650075FD5D /* FontAwesomeStateRequirement.swift in Sources */,
+				B16D0E9229260B820047BFF9 /* KeyProceedByViewCoordinator.swift in Sources */,
 				E34A58D728374267009AF40B /* APIBase.swift in Sources */,
 				86BB7CD3280D563C00BB3B74 /* AppAdaptables.swift in Sources */,
 				8642B9FF2807FF6F00004711 /* SceneDelegate.swift in Sources */,
 				86876FFC2808301C00049206 /* SplashViewController.swift in Sources */,
 				860886792817D9B300076776 /* RootCoordinator.swift in Sources */,
+				B19A08E12938EE0100ADE528 /* ScannerViewModel.swift in Sources */,
 				1847DCFB283F88650075FD5D /* FontAwesomeExtension.swift in Sources */,
 				8664990B2809807800A95496 /* UIColor+Extension.swift in Sources */,
 				E34A58DB28374506009AF40B /* APIResponder.swift in Sources */,
 				E3B7165E283CC2510077002C /* UITextField+Extension.swift in Sources */,
+				B198A1C2293E2042004D1710 /* UIAlertController+Extension.swift in Sources */,
+				B19A08DE2938B86400ADE528 /* ScannerCoordinator.swift in Sources */,
 				E34A58D528374251009AF40B /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -978,9 +1140,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FNN65ZRAY5;
+				DEVELOPMENT_TEAM = J6T6SJP45Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Mercer | Mettl";
@@ -997,8 +1160,9 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D PRO";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercer.mercermettl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mettl.mercermettl.rr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Mercer | Mettl Dev Profile";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1010,9 +1174,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FNN65ZRAY5;
+				DEVELOPMENT_TEAM = J6T6SJP45Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Mercer | Mettl/Resources/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Mercer | Mettl";
@@ -1029,8 +1194,9 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D PRO";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercer.mercermettl;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mettl.mercermettl.rr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Mercer | Mettl Dev Profile";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1135,6 +1301,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1161,13 +1328,13 @@
 				CODE_SIGN_ENTITLEMENTS = MettlAssessment.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FNN65ZRAY5;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = J6T6SJP45Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mercer | Mettl/Resources/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Mercer_Mettl;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera permission to record candidate movements. ";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone permission to record candidate voice. ";
+				INFOPLIST_KEY_CFBundleDisplayName = "Mercer | Mettl";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to scan QR codes.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This is required by your organization in order to proctor the test.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1175,6 +1342,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1182,9 +1350,9 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D DEV";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercer.mercermettl.rr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mettl.mercermettl.rr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Mercer Mettl DevProvProf";
+				PROVISIONING_PROFILE_SPECIFIER = "Mercer | Mettl Dev Profile";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1197,15 +1365,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = MettlAssessment.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = FNN65ZRAY5;
+				CURRENT_PROJECT_VERSION = 10;
+				DEVELOPMENT_TEAM = J6T6SJP45Y;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Mercer | Mettl/Resources/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = Mercer_Mettl;
-				INFOPLIST_KEY_NSCameraUsageDescription = "Need camera permission to record candidate movements. ";
-				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Need microphone permission to record candidate voice. ";
+				INFOPLIST_KEY_CFBundleDisplayName = "Mercer | Mettl";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app uses the camera to scan QR codes.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "This is required by your organization in order to proctor the test.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1213,6 +1381,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1220,9 +1389,9 @@
 				);
 				MARKETING_VERSION = 1.0;
 				OTHER_SWIFT_FLAGS = "-D DEV";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mercer.mercermettl.rr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mettl.mercermettl.rr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Mercer Mettl DistProvProf";
+				PROVISIONING_PROFILE_SPECIFIER = "Mercer | Mettl Dev Profile";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1381,6 +1550,30 @@
 				kind = branch;
 			};
 		};
+		B135B2CE295ADD5500F0D57F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B135B2D1295ADDDA00F0D57F /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		B166382228C9CB9900FDC153 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1399,6 +1592,16 @@
 			package = 86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */;
 			productName = SideMenu;
 		};
+		B135B2CF295ADD5500F0D57F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B166382228C9CB9900FDC153 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		B135B2D2295ADDDA00F0D57F /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B166382228C9CB9900FDC153 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		B1443B2A28A0F0900089181A /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 86B277FD2834FD5800C24D9B /* XCRemoteSwiftPackageReference "SideMenu" */;
@@ -1413,6 +1616,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 187A80A22840D4460057B91E /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		B166382328C9CB9900FDC153 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B166382228C9CB9900FDC153 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

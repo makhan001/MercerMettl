@@ -26,7 +26,7 @@ extension UIViewController {
             statusBarView.backgroundColor = color
         }
     }
-
+    
     // MARK: - Pendo Analytics
     func startPendoSession(visitorid: String = "",
                            accountid: String = "",
@@ -38,7 +38,7 @@ extension UIViewController {
             visitorData: visitordata,
             accountData: accountdata)
     }
-
+    
     // MARK: - Alert Extension
     func showAlertController(title: String, message: String) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
@@ -47,14 +47,21 @@ extension UIViewController {
         alert.addAction(action)
         self.present(alert, animated: true, completion: nil)
     }
-
-    func showLogoutAlertController(title: String, message: String, router: NextSceneDismisser?) {
+    
+    func showQuitTestAlertController(title: String, message: String, router: NextSceneDismisser?) {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: .alert)
-        let notNow = UIAlertAction.init(title: "No", style: .default) { _ in
+        alert.setMessageAlignment(.left)
+        let notNow = UIAlertAction.init(title: AppConstant.quiteBackBtnTitle,
+                                        style: .default) { _ in
         }
-        let yes = UIAlertAction.init(title: "Yes", style: .destructive) { _ in
-            router?.dismiss(controller: .landing)
+        let yes = UIAlertAction.init(title: AppConstant.quiteQuitBtnTitle, style: .destructive) { _ in
+            DispatchQueue.main.async {
+                UIAccessibility.requestGuidedAccessSession(enabled: false) { didSucceed in
+                    router?.dismiss(controller: .landing)
+                }
+            }
         }
+        alert.view.tintColor = UIColor(named: "DarkBlue")
         alert.addAction(yes)
         alert.addAction(notNow)
         self.present(alert, animated: true, completion: nil)
@@ -63,10 +70,25 @@ extension UIViewController {
     func convertImageToBase64String(img: UIImage) -> String {
         return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
     }
-
+    
     func convertBase64StringToImage(imageBase64String: String) -> UIImage {
         let imageData = Data(base64Encoded: imageBase64String)
         let image = UIImage(data: imageData!)
         return image!
+    }
+    
+    func checkDeviceMirroring() -> Bool {
+//        if UIScreen.screens.count < 2 {
+//           return false
+//        } else {
+//           return true
+//        }
+        
+        if UIScreen.main.isCaptured {
+            return true
+        }
+        else {
+            return false
+        }
     }
 }

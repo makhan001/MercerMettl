@@ -69,6 +69,8 @@ extension AppDelegate {
         let value = UIInterfaceOrientation.portrait.rawValue
         UIDevice.current.setValue(value, forKey: "orientation")
     }
+    
+
     // MARK: - setRootController.
     func setRootController() {
         self.window = UIWindow(frame: UIScreen.main.bounds)

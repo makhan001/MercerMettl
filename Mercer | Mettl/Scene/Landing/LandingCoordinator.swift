@@ -11,6 +11,8 @@ final class LandingCoordinator: Coordinator<Scenes> {
     weak var delegate: CoordinatorDimisser?
     let controller: LandingViewController = LandingViewController.from(from: .main, with: .landing)
     private var validateKey1: ValidatekeyCoordinator!
+    private var keyProceedBy: KeyProceedByViewCoordinator!
+
     override func start() {
         super.start()
         router.setRootModule(controller, hideBar: true)
@@ -27,12 +29,21 @@ final class LandingCoordinator: Coordinator<Scenes> {
         validateKey1.start()
         self.router.present(validateKey1, animated: true)
     }
+    private func startKeyProceedBy() {
+        let router = Router()
+        keyProceedBy = KeyProceedByViewCoordinator(router: router)
+        add(keyProceedBy)
+        keyProceedBy.delegate = self
+        keyProceedBy.start()
+        self.router.present(keyProceedBy, animated: true)
+    }
 }
 
 extension LandingCoordinator: NextSceneDismisser {
     func push(scene: Scenes) {
         switch scene {
         case .validate: startValidateview()
+        case .keyProceed: startKeyProceedBy()
         default: break
         }
     }

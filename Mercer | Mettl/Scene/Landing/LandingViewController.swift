@@ -9,7 +9,6 @@ import UIKit
 
 class LandingViewController: UIViewController {
     @IBOutlet weak var lblWelcome: UILabel!
-    @IBOutlet weak var lblGetStarted: UILabel!
     @IBOutlet weak var lblMercerMettl: UILabel!
     @IBOutlet weak var btnGetStarted: UIButton!
     @IBOutlet weak var imgRightArrow: UIImageView!
@@ -40,11 +39,11 @@ extension LandingViewController {
     private func configureFonts() {
         self.lblWelcome.font = UIFont.setFont(fontType: .light, fontSize: .large)
         self.lblMercerMettl.font = UIFont.setFont(fontType: .regular, fontSize: .vxllarge)
-        self.lblGetStarted.font = UIFont.setFont(fontType: .medium, fontSize: .medium)
-        self.imgRightArrow.image = UIImage.fontAwesomeIcon(name: FontAwesome.arrowRight,
-                                                           style: .solid,
-                                                           textColor: .white,
-                                                           size: CGSize(width: 30, height: 30))
+        self.btnGetStarted.titleLabel?.font = UIFont.setFont(fontType: .medium, fontSize: .medium)
+        self.btnGetStarted.setImage(UIImage.fontAwesomeIcon(name: FontAwesome.arrowRight,
+                                                            style: .solid,
+                                                            textColor: .white,
+                                                            size: CGSize(width: 30, height: 15)), for: .normal)
     }
     private func configureCollection() {
         collectionView.configure()
@@ -63,33 +62,32 @@ extension LandingViewController {
         }
     }
     private func getStartedAction() {
-        router?.push(scene: .validate)
+        router?.push(scene: .keyProceed)
     }
     // Environment bottomsheet action
     @objc func tripleTapped() {
         openEnvironmentAlert()
     }
+    
     private func openEnvironmentAlert() {
         // swiftlint:disable unused_closure_parameter
         let alert = UIAlertController(title: "Select Server(API) Enviroment ",
                                               message: "",
                                               preferredStyle: .actionSheet)
-                alert.addAction(
-                    UIAlertAction(
-                        title: "Production (Pro)",
-                        style: .default,
-                        handler: {(action: UIAlertAction!) in
+                alert.addAction(UIAlertAction(title: "Production (Com)",
+                                              style: .default,
+                                              handler: {(action: UIAlertAction!) in
                             APIEnvironment = .production
                             print(APIEnvironment.host)
                 }))
-                alert.addAction(UIAlertAction(title: "Staging (Com)",
+                alert.addAction(UIAlertAction(title: "Staging (Pro)",
                                               style: .default,
                                               handler: {(action: UIAlertAction!) in
                     APIEnvironment = .staging
                     print(APIEnvironment.host)
                 }))
 
-                alert.addAction(UIAlertAction(title: "Development (xyz)",
+                alert.addAction(UIAlertAction(title: "Staging (xyz)",
                                               style: .default,
                                               handler: {(action: UIAlertAction!) in
                     APIEnvironment = .dev

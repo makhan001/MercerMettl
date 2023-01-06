@@ -158,6 +158,7 @@ public enum FontAwesome: String, CaseIterable {
     case bluetoothB = "fa-bluetooth-b"
     case bold = "fa-bold"
     case bolt = "fa-bolt"
+    case boltslash = "fa-bolt-slash"
     case bomb = "fa-bomb"
     case bone = "fa-bone"
     case bong = "fa-bong"
@@ -1485,6 +1486,7 @@ public enum FontAwesome: String, CaseIterable {
     case youtube = "fa-youtube"
     case youtubeSquare = "fa-youtube-square"
     case zhihu = "fa-zhihu"
+    case xmark = "fa-xmark"
     /// An unicode code of FontAwesome icon
     public var unicode: String {
         switch self {
@@ -1620,6 +1622,7 @@ public enum FontAwesome: String, CaseIterable {
             case .bluetoothB: return "\u{f294}"
             case .bold: return "\u{f032}"
             case .bolt: return "\u{f0e7}"
+            case .boltslash: return "\u{e0b8}"
             case .bomb: return "\u{f1e2}"
             case .bone: return "\u{f5d7}"
             case .bong: return "\u{f55c}"
@@ -2947,6 +2950,7 @@ public enum FontAwesome: String, CaseIterable {
             case .youtube: return "\u{f167}"
             case .youtubeSquare: return "\u{f431}"
             case .zhihu: return "\u{f63f}"
+            case .xmark: return "\u{f00d}"
         }
     }
 
@@ -3085,6 +3089,7 @@ public enum FontAwesome: String, CaseIterable {
             case .bluetoothB: return [.brands]
             case .bold: return [.solid]
             case .bolt: return [.solid]
+            case .boltslash: return [.solid]
             case .bomb: return [.solid]
             case .bone: return [.solid]
             case .bong: return [.solid]
@@ -4412,7 +4417,7 @@ public enum FontAwesome: String, CaseIterable {
             case .youtube: return [.brands]
             case .youtubeSquare: return [.brands]
             case .zhihu: return [.brands]
-
+            case .xmark: return [.regular, .solid]
         }
     }
 }
@@ -5338,7 +5343,7 @@ public enum FontAwesomeBrands: String {
             case .yoast: return "\u{f2b1}"
             case .youtube: return "\u{f167}"
             case .youtubeSquare: return "\u{f431}"
-        case .zhihu: return "\u{f63f}"
+            case .zhihu: return "\u{f63f}"
         }
     }
 }

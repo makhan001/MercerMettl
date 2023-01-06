@@ -10,6 +10,8 @@ enum Scenes: String {
     case landing
     case webview
     case validate
+    case keyProceed
+    case scanner
 }
 
 enum Storyboard: String {
@@ -21,4 +23,6 @@ enum StoryboardIdentifier: String {
     case splash
     case landing
     case validateKey
+    case keyProceedBy
+    case scannerView
 }
